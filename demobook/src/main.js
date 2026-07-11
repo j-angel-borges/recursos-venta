@@ -512,3 +512,9 @@ import './style.css';
   });
 
 
+
+window.changeSlide = changeSlide;
+window.selectPin = selectPin;
+window.adjustValue = adjustValue;
+window.calculateCost = calculateCost;
+window.closeModal = closeModal;

@@ -2,52 +2,52 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zentry Prospect</title>
+  <title>ZentryOS - Evaluación de Bienestar Digital</title>
 </head>
 <body>
   <div class="container">
     <div class="step-container">
       
-      <!-- Slide 0: Portada -->
-      <div class="step active" id="step-0">
-        <div class="card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-          <img src="https://raw.githubusercontent.com/j-angel-borges/zentry-assets/main/zentry-icon-liquid.png" alt="ZentryOS" style="width: 120px; margin-bottom: 24px;" onerror="this.style.display='none'">
-          <h2 style="font-size: 28px; margin-bottom: 16px;">Protege la mente de tu hijo en la era digital</h2>
-          <p class="subtitle">Evaluación de Bienestar Digital (Zentry Prospect)</p>
-          <button class="btn btn-primary" style="margin-top: 32px;" onclick="nextStep(0)">Iniciar Evaluación →</button>
-        </div>
-      </div>
-
-      <!-- Slide 1: Nivel de Preocupación -->
-      <div class="step" id="step-1">
+      <!-- Paso 1: Registro -->
+      <div class="step active" id="step-1">
         <div class="card">
-          <h2>Nivel de Preocupación</h2>
-          <p class="subtitle">En una escala del 1 al 10, ¿qué tan preocupado está por el abuso de pantallas de su hijo?</p>
-          <div class="form-group" style="margin-top: 40px;">
-            <div class="slider-container">
-              <input type="range" id="nivelPreocupacion" min="1" max="10" value="5" oninput="document.getElementById('valPreoc').innerText = this.value">
-              <div class="slider-value" id="valPreoc">5</div>
-            </div>
-          </div>
+          <h2>Datos de Conexión Familiar</h2>
+          <p class="subtitle">Ingrese los datos para iniciar el diagnóstico de Bienestar Digital</p>
+          <div class="form-group"><label>Asesor Comercial</label><input type="text" id="asesor" placeholder="Nombre del asesor" required></div>
+          <div class="form-group"><label>Nombre del Padre/Madre</label><input type="text" id="nombrePadres" placeholder="Ej. Juan Pérez" required></div>
+          <div class="form-group"><label>Número de Celular</label><input type="tel" id="celular" placeholder="Ej. 999 999 999" required></div>
+          <div class="form-group"><label>Nombre del Menor</label><input type="text" id="nombreHijo" placeholder="Ej. Mateo" required></div>
+          <div class="form-group"><label>Edad del Menor</label><input type="number" id="edadHijo" placeholder="Ej. 12" min="1" max="18" required></div>
         </div>
-        <div class="nav-buttons">
-          <button class="btn btn-secondary" onclick="prevStep(1)">← Atrás</button>
-          <button class="btn btn-primary" onclick="nextStep(1)">Siguiente →</button>
-        </div>
+        <div class="nav-buttons"><button class="btn btn-primary" onclick="nextStep(1)">Siguiente →</button></div>
       </div>
 
-      <!-- Slide 2: Conocimiento del Daño -->
+      <!-- Paso 2: Concienciación -->
       <div class="step" id="step-2">
         <div class="card">
-          <h2>Impacto Cognitivo</h2>
-          <p class="subtitle">¿Ha oído hablar del impacto cognitivo y la ludopatía digital temprana generada por los algoritmos?</p>
+          <h2>Concienciación de Riesgo</h2>
+          <p class="subtitle">Evaluación de prioridades y comportamiento</p>
           <div class="form-group">
-            <div class="btn-group" id="conocimientoDano">
-              <button class="btn-select" data-val="Sí, he leído al respecto" onclick="selectBtnGroup(this, 'conocimientoDano')">Sí, lo conozco</button>
-              <button class="btn-select" data-val="He notado algunos síntomas" onclick="selectBtnGroup(this, 'conocimientoDano')">Solo sospechas</button>
-              <button class="btn-select" data-val="No, no sabía que era tan grave" onclick="selectBtnGroup(this, 'conocimientoDano')">No sabía</button>
+            <label>1. ¿Qué tan importante es el desarrollo mental en el futuro de su hijo?</label>
+            <div class="slider-container">
+              <input type="range" id="importancia1_10" min="1" max="10" value="10" oninput="document.getElementById('sliderVal').innerText = this.value">
+              <div class="slider-value" id="sliderVal">10</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>2. Lograr que use la tecnología para aprender en lugar de perder el tiempo, ¿sería HOY una prioridad?</label>
+            <div class="btn-group" id="prioridadTech">
+              <button class="btn-select" data-val="Sí" onclick="selectBtnGroup(this, 'prioridadTech')">Sí</button>
+              <button class="btn-select" data-val="No" onclick="selectBtnGroup(this, 'prioridadTech')">No</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>3. ¿Ha percibido cambios en su comportamiento (irritabilidad) cuando usa mucho el celular?</label>
+            <div class="options-group" id="comportamiento">
+              <div class="option-card" onclick="selectRadio(this, 'comportamiento')"><div class="option-text">Sí, cambia notablemente de humor cuando le pido que lo deje.</div></div>
+              <div class="option-card" onclick="selectRadio(this, 'comportamiento')"><div class="option-text">A veces, se nota distraído o aburrido si no está conectado.</div></div>
+              <div class="option-card" onclick="selectRadio(this, 'comportamiento')"><div class="option-text">No he percibido cambios en su actitud todavía.</div></div>
             </div>
           </div>
         </div>
@@ -57,154 +57,97 @@
         </div>
       </div>
 
-      <!-- Slide 3: Edad Hijos -->
+      <!-- Paso 3: Consumo -->
       <div class="step" id="step-3">
         <div class="card">
-          <h2>Clasificación de Edad</h2>
-          <p class="subtitle">¿En qué rango de edad se encuentran sus hijos?</p>
+          <h2>Radiografía de Consumo</h2>
+          <p class="subtitle">Análisis del tiempo y tipo de exposición</p>
           <div class="form-group">
-            <div class="option-card" data-val="Mayores (+13)" onclick="selectOptionGroup(this, 'edadHijos', 4)">
-              <div>Mayores (+13 años)</div>
+            <label>4. ¿A qué plataformas le dedica más tiempo?</label>
+            <div class="options-group" id="plataformas">
+              <div class="option-card" onclick="toggleCheckbox(this)"><div class="option-text">Videos cortos (YouTube Shorts, TikTok, Instagram)</div></div>
+              <div class="option-card" onclick="toggleCheckbox(this)"><div class="option-text">Videojuegos con compras internas</div></div>
+              <div class="option-card" onclick="toggleCheckbox(this)"><div class="option-text">Canales de creadores de contenido (Streamers)</div></div>
+              <div class="option-card" onclick="toggleCheckbox(this)"><div class="option-text">Mensajería y redes sociales (WhatsApp, DMs)</div></div>
             </div>
-            <div class="option-card" data-val="Menores (-13)" onclick="selectOptionGroup(this, 'edadHijos', 5)">
-              <div>Menores (-13 años)</div>
-            </div>
-            <div class="option-card" data-val="Ambas edades" onclick="selectOptionGroup(this, 'edadHijos', 6)">
-              <div>Ambas edades</div>
+          </div>
+          <div class="form-group">
+            <label>5. ¿Cuántas horas al día pasa frente a una pantalla?</label>
+            <div class="stepper">
+              <button class="stepper-btn" onclick="updateHours(-1)">-</button>
+              <div class="stepper-value" id="horasPantalla">4</div>
+              <button class="stepper-btn" onclick="updateHours(1)">+</button>
             </div>
           </div>
         </div>
         <div class="nav-buttons">
           <button class="btn btn-secondary" onclick="prevStep(3)">← Atrás</button>
+          <button class="btn btn-primary" onclick="nextStep(3)">Siguiente →</button>
         </div>
       </div>
 
-      <!-- Slide 4a: Mayores (Index 4) -->
+      <!-- Paso 4: Matriz de Riesgo -->
       <div class="step" id="step-4">
         <div class="card">
-          <h2>Desconexión Familiar</h2>
-          <p class="subtitle">¿Ha notado que prefiere quedarse en su cuarto viendo videos o jugando en lugar de interactuar con la familia?</p>
-          <div class="form-group">
-            <div class="btn-group" id="respuestaCondicional_a">
-              <button class="btn-select" data-val="Sí, bastante" onclick="selectBtnGroup(this, 'respuestaCondicional')">Sí, bastante</button>
-              <button class="btn-select" data-val="A veces" onclick="selectBtnGroup(this, 'respuestaCondicional')">A veces</button>
-              <button class="btn-select" data-val="No" onclick="selectBtnGroup(this, 'respuestaCondicional')">No</button>
+          <h2>Matriz de Escenarios de Riesgo</h2>
+          <p class="subtitle">Califique el nivel de peligro de estos escenarios</p>
+          <div class="risk-group">
+            <div class="risk-title">Aislamiento Social Progresivo</div><div class="risk-desc">Rechaza interactuar con amigos por jugar en línea.</div>
+            <div class="risk-btns" id="riesgoAislamiento">
+              <button class="risk-btn" data-val="Alto" onclick="selectRisk(this, 'riesgoAislamiento')">Alto</button>
+              <button class="risk-btn" data-val="Moderado" onclick="selectRisk(this, 'riesgoAislamiento')">Moderado</button>
+              <button class="risk-btn" data-val="Bajo" onclick="selectRisk(this, 'riesgoAislamiento')">Bajo</button>
+            </div>
+          </div>
+          <div class="risk-group">
+            <div class="risk-title">Sesgo de Contenido</div><div class="risk-desc">Publicidad de apuestas o chats sin filtro.</div>
+            <div class="risk-btns" id="riesgoContenido">
+              <button class="risk-btn" data-val="Alto" onclick="selectRisk(this, 'riesgoContenido')">Alto</button>
+              <button class="risk-btn" data-val="Moderado" onclick="selectRisk(this, 'riesgoContenido')">Moderado</button>
+              <button class="risk-btn" data-val="Bajo" onclick="selectRisk(this, 'riesgoContenido')">Bajo</button>
+            </div>
+          </div>
+          <div class="risk-group">
+            <div class="risk-title">Ansiedad por Notificaciones</div><div class="risk-desc">Interrumpe descansos cuando vibra el celular.</div>
+            <div class="risk-btns" id="riesgoAnsiedad">
+              <button class="risk-btn" data-val="Alto" onclick="selectRisk(this, 'riesgoAnsiedad')">Alto</button>
+              <button class="risk-btn" data-val="Moderado" onclick="selectRisk(this, 'riesgoAnsiedad')">Moderado</button>
+              <button class="risk-btn" data-val="Bajo" onclick="selectRisk(this, 'riesgoAnsiedad')">Bajo</button>
+            </div>
+          </div>
+          <div class="risk-group">
+            <div class="risk-title">Alteración de Identidad</div><div class="risk-desc">Adopta opiniones de influencers.</div>
+            <div class="risk-btns" id="riesgoIdentidad">
+              <button class="risk-btn" data-val="Alto" onclick="selectRisk(this, 'riesgoIdentidad')">Alto</button>
+              <button class="risk-btn" data-val="Moderado" onclick="selectRisk(this, 'riesgoIdentidad')">Moderado</button>
+              <button class="risk-btn" data-val="Bajo" onclick="selectRisk(this, 'riesgoIdentidad')">Bajo</button>
             </div>
           </div>
         </div>
         <div class="nav-buttons">
-          <button class="btn btn-secondary" onclick="prevStep(4, 3)">← Atrás</button>
-          <button class="btn btn-primary" onclick="nextStep(4, 7)">Siguiente →</button>
+          <button class="btn btn-secondary" onclick="prevStep(4)">← Atrás</button>
+          <button class="btn btn-primary" onclick="submitData()">Analizar Impacto</button>
         </div>
       </div>
 
-      <!-- Slide 4b: Menores (Index 5) -->
+      <!-- Paso 5: Loading / Success -->
       <div class="step" id="step-5">
         <div class="card">
-          <h2>Desarrollo Tecnológico</h2>
-          <p class="subtitle">¿Le gustaría que su hijo domine la Inteligencia Artificial para crear en lugar de solo consumir videos sin fin?</p>
-          <div class="form-group">
-            <div class="btn-group" id="respuestaCondicional_b">
-              <button class="btn-select" data-val="Sí, es vital" onclick="selectBtnGroup(this, 'respuestaCondicional')">Sí, es vital</button>
-              <button class="btn-select" data-val="No lo había pensado" onclick="selectBtnGroup(this, 'respuestaCondicional')">Me da igual</button>
-            </div>
-          </div>
-        </div>
-        <div class="nav-buttons">
-          <button class="btn btn-secondary" onclick="prevStep(5, 3)">← Atrás</button>
-          <button class="btn btn-primary" onclick="nextStep(5, 7)">Siguiente →</button>
-        </div>
-      </div>
-
-      <!-- Slide 4c: Ambas (Index 6) -->
-      <div class="step" id="step-6">
-        <div class="card">
-          <h2>Educación Tradicional</h2>
-          <p class="subtitle">¿Considera que la escuela tradicional de hoy prepara adecuadamente a sus hijos para un mundo dominado por la IA?</p>
-          <div class="form-group">
-            <div class="btn-group" id="respuestaCondicional_c">
-              <button class="btn-select" data-val="No, están desactualizados" onclick="selectBtnGroup(this, 'respuestaCondicional')">No, falta innovación</button>
-              <button class="btn-select" data-val="Sí, confío en la escuela" onclick="selectBtnGroup(this, 'respuestaCondicional')">Sí, es suficiente</button>
-            </div>
-          </div>
-        </div>
-        <div class="nav-buttons">
-          <button class="btn btn-secondary" onclick="prevStep(6, 3)">← Atrás</button>
-          <button class="btn btn-primary" onclick="nextStep(6, 7)">Siguiente →</button>
-        </div>
-      </div>
-
-      <!-- Slide 5: Interes_Solucion (Index 7) -->
-      <div class="step" id="step-7">
-        <div class="card">
-          <h2>Intencionalidad de Solución</h2>
-          <p class="subtitle">¿Les interesaría conocer una solución de supervisión inteligente que convierta el teléfono en un tutor educativo?</p>
-          <div class="form-group">
-            <div class="btn-group" id="interesSolucion">
-              <button class="btn-select" data-val="Sí, me interesa" onclick="selectBtnGroup(this, 'interesSolucion')">Sí, me interesa</button>
-              <button class="btn-select" data-val="No por el momento" onclick="selectBtnGroup(this, 'interesSolucion')">No, gracias</button>
-            </div>
-          </div>
-        </div>
-        <div class="nav-buttons">
-          <button class="btn btn-secondary" onclick="prevStep(7, state.lastBranch)">← Atrás</button>
-          <button class="btn btn-primary" onclick="nextStep(7, 8)">Siguiente →</button>
-        </div>
-      </div>
-
-      <!-- Slide 6: Contacto (Index 8) -->
-      <div class="step" id="step-8">
-        <div class="card">
-          <h2>Formulario de Contacto</h2>
-          <p class="subtitle">Por favor, ingrese sus datos para la reserva de demostración.</p>
-          <div class="form-group">
-            <label>Nombre del Padre/Madre</label>
-            <input type="text" id="nombreMadre" placeholder="Ej. Ana María" required>
-          </div>
-          <div class="form-group">
-            <label>Número de Celular</label>
-            <input type="tel" id="celular" placeholder="Ej. 999 999 999" required>
-          </div>
-          <div class="form-group">
-            <label>Distrito</label>
-            <input type="text" id="distrito" placeholder="Ej. San Borja" required>
-          </div>
-        </div>
-        <div class="nav-buttons">
-          <button class="btn btn-secondary" onclick="prevStep(8, 7)">← Atrás</button>
-          <button class="btn btn-primary" onclick="nextStep(8, 9)">Guardar Lead →</button>
-        </div>
-      </div>
-
-      <!-- Slide 7: Cierre y vCard (Index 9) -->
-      <div class="step" id="step-9">
-        <div class="card">
-          <div id="loadingState" class="loading-container" style="display:none;">
+          <div id="loadingState" class="loading-container">
             <div class="spinner"></div>
-            <h2>Sincronizando Lead...</h2>
+            <h2>Procesando diagnóstico...</h2>
           </div>
-          <div id="successState">
-            <h2 style="text-align: center; color: var(--success); margin-bottom: 24px;">¡Registro Completado!</h2>
-            <div class="qr-container">
-              <!-- Mock QR -->
-              <div style="width: 150px; height: 150px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px;">QR vCard</div>
-            </div>
-            <p style="text-align: center; font-size: 14px; margin-bottom: 16px; color: var(--text-muted);">Escanee para guardar mi contacto.</p>
-            
-            <div class="form-group">
-              <label>Observaciones del Asesor (Opcional)</label>
-              <textarea id="observaciones" rows="3" placeholder="Ej. Muy interesado, agendar llamada mañana..."></textarea>
-            </div>
-            
-            <!-- Botón Final Oversized Corregido -->
-            <button class="btn-final-action" onclick="finishAndReload()">Nuevo Prospecto</button>
+          <div id="successState" class="loading-container" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h2>Diagnóstico Guardado</h2>
+            <p class="subtitle">Procediendo con la evaluación de impacto y mitigación.</p>
+            <button class="btn-final-action" onclick="resetForm()">Nuevo Diagnóstico</button>
           </div>
         </div>
       </div>
 
     </div>
   </div>
-
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>

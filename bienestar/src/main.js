@@ -1,105 +1,150 @@
-import './style.css';
+import './style.css'
 
 const state = {
-  id: '',
-  nivelPreocupacion: 5, conocimientoDano: '', edadHijos: '', 
-  preguntaCondicional: '', respuestaCondicional: '',
-  interesSolucion: '', nombreMadre: '', celular: '', distrito: '', 
-  observaciones: '', lastBranch: 4
+  asesor: '', nombrePadres: '', celular: '', nombreHijo: '', edadHijo: '',
+  importancia1_10: 10, prioridadTech: '', comportamiento: '',
+  plataformas: [], horasPantalla: 4,
+  riesgoAislamiento: '', riesgoContenido: '', riesgoAnsiedad: '', riesgoIdentidad: ''
 };
 
-function showStep(num) {
-  document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
-  document.getElementById(`step-${num}`).classList.add('active');
+function showStep(num, direction = 'next') {
+  const current = document.querySelector('.step.active');
+  const next = document.getElementById(`step-${num}`);
+  if(direction === 'next') {
+    current.classList.add('exit'); current.classList.remove('active');
+    setTimeout(() => { current.classList.remove('exit'); next.classList.add('active'); }, 300);
+  } else {
+    current.classList.remove('active'); next.classList.add('active');
+  }
 }
 
-function nextStep(current, target = current + 1) {
-  if(current === 0) { showStep(1); return; }
-  if(current === 1) { state.nivelPreocupacion = document.getElementById('nivelPreocupacion').value; showStep(2); return; }
-  if(current === 2) { if(!state.conocimientoDano) { alert("Seleccione una opción"); return; } showStep(3); return; }
-  
-  if(current === 4 || current === 5 || current === 6) {
-    if(!state.respuestaCondicional) { alert("Seleccione una opción"); return; }
-    showStep(7); return;
+function nextStep(currentNum) {
+  if(validateStep(currentNum)) { saveStepData(currentNum); showStep(currentNum + 1, 'next'); }
+}
+function prevStep(currentNum) { showStep(currentNum - 1, 'prev'); }
+
+function validateStep(num) {
+  if(num === 1) {
+    const inputs = ['asesor', 'nombrePadres', 'celular', 'nombreHijo', 'edadHijo'];
+    let valid = true;
+    inputs.forEach(id => {
+      const el = document.getElementById(id);
+      if(!el.value) { el.style.borderColor = 'var(--danger)'; valid = false; }
+      else { el.style.borderColor = 'var(--card-border)'; }
+    });
+    return valid;
   }
-  
-  if(current === 7) { if(!state.interesSolucion) { alert("Seleccione una opción"); return; } showStep(8); return; }
-  
-  if(current === 8) {
-    state.nombreMadre = document.getElementById('nombreMadre').value;
+  if(num === 2) { if(!state.prioridadTech || !state.comportamiento) { alert("Responda todas las preguntas."); return false; } }
+  if(num === 4) { if(!state.riesgoAislamiento || !state.riesgoContenido || !state.riesgoAnsiedad || !state.riesgoIdentidad) { alert("Califique todos los escenarios."); return false; } }
+  return true;
+}
+
+function saveStepData(num) {
+  if(num === 1) {
+    state.asesor = document.getElementById('asesor').value;
+    state.nombrePadres = document.getElementById('nombrePadres').value;
     state.celular = document.getElementById('celular').value;
-    state.distrito = document.getElementById('distrito').value;
-    if(!state.nombreMadre || !state.celular) { alert("Complete los datos requeridos"); return; }
-    
-    submitData();
-    showStep(9);
-    return;
+    state.nombreHijo = document.getElementById('nombreHijo').value;
+    state.edadHijo = document.getElementById('edadHijo').value;
   }
-  
-  showStep(target);
-}
-
-function prevStep(current, target = current - 1) {
-  showStep(target);
+  if(num === 2) state.importancia1_10 = document.getElementById('importancia1_10').value;
 }
 
 function selectBtnGroup(btn, groupName) {
   const parent = btn.parentElement;
   parent.querySelectorAll('.btn-select').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  state[groupName] = btn.getAttribute('data-val');
+  btn.classList.add('selected'); state[groupName] = btn.getAttribute('data-val');
 }
 
-function selectOptionGroup(card, groupName, targetStep) {
+function selectRadio(card, groupName) {
   const parent = card.parentElement;
   parent.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
-  card.classList.add('selected');
-  state[groupName] = card.getAttribute('data-val');
-  
-  // Set conditional question context
-  if(targetStep === 4) state.preguntaCondicional = "Desconexión Familiar (Mayores)";
-  if(targetStep === 5) state.preguntaCondicional = "Desarrollo Tecnológico (Menores)";
-  if(targetStep === 6) state.preguntaCondicional = "Educación Tradicional (Ambas)";
-  
-  state.lastBranch = targetStep;
-  setTimeout(() => showStep(targetStep), 300);
+  card.classList.add('selected'); state[groupName] = card.querySelector('.option-text').innerText;
+}
+
+function toggleCheckbox(card) {
+  card.classList.toggle('selected');
+  const text = card.querySelector('.option-text').innerText;
+  if(card.classList.contains('selected')) {
+    if(!state.plataformas.includes(text)) state.plataformas.push(text);
+  } else { state.plataformas = state.plataformas.filter(t => t !== text); }
+}
+
+function updateHours(change) {
+  let val = parseInt(document.getElementById('horasPantalla').innerText);
+  val += change; if(val < 0) val = 0; if(val > 24) val = 24;
+  document.getElementById('horasPantalla').innerText = val; state.horasPantalla = val;
+}
+
+function selectRisk(btn, groupName) {
+  const parent = btn.parentElement;
+  parent.querySelectorAll('.risk-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected'); state[groupName] = btn.getAttribute('data-val');
 }
 
 function submitData() {
-  document.getElementById('successState').style.display = 'none';
-  document.getElementById('loadingState').style.display = 'flex';
-  
-  console.log("Mock enviando datos al backend:", state);
-  // Simulación de petición fetch al backend
-  setTimeout(() => {
-    onSuccess();
-  }, 1500);
+  if(validateStep(4)) {
+    showStep(5, 'next');
+    // MOCK SUBMIT
+    console.log("Submitting to backend (mock):", state);
+    setTimeout(onSuccess, 1500);
+  }
 }
 
 function onSuccess() {
   document.getElementById('loadingState').style.display = 'none';
-  document.getElementById('successState').style.display = 'block';
+  document.getElementById('successState').style.display = 'flex';
 }
 
-function onError(error) {
-  alert("Error: " + error);
-  document.getElementById('loadingState').style.display = 'none';
-  document.getElementById('successState').style.display = 'block';
+function onError(error) { alert("Error: " + error); resetForm(); }
+
+// NUEVA FUNCIÓN: Reinicia el formulario sin recargar la página (evita la pantalla blanca)
+function resetForm() {
+  // 1. Limpiar el estado interno
+  state.asesor = ''; state.nombrePadres = ''; state.celular = ''; state.nombreHijo = ''; state.edadHijo = '';
+  state.importancia1_10 = 10; state.prioridadTech = ''; state.comportamiento = '';
+  state.plataformas = []; state.horasPantalla = 4;
+  state.riesgoAislamiento = ''; state.riesgoContenido = ''; state.riesgoAnsiedad = ''; state.riesgoIdentidad = '';
+
+  // 2. Limpiar los inputs visuales
+  document.getElementById('asesor').value = '';
+  document.getElementById('nombrePadres').value = '';
+  document.getElementById('celular').value = '';
+  document.getElementById('nombreHijo').value = '';
+  document.getElementById('edadHijo').value = '';
+  
+  // 3. Restaurar sliders y contadores a sus valores por defecto
+  document.getElementById('importancia1_10').value = 10;
+  document.getElementById('sliderVal').innerText = '10';
+  document.getElementById('horasPantalla').innerText = '4';
+
+  // 4. Quitar la selección visual de todos los botones y tarjetas
+  document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+
+  // 5. Restaurar la vista de carga/éxito
+  document.getElementById('successState').style.display = 'none';
+  document.getElementById('loadingState').style.display = 'flex';
+
+  // 6. Volver al Paso 1
+  document.querySelectorAll('.step').forEach(step => {
+    step.classList.remove('active');
+    step.classList.remove('exit');
+  });
+  document.getElementById('step-1').classList.add('active');
 }
 
-function finishAndReload() {
-  state.observaciones = document.getElementById('observaciones').value;
-  console.log("Mock guardando observaciones:", state.observaciones);
-  location.reload();
-}
-
-window.state = state;
+// Bind functions to window
 window.showStep = showStep;
 window.nextStep = nextStep;
 window.prevStep = prevStep;
+window.validateStep = validateStep;
+window.saveStepData = saveStepData;
 window.selectBtnGroup = selectBtnGroup;
-window.selectOptionGroup = selectOptionGroup;
+window.selectRadio = selectRadio;
+window.toggleCheckbox = toggleCheckbox;
+window.updateHours = updateHours;
+window.selectRisk = selectRisk;
 window.submitData = submitData;
 window.onSuccess = onSuccess;
 window.onError = onError;
-window.finishAndReload = finishAndReload;
+window.resetForm = resetForm;

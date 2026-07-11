@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZentryOS - DemoBook Slides</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+
+  <div class="presentation-container">
+    <div class="slides-wrapper">
+
+      <!-- SLIDE 1: AUTORIDAD Y POSICIONAMIENTO -->
+      <div class="slide active" id="slide-0">
+        <div class="slide-header">
+          <h2 class="slide-title">Autoridad y Posicionamiento</h2>
+          <p class="slide-subtitle">Respaldo tecnológico e infraestructura de nivel industrial</p>
+        </div>
+        <div class="slide-content">
+          <div class="map-container">
+            <svg class="sv-map" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Glow Filters -->
+                <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="6" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <!-- Hilos/Líneas de conexión -->
+              <!-- Google to QUARZ -->
+              <path class="map-link-line" d="M 100 120 L 250 200" stroke="#533B87" stroke-width="2.5" fill="none" opacity="0.6" id="line-google" />
+              <!-- Meta to QUARZ -->
+              <path class="map-link-line" d="M 400 150 L 250 200" stroke="#533B87" stroke-width="2.5" fill="none" opacity="0.6" id="line-meta" />
+              <!-- Apple to QUARZ -->
+              <path class="map-link-line" d="M 180 320 L 250 200" stroke="#533B87" stroke-width="2.5" fill="none" opacity="0.6" id="line-apple" />
+
+              <!-- Sub-conexiones (Doble-punteadas) -->
+              <!-- Android to Google -->
+              <path d="M 80 50 L 100 120" stroke="#3DDC84" stroke-dasharray="3" stroke-width="1.5" fill="none" opacity="0.5" />
+              <!-- GitHub to Google -->
+              <path d="M 70 210 L 100 120" stroke="#24292F" stroke-dasharray="3" stroke-width="1.5" fill="none" opacity="0.5" />
+              <!-- OpenAI to Meta -->
+              <path d="M 430 260 L 400 150" stroke="#74AA9C" stroke-dasharray="3" stroke-width="1.5" fill="none" opacity="0.5" />
+              <!-- iOS to Apple -->
+              <path d="M 320 340 L 180 320" stroke="#000000" stroke-dasharray="3" stroke-width="1.5" fill="none" opacity="0.5" />
+
+              <!-- Pins -->
+              <!-- Google Cloud -->
+              <g class="map-pin active-pin" id="pin-google" onclick="selectPin('google')" transform="translate(100, 120)">
+                <g class="pin-inner">
+                  <circle r="16" fill="white" stroke="#EA4335" stroke-width="2" />
+                  <circle r="6" fill="#EA4335" />
+                  <text y="-22" font-family="'Outfit'" font-size="11" font-weight="700" text-anchor="middle" fill="#4A5160">Google Cloud</text>
+                </g>
+              </g>
+              
+              <!-- Meta -->
+              <g class="map-pin" id="pin-meta" onclick="selectPin('meta')" transform="translate(400, 150)">
+                <g class="pin-inner">
+                  <circle r="16" fill="white" stroke="#0064E0" stroke-width="2" />
+                  <circle r="6" fill="#0064E0" />
+                  <text y="-22" font-family="'Outfit'" font-size="11" font-weight="700" text-anchor="middle" fill="#4A5160">Meta</text>
+                </g>
+              </g>
+              
+              <!-- Apple Enterprise -->
+              <g class="map-pin" id="pin-apple" onclick="selectPin('apple')" transform="translate(180, 320)">
+                <g class="pin-inner">
+                  <circle r="16" fill="white" stroke="#000000" stroke-width="2" />
+                  <circle r="6" fill="#000000" />
+                  <text y="28" font-family="'Outfit'" font-size="11" font-weight="700" text-anchor="middle" fill="#4A5160">Apple Enterprise</text>
+                </g>
+              </g>
+
+              <!-- Sub-Pins (Secundarios más pequeños) -->
+              <!-- Sub-Pin: Android -->
+              <g class="map-pin" transform="translate(80, 50)">
+                <g class="pin-inner">
+                  <circle r="11" fill="white" stroke="#3DDC84" stroke-width="1.5" />
+                  <text y="3" font-family="'Outfit'" font-size="7.5" font-weight="800" text-anchor="middle" fill="#3DDC84">AND</text>
+                  <text y="20" font-family="'Outfit'" font-size="9" font-weight="600" text-anchor="middle" fill="#4A5160" opacity="0.8">Android</text>
+                </g>
+              </g>
+              
+              <!-- Sub-Pin: GitHub -->
+              <g class="map-pin" transform="translate(70, 210)">
+                <g class="pin-inner">
+                  <circle r="11" fill="white" stroke="#24292F" stroke-width="1.5" />
+                  <text y="3" font-family="'Outfit'" font-size="7.5" font-weight="800" text-anchor="middle" fill="#24292F">GH</text>
+                  <text y="20" font-family="'Outfit'" font-size="9" font-weight="600" text-anchor="middle" fill="#4A5160" opacity="0.8">GitHub</text>
+                </g>
+              </g>
+              
+              <!-- Sub-Pin: OpenAI -->
+              <g class="map-pin" transform="translate(430, 260)">
+                <g class="pin-inner">
+                  <circle r="11" fill="white" stroke="#74AA9C" stroke-width="1.5" />
+                  <text y="3" font-family="'Outfit'" font-size="7.5" font-weight="800" text-anchor="middle" fill="#74AA9C">AI</text>
+                  <text y="20" font-family="'Outfit'" font-size="9" font-weight="600" text-anchor="middle" fill="#4A5160" opacity="0.8">OpenAI</text>
+                </g>
+              </g>
+              
+              <!-- Sub-Pin: iOS -->
+              <g class="map-pin" transform="translate(320, 340)">
+                <g class="pin-inner">
+                  <circle r="11" fill="white" stroke="#000000" stroke-width="1.5" />
+                  <text y="3" font-family="'Outfit'" font-size="7" font-weight="800" text-anchor="middle" fill="#000000">iOS</text>
+                  <text y="20" font-family="'Outfit'" font-size="9" font-weight="600" text-anchor="middle" fill="#4A5160" opacity="0.8">iOS</text>
+                </g>
+              </g>
+
+              <!-- Central Node: QUARZ GROUP & ZentryOS -->
+              <g transform="translate(250, 200)" filter="url(#glow-purple)">
+                <circle r="34" fill="#533B87" />
+                <circle r="30" fill="white" stroke="#D6C8FA" stroke-width="2" />
+                <text y="-4" font-family="'Outfit'" font-size="9" font-weight="800" text-anchor="middle" fill="#533B87">QUARZ</text>
+                <text y="8" font-family="'Outfit'" font-size="7.5" font-weight="700" text-anchor="middle" fill="#4A5160">ZentryOS</text>
+              </g>
+            </svg>
+          </div>
+          
+          <div class="map-info-panel">
+            <div class="info-card active-card" id="card-google">
+              <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                Google Cloud Platform
+              </h3>
+              <p>Procesamiento avanzado de telemetría y hosting bajo infraestructura de alta redundancia. Conectamos los reportes a través de Vertex AI de Google.</p>
+            </div>
+            <div class="info-card" id="card-meta">
+              <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                Meta Developers
+              </h3>
+              <p>Seguridad y arquitectura integrada para el bloqueo inteligente a nivel de API de aplicaciones sociales como Facebook, Instagram y WhatsApp.</p>
+            </div>
+            <div class="info-card" id="card-apple">
+              <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                Apple Enterprise
+              </h3>
+              <p>Gestión avanzada de dispositivos móviles (MDM) de grado corporativo, impidiendo que el launcher de ZentryOS pueda ser desinstalado por el menor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: MISIÓN Y PROBLEMÁTICA -->
+      <div class="slide" id="slide-1">
+        <div class="slide-header">
+          <h2 class="slide-title">Misión y Propósito</h2>
+          <p class="slide-subtitle">El porqué de ZentryOS en el desarrollo familiar</p>
+        </div>
+        <div class="slide-content">
+          <div class="mission-text-panel">
+            <div class="mission-statement">
+              "ZentryOS nace de una premisa: Blindar la Salud mental de las nuevas generaciones con herramientas que eleven su potencial y los protejan de los algoritmos"
+            </div>
+          </div>
+          <div class="mission-visual">
+            <div class="shield-illustration">
+              <div class="shield-bg-glow"></div>
+              <!-- Shield Icon -->
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#533B87" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M12 8v8M9 11h6" stroke-width="1.5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: ECONOMÍA Y GASTO FAMILIAR -->
+      <div class="slide" id="slide-2">
+        <div class="slide-header">
+          <h2 class="slide-title">¿Cuánto cuesta la Tecnología?</h2>
+          <p class="slide-subtitle">Análisis del presupuesto de consumo tecnológico de tu hogar</p>
+        </div>
+        <div class="slide-content">
+          <div class="calc-layout">
+            <!-- Formulario Calculadora -->
+            <div class="calc-form">
+              <div class="calc-group">
+                <label>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                  Equipos Físicos (Móviles, Tablets, Laptops)
+                </label>
+                <div class="input-control">
+                  <button class="calc-btn-adjust" onclick="adjustValue('equipos', -500)">-</button>
+                  <input type="number" id="equipos" value="4500" step="500">
+                  <button class="calc-btn-adjust" onclick="adjustValue('equipos', 500)">+</button>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <label>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+                  Servicios Mensuales (Planes, Internet, Netflix, Spotify)
+                </label>
+                <div class="input-control">
+                  <button class="calc-btn-adjust" onclick="adjustValue('servicios', -20)">-</button>
+                  <input type="number" id="servicios" value="150" step="10">
+                  <button class="calc-btn-adjust" onclick="adjustValue('servicios', 20)">+</button>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <label>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l-7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                  Otros (Almacenamiento Cloud, Delivery, Apps Pagas)
+                </label>
+                <div class="input-control">
+                  <button class="calc-btn-adjust" onclick="adjustValue('otros', -10)">-</button>
+                  <input type="number" id="otros" value="60" step="10">
+                  <button class="calc-btn-adjust" onclick="adjustValue('otros', 10)">+</button>
+                </div>
+              </div>
+
+              <button class="btn-calc-action" onclick="calculateCost()">Calcular Gasto en 5 Años</button>
+            </div>
+            
+            <!-- Resultados -->
+            <div class="calc-result-panel">
+              <div class="calc-result-box">
+                <div class="calc-result-label">Gasto Histórico (5 años)</div>
+                <div class="calc-result-value" id="calc-total">S/. 17,100.00</div>
+              </div>
+
+              <div class="rafaga-panel" id="rafaga-panel">
+                <div class="rafaga-question">1. ¿Consideran esto un gasto o una inversión?</div>
+                <div class="rafaga-question" style="animation-delay: 0.8s;">2. ¿Saben qué tienen todos en común?</div>
+                <div class="rafaga-question" style="animation-delay: 1.6s; font-weight: 700;">"Todos tienen software y algoritmos... Pero, ¿saben cuál es su verdadero objetivo?"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: LA ATENCION -->
+      <div class="slide" id="slide-3">
+        <div class="slide-header" style="text-align: center;">
+          <h2 class="slide-title" style="font-size: 44px; letter-spacing: 2px;">LA ATENCIÓN</h2>
+          <p class="slide-subtitle">La divisa más cara de la era digital y cómo impacta en la salud mental infantil</p>
+        </div>
+        <div class="slide-content">
+          <div class="attention-layout">
+            <div class="attention-buttons-grid">
+              <!-- Botón 1 -->
+              <div class="attention-card-btn" onclick="openModal('paper')">
+                <div class="attention-icon-wrapper">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5v-15A2.5 2.5 0 0 1 6.5 2M20 2v20"/></svg>
+                </div>
+                <h3>Evidencia Científica</h3>
+                <p>Estudios médicos que demuestran el colapso cognitivo del lóbulo frontal por la economía de la atención.</p>
+              </div>
+
+              <!-- Botón 2 -->
+              <div class="attention-card-btn" onclick="openModal('video')">
+                <div class="attention-icon-wrapper">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                </div>
+                <h3>El Lado Oscuro</h3>
+                <p>Testimonios de ex-ingenieros de Silicon Valley sobre el bucle de dopamina y la reducción de potencial.</p>
+              </div>
+
+              <!-- Botón 3 -->
+              <div class="attention-card-btn" onclick="openModal('solution')">
+                <div class="attention-icon-wrapper">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>ZentryOS: Solución</h3>
+                <p>La alternativa bilateral: control parental impenetrable integrado con educación interactiva por IA.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SLIDE 5: EL JUEGO COGNITIVO -->
+      <div class="slide" id="slide-4">
+        <div class="slide-header">
+          <h2 class="slide-title">Desafío de Percepción</h2>
+          <p class="slide-subtitle">Simulador interactivo de sesgo algorítmico y control cognitivo</p>
+        </div>
+        <div class="slide-content" style="justify-content: center; align-items: flex-start; overflow-y: auto;">
+          <div class="game-wrapper">
+            <div class="subliminal-rabbit" id="subliminalRabbitBg"></div>
+
+            <!-- PANTALLA 1: JUEGO WHACK-A-RABBIT -->
+            <div class="screen active" id="screen1">
+                <h3 style="font-size: 1.4rem; margin-bottom: 5px; font-family: 'Outfit'; color: var(--purpura-zentry); text-align: center;">🐰 Atrapa al Conejo</h3>
+                <p style="margin-bottom: 12px; font-size: 0.95rem; text-align: center;">Toca los conejos tan rápido como puedas antes de que se escondan.</p>
+                
+                <div class="whack-header">
+                    <div class="whack-score">Puntuación: <span id="scoreVal">0</span></div>
+                    <div class="whack-timer">Tiempo: <span id="whackTimerVal">10</span>s</div>
+                </div>
+
+                <div class="whack-board" id="whackBoard">
+                    <div class="hole" data-index="0"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
+                    <div class="hole" data-index="1"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
+                    <div class="hole" data-index="2"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
+                    <div class="hole" data-index="3"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
+                    <div class="hole" data-index="4"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
+                    <div class="hole" data-index="5"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
+                    <div class="hole" data-index="6"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
+                    <div class="hole" data-index="7"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
+                    <div class="hole" data-index="8"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
+                </div>
+
+                <button class="btn-primary" id="btnStartWhack" style="margin-top: 5px;">Iniciar Juego</button>
+                <p style="text-align: center; font-size: 0.8rem; margin-top: 8px; color: var(--gris-neutro-oscuro); opacity: 0.7; margin-bottom: 0;">si le das a patos, ganas</p>
+                <button class="btn-primary" id="btnGoToScreen2" style="display: none; margin-top: 5px;">Siguiente Nivel</button>
+            </div>
+
+            <!-- PANTALLA 2: JUEGO MATEMÁTICO -->
+            <div class="screen" id="screen2">
+                <h3 style="font-size: 1.4rem; margin-bottom: 12px; font-family: 'Outfit'; color: var(--purpura-zentry); text-align: center;">⚡ Enfoque Numérico Inicial</h3>
+                
+                <!-- Slide 1: Elegir número -->
+                <div class="math-slide active" id="mathSlide1">
+                    <p style="margin-bottom: 12px; font-size: 0.95rem; text-align: center;">Selecciona rápidamente un número del 1 al 9:</p>
+                    <div class="math-grid-numbers">
+                        <button class="btn-math-num" data-num="1">1</button>
+                        <button class="btn-math-num" data-num="2">2</button>
+                        <button class="btn-math-num" data-num="3">3</button>
+                        <button class="btn-math-num" data-num="4">4</button>
+                        <button class="btn-math-num" data-num="5">5</button>
+                        <button class="btn-math-num" data-num="6">6</button>
+                        <button class="btn-math-num" data-num="7">7</button>
+                        <button class="btn-math-num" data-num="8">8</button>
+                        <button class="btn-math-num" data-num="9">9</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Multiplicar por 9 -->
+                <div class="math-slide" id="mathSlide2">
+                    <p style="margin-bottom: 12px; font-size: 0.95rem; text-align: center;">Multiplica mentalmente tu número seleccionado por <strong>9</strong>.</p>
+                    <div style="font-size: 2.2rem; text-align: center; color: var(--purpura-zentry); font-weight: 700; margin: 12px 0;">
+                        × 9
+                    </div>
+                    <button class="btn-primary" id="btnMathStep2">Multiplicación Realizada</button>
+                </div>
+
+                <!-- Slide 3: Sumar dígitos -->
+                <div class="math-slide" id="mathSlide3">
+                    <p style="margin-bottom: 12px; font-size: 0.95rem; text-align: center;">Suma los dígitos de tu resultado mental.<br><span style="font-size: 0.8rem; opacity: 0.75;">(Ejemplo: si tu resultado fue 45, suma 4 + 5)</span></p>
+                    <div style="font-size: 2.2rem; text-align: center; color: var(--purpura-zentry); font-weight: 700; margin: 12px 0;">
+                        A + B
+                    </div>
+                    <button class="btn-primary" id="btnMathStep3">Dígitos Sumados</button>
+                </div>
+
+                <!-- Slide 4: Guardar número final -->
+                <div class="math-slide" id="mathSlide4">
+                    <p style="margin-bottom: 12px; font-size: 0.95rem; text-align: center;">Guarda tu número final en tu mente y no lo olvides.</p>
+                    <div class="save-number-card">
+                        Guarda tu número y no lo olvides
+                    </div>
+                    <button class="btn-primary" id="btnMathStep4">Continuar al Conteo</button>
+                </div>
+            </div>
+
+            <!-- PANTALLA 4: ELECCIÓN DE POSE -->
+            <div class="screen" id="screen4">
+                <h3 style="font-size: 1.4rem; margin-bottom: 12px; font-family: 'Outfit'; color: var(--purpura-zentry); text-align: center;">Elige la Pose que desea el conejo ?</h3>
+                
+                <div class="corner-timer pulse-timer" id="poseTimerContainer" style="position: relative; top: 0; right: 0; margin: 0 auto 12px auto; width: fit-content; font-size: 0.95rem; color: var(--purpura-zentry); font-weight: 600;">
+                    <span>Elige en:</span> <span id="poseTimerVal">7</span>s
+                </div>
+
+                <div class="btn-options-container pose-memo-options" id="poseButtons" style="grid-template-columns: repeat(2, 1fr); margin-top: 20px;">
+                    <!-- Pose Y -->
+                    <div class="btn-option pose-card" data-pose="Pose Y" id="poseCardY" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px;">
+                        <div class="pose-img-box rotate-y" style="margin: 0 auto; width: 45px; height: 45px;"><img src="data:," alt="Pose Y"></div>
+                        <span style="display:block; margin-top:8px; font-size: 0.9rem; pointer-events: none;">Pose Y</span>
+                    </div>
+                    <!-- Pose X -->
+                    <div class="btn-option pose-card" data-pose="Pose X" id="poseCardX" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px;">
+                        <div class="pose-img-box rotate-x" style="margin: 0 auto; width: 45px; height: 45px;"><img src="data:," alt="Pose X"></div>
+                        <span style="display:block; margin-top:8px; font-size: 0.9rem; pointer-events: none;">Pose X</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 5: PRUEBA DE MEMORIZACIÓN -->
+            <div class="screen" id="screen5">
+                <h3 style="font-size: 1.4rem; margin-bottom: 12px; font-family: 'Outfit'; color: var(--purpura-zentry); text-align: center;">🧠 Prueba de Memorización</h3>
+                <p style="margin-bottom: 12px; font-size: 0.9rem; text-align: center;">Completa las preguntas de memoria para validar los datos lógicos de tu sesión.</p>
+
+                <div class="memo-test-container">
+                    <!-- Pregunta 1: Conejos -->
+                    <div class="memo-group active" id="memoGroup1">
+                        <label>1. ¿Cuántos conejos lograste atrapar?</label>
+                        <div class="btn-options-container">
+                            <button class="btn-option" data-val="4">4</button>
+                            <button class="btn-option" data-val="6">6</button>
+                            <button class="btn-option" data-val="8">8</button>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 2: Cuenta matemática -->
+                    <div class="memo-group" id="memoGroup2">
+                        <label>2. ¿Cuál fue el resultado de tu cuenta mental (el que guardaste)?</label>
+                        <div class="btn-options-container">
+                            <button class="btn-option" data-val="7">7</button>
+                            <button class="btn-option" data-val="9">9</button>
+                            <button class="btn-option" data-val="11">11</button>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 3: Pose -->
+                    <div class="memo-group" id="memoGroup3">
+                        <label>3. ¿Qué pose de orientación elegiste al final?</label>
+                        <div class="btn-options-container pose-memo-options">
+                            <div class="btn-option" data-val="Pose Y">
+                                <div class="pose-img-box rotate-y" style="margin: 0 auto; width: 35px; height: 35px;"><img src="data:," alt="Pose Y"></div>
+                                <span style="display:block; margin-top:4px; font-size: 0.75rem;">Pose Y</span>
+                            </div>
+                            <div class="btn-option" data-val="Pose X">
+                                <div class="pose-img-box rotate-x" style="margin: 0 auto; width: 35px; height: 35px;"><img src="data:," alt="Pose X"></div>
+                                <span style="display:block; margin-top:4px; font-size: 0.75rem;">Pose X</span>
+                            </div>
+                            <div class="btn-option" data-val="Ángulo X">
+                                <div class="pose-img-box rotate-anglex" style="margin: 0 auto; width: 35px; height: 35px;"><img src="data:," alt="Ángulo X"></div>
+                                <span style="display:block; margin-top:4px; font-size: 0.75rem;">Ángulo X</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group" style="align-items: center; margin-top: 10px; margin-bottom: 10px;">
+                    <label style="font-weight: 600; margin-bottom: 4px;">Código de validación generado:</label>
+                    <input type="text" id="memoOutputVal" style="font-size: 1.1rem; font-weight: 700; text-align: center; color: var(--purple-main); background: rgba(83, 59, 135, 0.08); border: 2px dashed var(--purple-main); padding: 8px;" placeholder="Responde las preguntas..." readonly="">
+                </div>
+
+                <button class="btn-primary" id="btnGoToExplanation" style="margin-top: 5px;" disabled="">Mira el Porqué</button>
+            </div>
+
+            <!-- PANTALLA 6: EXPLICACIÓN Y REVELACIÓN -->
+            <div class="screen" id="screen6">
+                <h3 style="font-size: 1.4rem; margin-bottom: 12px; font-family: 'Outfit'; color: var(--purpura-zentry); text-align: center;">🧠 ¿Crees que elegiste en libertad?</h3>
+                <p style="margin-bottom: 12px; font-size: 0.9rem; text-align: center;"><strong>No.</strong> Nosotros controlamos y predijimos tu decisión desde el primer minuto. Así es como lo hicimos:</p>
+
+                <div class="explanation-card">
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--purpura-zentry); margin-bottom: 4px; font-family: 'Outfit';">🌀 Capa 1: Condicionamiento Inconsciente</h4>
+                    <p style="font-size: 0.8rem; line-height: 1.35; color: var(--gris-neutro-oscuro);">
+                        Al iniciar con un juego de conejos, bombardeamos tu subconsciente. Luego, en el juego de poses, rotamos la imagen, pero mantuvimos la del conejo de la <strong>Pose X</strong> en el centro, <strong>5% más grande</strong> y de más fácil acceso bajo presión de tiempo.
+                    </p>
+                </div>
+
+                <div class="explanation-card">
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--purpura-zentry); margin-bottom: 4px; font-family: 'Outfit';">📐 Capa 2: La Ilusión de Libertad</h4>
+                    <p style="font-size: 0.8rem; line-height: 1.35; color: var(--gris-neutro-oscuro);">
+                        Te guiamos a través de un juego matemático que siempre arrojaba 9, un juego de conejos programado para detenerse en 6, y forzamos tu vista hacia la Pose X. Diseñamos todo para que en la prueba de memoria respondieras 6, 9 y Pose X, construyendo el código exacto <strong>"69 pose x"</strong>.
+                    </p>
+                </div>
+
+                <p style="font-size: 0.9rem; font-weight: 700; color: var(--purpura-zentry); margin-top: 12px; margin-bottom: 12px; text-align: center;">
+                    Si pudimos manipular tu elección en un juego de 2 minutos... ¿Qué crees que hacen los algoritmos de redes sociales con la atención de tu hijo todos los días?
+                </p>
+
+                <button class="btn-primary" id="btnRestartGame">Reiniciar Demostración</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="controls">
+      <button class="nav-btn" id="prev-btn" onclick="changeSlide(-1)" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        Atrás
+      </button>
+      <div class="slide-indicator" id="slide-ind">1 / 5</div>
+      <button class="nav-btn" id="next-btn" onclick="changeSlide(1)">
+        Siguiente
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- POPUPS / MODALES -->
+  <!-- Modal 1: Paper -->
+  <div class="modal-overlay" id="modal-paper">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('paper')">✕</button>
+      <h2 class="modal-title" style="color: var(--purpura-zentry);">📚 Biblioteca de Validación Científica</h2>
+      <div class="modal-body">
+        <p><strong>Estudio Pediatrics Journal (AAP):</strong><br>
+        La investigación <em>"Association between Screen-Based Media Use and Brain White Matter Integrity in Preschool-aged Children"</em> demostró que los menores con alta exposición a pantallas sufren una menor integridad en la materia blanca cerebral en áreas encargadas del lenguaje, alfabetización y autorregulación (desarrollo de Mielina).</p>
+        <br>
+        <p><strong>Crecimiento Económico del Mercado:</strong><br>
+        La economía de la atención factura miles de millones de dólares al año. Ha evolucionado de la publicidad de TV (bloque estático) a los teléfonos móviles inteligentes mediante reforzamiento intermitente algorítmico, compitiendo directamente con la autoridad del padre.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Video -->
+  <div class="modal-overlay" id="modal-video">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('video')">✕</button>
+      <h2 class="modal-title" style="color: var(--purpura-zentry);">🎬 El Lado Oscuro de la Pantalla</h2>
+      <div class="modal-body">
+        <div class="video-mock">
+          <button class="video-mock-btn-play">▶</button>
+          <div class="video-overlay-text">Simulación: Ex-diseñadores de Silicon Valley explican cómo se manipula la dopamina infantil para maximizar el scroll.</div>
+        </div>
+        <br>
+        <p><strong>Bucle de Dopamina Artificial:</strong><br>
+        Las notificaciones push, likes y feeds de reproducción automática disparan descargas continuas de dopamina de forma constante en el cerebro del niño. Esto reduce su tolerancia a la frustración y disminuye su capacidad de retención y atención profunda.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Solución -->
+  <div class="modal-overlay" id="modal-solution">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('solution')">✕</button>
+      <h2 class="modal-title" style="color: var(--purpura-zentry);">🛡️ El Ecosistema Bilateral de ZentryOS</h2>
+      <div class="modal-body">
+        <p>ZentryOS bloquea de raíz los distractores adictivos integrando dos entornos especializados:</p>
+        <ul>
+          <li><strong>1. Vista de Control (Padres):</strong> Monitoreo ejecutivo e inteligente de telemetría limpia, alertas lógicas de comportamiento digital y bloqueo instantáneo (Kill-Switch).</li>
+          <li><strong>2. Vista Interactiva (Hijos):</strong> Un launcher gamificado que condiciona el acceso a distractores a cambio de la resolución previa de retos cognitivos (Lógica, Matemáticas y Educación).</li>
+        </ul>
+        <br>
+        <p><strong>Perspectiva Histórica:</strong> La IA es la calculadora del siglo XXI. El objetivo no es evitarla, sino enseñar a tu hijo a dominarla y usarla activamente.</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

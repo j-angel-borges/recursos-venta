@@ -1,6 +1,4 @@
 import './style.css'
-import { db } from './firebase.js';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const state = {
   asesor: '', nombrePadres: '', celular: '', nombreHijo: '', edadHijo: '',
@@ -84,21 +82,12 @@ function selectRisk(btn, groupName) {
   btn.classList.add('selected'); state[groupName] = btn.getAttribute('data-val');
 }
 
-async function submitData() {
+function submitData() {
   if(validateStep(4)) {
     showStep(5, 'next');
-    
-    try {
-      const docRef = await addDoc(collection(db, "bienestar_diagnostics"), {
-        ...state,
-        createdAt: serverTimestamp()
-      });
-      console.log("Document written with ID: ", docRef.id);
-      onSuccess();
-    } catch (e) {
-      console.error("Error adding document: ", e);
-      onError(e.message);
-    }
+    // MOCK SUBMIT
+    console.log("Submitting to backend (mock):", state);
+    setTimeout(onSuccess, 1500);
   }
 }
 

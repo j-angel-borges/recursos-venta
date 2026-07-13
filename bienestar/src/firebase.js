@@ -2,12 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "mock-key",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "mock-domain",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "mock-project",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "mock-bucket",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "mock-sender",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "mock-app"
+  apiKey: "AIzaSyDOflhgWbY3dpvSs0icoVOH9uCS16w8Yl8",
+  authDomain: "zentry-hub.firebaseapp.com",
+  projectId: "zentry-hub",
+  storageBucket: "zentry-hub.firebasestorage.app",
+  messagingSenderId: "9976842702",
+  appId: "1:9976842702:web:83be01d42a4f28390d439f",
+  measurementId: "G-TDT1M5PC5B"
 };
 
 const app = initializeApp(firebaseConfig);

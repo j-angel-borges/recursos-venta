@@ -1098,3 +1098,278 @@
     }
 
   
+
+
+/* ==============================================================================
+   ESTILOS PARA EL MODAL INTERACTIVO: REMATE DE HORAS
+   ============================================================================== */
+
+.attention-card-btn.remate-card-highlight {
+  border-top: 3px solid #ef4444;
+  position: relative;
+  overflow: hidden;
+}
+
+.attention-card-btn.remate-card-highlight::after {
+  content: 'OFERTA / DIALÉCTICA';
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.attention-icon-wrapper.offer-icon-wrapper {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
+}
+
+.modal-content.modal-remate-content {
+  max-width: 780px;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 32px;
+  border-radius: 24px;
+}
+
+.remate-badge-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.remate-modal-subtitle {
+  font-size: 13px;
+  color: var(--gris-neutro-oscuro);
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.remate-hero-image-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 14px 0;
+  border: 1px solid rgba(83, 59, 135, 0.15);
+  box-shadow: 0 8px 24px rgba(74, 81, 96, 0.08);
+}
+
+.remate-hero-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.remate-hero-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.remate-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.remate-step-card {
+  display: flex;
+  gap: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  align-items: flex-start;
+}
+
+.remate-step-num {
+  background: var(--purpura-zentry);
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.remate-step-text h4 {
+  font-size: 15px;
+  color: var(--purpura-zentry);
+  margin-bottom: 4px;
+}
+
+.remate-step-text p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--gris-neutro-oscuro);
+}
+
+.remate-quote-box {
+  margin-top: 8px;
+  background: #ffffff;
+  border-left: 3px solid #b89c50;
+  padding: 8px 12px;
+  border-radius: 0 8px 8px 0;
+  font-size: 12.5px;
+}
+
+.remate-quote-answer {
+  margin-top: 4px;
+  color: var(--purpura-zentry);
+  font-size: 12px;
+}
+
+.remate-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.remate-kpi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.remate-kpi-card .kpi-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.remate-kpi-card .kpi-val {
+  font-family: 'Outfit', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--purpura-zentry);
+}
+
+.remate-kpi-card .kpi-lbl {
+  font-size: 10.5px;
+  color: var(--gris-neutro-oscuro);
+  opacity: 0.8;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.remate-kpi-card.highlight-danger {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: #fff5f5;
+}
+
+.remate-kpi-card.highlight-danger .kpi-val {
+  color: #dc2626;
+}
+
+.remate-kpi-card.highlight-gold {
+  border-color: rgba(184, 156, 80, 0.4);
+  background: #fffdf5;
+}
+
+.remate-kpi-card.highlight-gold .kpi-val {
+  color: #b89c50;
+}
+
+.remate-comparison-box {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.comparison-header {
+  font-size: 12.5px;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+}
+
+.comparison-bar-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.comp-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.comp-item.left { text-align: left; }
+.comp-item.right { text-align: right; }
+
+.comp-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.comp-tag.danger { color: #fca5a5; }
+.comp-tag.success { color: #86efac; }
+
+.comp-amount {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.comp-amount.gold {
+  color: #facc15;
+  text-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+}
+
+.comp-sub {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.comp-divider {
+  font-weight: 800;
+  font-size: 14px;
+  color: #64748b;
+  padding: 0 6px;
+}
+
+.remate-conclusion-alert {
+  background: rgba(239, 68, 68, 0.08);
+  border-left: 4px solid #ef4444;
+  padding: 12px 14px;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  gap: 10px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #7f1d1d;
+}
+
+.remate-conclusion-alert .alert-icon {
+  font-size: 18px;
+}

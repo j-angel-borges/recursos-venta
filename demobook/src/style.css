@@ -1954,3 +1954,188 @@ h1, h2, h3 {
     padding: 12px;
   }
 }
+
+/* ==============================================================================
+   RESPONSIVE COMPLETO + SLIDES DE VIDEO/STATS (2026-08-29)
+   ============================================================================== */
+.slide {
+  overflow-y: auto;
+  padding-bottom: 28px;
+}
+.video-slide-content {
+  overflow-y: auto;
+  align-items: flex-start;
+}
+.video-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.video-row {
+  display: grid;
+  grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.video-ref {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 6px;
+}
+.video-ref-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--purpura-zentry);
+}
+.video-ref-quote {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(24px, 3.2vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #0F172A;
+  margin: 0;
+}
+.video-ref-sub {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748B;
+  margin: 0;
+  max-width: 46ch;
+}
+
+.stat-chart-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+  background: #0B0E14;
+}
+.stat-slot {
+  padding: 10px;
+}
+
+/* Slide 5: tablero 2 filas x 5 columnas en escritorio para que el botón entre en el encuadre */
+#slide-4 .game-wrapper {
+  max-width: min(720px, 70vh);
+}
+#slide-4 .whack-board {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+}
+@media (min-width: 901px) {
+  #slide-4 .game-wrapper {
+    padding: 14px 22px;
+  }
+  #slide-4 .whack-board {
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+/* Slide 4: apilar tarjetas en pantallas medianas y chicas */
+@media (max-width: 900px) {
+  .attention-buttons-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .attention-layout {
+    overflow-y: auto;
+  }
+  .video-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .video-ref-quote {
+    font-size: 24px;
+  }
+  .map-container,
+  .map-info-panel {
+    width: 100%;
+    height: auto;
+  }
+  .map-container {
+    min-height: 300px;
+  }
+  .map-info-panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .info-card {
+    flex: 1 1 220px;
+  }
+}
+@media (max-width: 500px) {
+  .map-info-panel {
+    flex-direction: column;
+  }
+  .video-ref-quote {
+    font-size: 20px;
+  }
+  #slide-4 .whack-board {
+    gap: 5px;
+    padding: 6px;
+  }
+  .stat-slot {
+    padding: 8px;
+  }
+  .controls {
+    gap: 8px;
+  }
+  .nav-btn {
+    padding: 8px 12px;
+  }
+}
+
+/* ==============================================================================
+   AJUSTES FINALES (2026-08-29): alternar video/texto, corregir zoom y gráficos completos
+   ============================================================================== */
+.video-row {
+  grid-template-columns: minmax(0, 34%) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+.video-row:nth-child(even) .video-card {
+  order: 2;
+}
+.video-row:nth-child(even) .video-ref {
+  order: 1;
+}
+.video-ref-quote {
+  font-size: clamp(20px, 2.6vw, 34px);
+}
+.video-card {
+  gap: 8px;
+  padding: 10px;
+}
+.video-rows {
+  gap: 14px;
+}
+
+/* Gráficos: asegurar que el SVG se vea completo, sin cortes */
+.stat-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+}
+.stat-chart-img {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background: #0B0E14;
+}
+
+@media (max-width: 900px) {
+  .video-row:nth-child(even) .video-card,
+  .video-row:nth-child(even) .video-ref {
+    order: 0;
+  }
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crecimiento del Ecosistema Tech en América Latina (2020-2026)</title>
+<style>
+  body {
+    margin: 0;
+    padding: 24px;
+    background: #101219;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  .chart-container {
+    max-width: 100%;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+  .chart-container:hover {
+    transform: scale(1.008);
+  }
+  .interactive-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: #202538;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid #2E3856;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    opacity: 0;
+    transition: opacity 150ms ease;
+  }
+</style>
+</head>
+<body>
+<div class="chart-container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap');
+
+:root {
+  --pz-canvas: #101219;
+  --pz-surface: #181B28;
+  --pz-elevated: #202538;
+  --pz-border: #2E3856;
+  --pz-border-subtle: #23293F;
+  --pz-grid: #23293F;
+  --pz-text-primary: #FFFFFF;
+  --pz-text-secondary: #E2E8F0;
+  --pz-text-muted: #94A3B8;
+  --pz-text-dimmed: #64748B;
+  --pz-mint: #0AE88A;
+  --pz-blue: #3D51F2;
+  --pz-lilac: #8E9BF7;
+  --pz-sol: #F2D412;
+  --pz-orange: #FE7E57;
+  --pz-coral: #F0524B;
+  --pz-cyan: #00F0FF;
+}
+
+.canvas-bg { fill: #101219; }
+.card-surface { fill: #181B28; stroke: #2E3856; stroke-width: 1px; rx: 16px; }
+.elevated-card { fill: #202538; stroke: #23293F; stroke-width: 1px; rx: 12px; }
+
+.badge-text {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  fill: #0AE88A;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chart-title {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.chart-subtitle {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  fill: #94A3B8;
+}
+
+.axis-label {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  fill: #E2E8F0;
+}
+
+.tick-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  fill: #94A3B8;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.data-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.grid-line {
+  stroke: #23293F;
+  stroke-width: 1px;
+  stroke-dasharray: 4 4;
+}
+
+.axis-line {
+  stroke: #2E3856;
+  stroke-width: 1.5px;
+}
+
+.legend-text {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  fill: #E2E8F0;
+}
+
+.footer-text {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  fill: #64748B;
+}
+
+.watermark {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  fill: #64748B;
+  letter-spacing: 0.05em;
+}
+]]></style>
+  <g id="background">
+    <rect width="1200" height="800" class="canvas-bg"/>
+    <rect x="20" y="20" width="1160" height="760" class="card-surface"/>
+  </g>
+  <g id="grid">
+    <line x1="90" y1="710.0" x2="1140" y2="710.0" class="grid-line"/>
+    <line x1="90" y1="625.7" x2="1140" y2="625.7" class="grid-line"/>
+    <line x1="90" y1="541.4" x2="1140" y2="541.4" class="grid-line"/>
+    <line x1="90" y1="457.1" x2="1140" y2="457.1" class="grid-line"/>
+    <line x1="90" y1="372.9" x2="1140" y2="372.9" class="grid-line"/>
+    <line x1="90" y1="288.6" x2="1140" y2="288.6" class="grid-line"/>
+    <line x1="90" y1="204.3" x2="1140" y2="204.3" class="grid-line"/>
+    <line x1="90" y1="120.0" x2="1140" y2="120.0" class="grid-line"/>
+  </g>
+  <g id="axes">
+    <text x="78" y="714.0" class="tick-label" text-anchor="end">0</text>
+    <text x="78" y="629.7" class="tick-label" text-anchor="end">100k</text>
+    <text x="78" y="545.4" class="tick-label" text-anchor="end">200k</text>
+    <text x="78" y="461.1" class="tick-label" text-anchor="end">300k</text>
+    <text x="78" y="376.9" class="tick-label" text-anchor="end">400k</text>
+    <text x="78" y="292.6" class="tick-label" text-anchor="end">500k</text>
+    <text x="78" y="208.3" class="tick-label" text-anchor="end">600k</text>
+    <text x="78" y="124.0" class="tick-label" text-anchor="end">700k</text>
+    <text x="165.0" y="734" class="axis-label" text-anchor="middle">Brasil</text>
+    <text x="315.0" y="734" class="axis-label" text-anchor="middle">México</text>
+    <text x="465.0" y="734" class="axis-label" text-anchor="middle">Colombia</text>
+    <text x="615.0" y="734" class="axis-label" text-anchor="middle">Argentina</text>
+    <text x="765.0" y="734" class="axis-label" text-anchor="middle">Chile</text>
+    <text x="915.0" y="734" class="axis-label" text-anchor="middle">Perú</text>
+    <text x="1065.0" y="734" class="axis-label" text-anchor="middle">Otros LatAm</text>
+    <line x1="90" y1="710.0" x2="1140" y2="710.0" class="axis-line"/>
+  </g>
+  <g id="series">
+    <rect x="117.0" y="305.4" width="42.2" height="404.6" fill="#3D51F2" rx="4"/>
+    <rect x="165.0" y="136.9" width="42.2" height="573.1" fill="#0AE88A" rx="4"/>
+    <rect x="267.0" y="524.6" width="42.2" height="185.4" fill="#3D51F2" rx="4"/>
+    <rect x="315.0" y="423.4" width="42.2" height="286.6" fill="#0AE88A" rx="4"/>
+    <rect x="417.0" y="617.3" width="42.2" height="92.7" fill="#3D51F2" rx="4"/>
+    <rect x="465.0" y="554.1" width="42.2" height="155.9" fill="#0AE88A" rx="4"/>
+    <rect x="567.0" y="613.1" width="42.2" height="96.9" fill="#3D51F2" rx="4"/>
+    <rect x="615.0" y="575.1" width="42.2" height="134.9" fill="#0AE88A" rx="4"/>
+    <rect x="717.0" y="666.2" width="42.2" height="43.8" fill="#3D51F2" rx="4"/>
+    <rect x="765.0" y="638.4" width="42.2" height="71.6" fill="#0AE88A" rx="4"/>
+    <rect x="867.0" y="678.0" width="42.2" height="32.0" fill="#3D51F2" rx="4"/>
+    <rect x="915.0" y="657.7" width="42.2" height="52.3" fill="#0AE88A" rx="4"/>
+    <rect x="1017.0" y="655.2" width="42.2" height="54.8" fill="#3D51F2" rx="4"/>
+    <rect x="1065.0" y="617.3" width="42.2" height="92.7" fill="#0AE88A" rx="4"/>
+  </g>
+  <g id="labels">
+  <g id="header">
+    <circle cx="50" cy="51" r="4" fill="#0AE88A"/>
+    <text x="62" y="55" class="badge-text">PLATZI STATS ENGINE</text>
+    <text x="50" y="85" class="chart-title">Crecimiento del Ecosistema Tech en América Latina (2020-2026)</text>
+    <text x="50" y="108" class="chart-subtitle">Población de desarrolladores de software y financiamiento venture capital por país</text>
+  </g>
+    <rect x="692.0" y="65" width="12" height="12" rx="3" fill="#3D51F2"/>
+    <text x="710.0" y="76" class="legend-text">Desarrolladores 2020</text>
+    <rect x="888.0" y="65" width="12" height="12" rx="3" fill="#0AE88A"/>
+    <text x="906.0" y="76" class="legend-text">Desarrolladores 2026 (Est.)</text>
+  </g>
+  <g id="source">
+  <g id="footer">
+    <text x="50" y="765" class="footer-text">Fuente: LAVCA, GitHub Octoverse, World Bank, OECD, Statista (94 fuentes verificadas)</text>
+    <circle cx="1020" cy="761" r="3.5" fill="#0AE88A"/>
+    <text x="1032" y="765" class="watermark">platzi-charts</text>
+  </g>
+  </g>
+</svg>
+  <div class="interactive-tooltip" id="tooltip"></div>
+</div>
+</body>
+</html>

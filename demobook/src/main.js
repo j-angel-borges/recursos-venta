@@ -498,6 +498,15 @@ import './style.css';
         clearTimeout(rabbitTimeout);
         clearInterval(poseTimerInterval);
       }
+
+      // Slide 10: preparar el experimento del Scroll Infinito
+      if (slideIndex === 9) {
+        if (typeof skinnerState !== 'undefined' && !skinnerState.active) {
+          resetSkinnerGame();
+        }
+      } else if (typeof skinnerState !== 'undefined' && skinnerState.active) {
+        skinnerState.active = false;
+      }
     }
   
   
@@ -513,8 +522,244 @@ import './style.css';
 
 
 
+  // ==================== NUEVAS FUNCIONES (2026-08-28) ====================
+
+  // --- Slide 6: clips de YouTube con recorte start/end ---
+  function buildYouTubeEmbedSrc(videoId, start, end) {
+    const params = new URLSearchParams();
+    params.set('rel', '0');
+    params.set('modestbranding', '1');
+    if (start && start > 0) params.set('start', String(start));
+    if (end && end > 0) params.set('end', String(end));
+    return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+  }
+
+  function applyVideoClip(cardId, videoId) {
+    const card = document.getElementById(`video-card-${cardId}`);
+    if (!card) return;
+    const startInput = card.querySelector('[data-clip="start"]');
+    const endInput = card.querySelector('[data-clip="end"]');
+    const start = (startInput && parseInt(startInput.value, 10)) || 0;
+    const end = (endInput && parseInt(endInput.value, 10)) || 0;
+    const iframe = document.getElementById(`yt-${cardId}`);
+    if (iframe) iframe.src = buildYouTubeEmbedSrc(videoId, start, end);
+  }
+
+  function resetVideoClip(cardId, videoId) {
+    const card = document.getElementById(`video-card-${cardId}`);
+    if (!card) return;
+    const startInput = card.querySelector('[data-clip="start"]');
+    const endInput = card.querySelector('[data-clip="end"]');
+    if (startInput) startInput.value = 0;
+    if (endInput) endInput.value = 0;
+    const iframe = document.getElementById(`yt-${cardId}`);
+    if (iframe) iframe.src = buildYouTubeEmbedSrc(videoId, 0, 0);
+  }
+
+  // --- Slides 7-9: API de montaje de gráficos estadísticos (Hanademi/Platzi) ---
+  window.ZentryStats = {
+    listSlots() {
+      return Array.from(document.querySelectorAll('[data-stat-slot]')).map(el => ({
+        id: el.dataset.statSlot,
+        chartType: el.dataset.chartType,
+        aspect: el.dataset.aspect || '4:3',
+        element: el
+      }));
+    },
+    mount(slotId, payload = {}) {
+      const slot = document.querySelector(`[data-stat-slot="${slotId}"]`);
+      if (!slot) {
+        console.warn(`ZentryStats: slot ${slotId} no encontrado`);
+        return false;
+      }
+      const { title = '', subtitle = '', svg = '', img = '', sources = '' } = payload;
+      const media = svg || (img ? `<img src="${img}" alt="${title || 'stat graphic'}" class="stat-mounted-img" />` : '');
+      slot.innerHTML = `
+        <div class="stat-mounted">
+          ${title ? `<h3 class="stat-mounted-title">${title}</h3>` : ''}
+          ${subtitle ? `<p class="stat-mounted-subtitle">${subtitle}</p>` : ''}
+          ${media ? `<div class="stat-mounted-media">${media}</div>` : ''}
+          ${sources ? `<div class="stat-mounted-sources">${sources}</div>` : ''}
+        </div>
+      `;
+      return true;
+    },
+    clear(slotId) {
+      const slot = document.querySelector(`[data-stat-slot="${slotId}"]`);
+      if (!slot) return false;
+      slot.innerHTML = '';
+      return true;
+    }
+  };
+
+  // --- Slide 10: minijuego Scroll Infinito vs Caja de Skinner ---
+  const skinnerState = {
+    active: false,
+    presses: 0,
+    pellets: 0,
+    nextRewardAt: 2,
+    _onScroll: null,
+    rewardPosts: [
+      '🎉 ¡Tienes un like nuevo!',
+      '🐰 Un video adorable que te hace reír',
+      '❤️ Tu publicación recibió 12 corazones',
+      '⚽ El gol que todos están viendo',
+      '😹 Un meme que te alegró el día',
+      '📈 Una racha ganadora en tu juego favorito',
+      '💬 Alguien mencionó tu nombre en un comentario',
+      '🎁 ¡Sorpresa! Un reto viral que puedes intentar',
+      '🧠 Un dato curioso que te vuela la cabeza',
+      '🏆 Logro desbloqueado: 7 días seguidos'
+    ],
+    plainPosts: [
+      '📄 Una publicación patrocinada',
+      '🗞️ Una noticia que no te interesa',
+      '📷 37 fotos de un viaje ajeno',
+      '🛒 Ofertas de productos que no buscaste',
+      '🤖 Un hilo interminable de opiniones',
+      '📍 El check-in de alguien que no conoces',
+      '📊 Una gráfica confusa sin contexto',
+      '🔁 Contenido reciclado de ayer',
+      '🧾 Un tutorial de algo irrelevante',
+      '🌫️ Una actualización sin novedad'
+    ]
+  };
+
+  function skinnerCurrentRatio() {
+    const p = skinnerState.presses;
+    if (p < 8) return 'VR-2';
+    if (p < 20) return 'VR-5';
+    if (p < 40) return 'VR-10';
+    return 'Extinción';
+  }
+
+  function skinnerSchedule(pressIndex) {
+    // Refuerzo de razón variable (Ferster & Skinner, 1957):
+    // premia seguido al inicio (VR-2), se espacia (VR-5 → VR-10) y extingue.
+    if (pressIndex < 8) return 2;
+    if (pressIndex < 20) return 5;
+    if (pressIndex < 40) return 10;
+    return null;
+  }
+
+  function skinnerPressLever() {
+    if (!skinnerState.active) return;
+    skinnerState.presses += 1;
+
+    const lever = document.getElementById('skinner-lever');
+    const rat = document.querySelector('.skinner-rat');
+    if (lever) {
+      lever.classList.add('lever-down');
+      setTimeout(() => lever.classList.remove('lever-down'), 160);
+    }
+    if (rat) {
+      rat.classList.add('rat-nudge');
+      setTimeout(() => rat.classList.remove('rat-nudge'), 160);
+    }
+
+    const ratio = skinnerSchedule(skinnerState.presses - 1);
+    let reward = false;
+    if (ratio !== null && skinnerState.presses >= skinnerState.nextRewardAt) {
+      reward = true;
+      skinnerState.pellets += 1;
+      skinnerState.nextRewardAt = skinnerState.presses + ratio + Math.floor(Math.random() * 3);
+    }
+
+    const feed = document.getElementById('skinner-feed');
+    if (feed) {
+      const pool = reward ? skinnerState.rewardPosts : skinnerState.plainPosts;
+      const text = pool[Math.floor(Math.random() * pool.length)];
+      const div = document.createElement('div');
+      div.className = `skinner-feed-item ${reward ? 'reward' : 'plain'}`;
+      div.innerHTML = `<span class="item-tag">${reward ? '✨ Premio variable' : '· Contenido neutro'}</span>${text}`;
+      feed.appendChild(div);
+      feed.scrollTop = feed.scrollHeight;
+    }
+
+    if (reward) {
+      const pellet = document.getElementById('skinner-pellet');
+      if (pellet) {
+        pellet.classList.remove('falling');
+        void pellet.offsetWidth;
+        pellet.classList.add('falling');
+      }
+    }
+
+    const pressesEl = document.getElementById('skinner-presses');
+    const pelletsEl = document.getElementById('skinner-pellets');
+    const ratioEl = document.getElementById('skinner-ratio');
+    const phaseEl = document.getElementById('skinner-phase-label');
+    if (pressesEl) pressesEl.textContent = skinnerState.presses;
+    if (pelletsEl) pelletsEl.textContent = skinnerState.pellets;
+    if (ratioEl) ratioEl.textContent = ratio === null ? '—' : skinnerCurrentRatio();
+
+    if (skinnerState.presses === 40) {
+      if (phaseEl) phaseEl.textContent = 'Extinción';
+      const concl = document.getElementById('skinner-conclusion');
+      if (concl) {
+        concl.classList.add('extinct');
+        concl.innerHTML = '🔴 <strong>Fase de extinción:</strong> el pellet ya no llega, pero la rata (y tú) siguen jalando la palanca. Así funciona el scroll infinito: el premio se espació hasta desaparecer y la conducta quedó instalada.';
+      }
+    } else if (phaseEl) {
+      phaseEl.textContent = skinnerCurrentRatio();
+    }
+  }
+
+  function startSkinnerGame() {
+    resetSkinnerGame();
+    skinnerState.active = true;
+    const feed = document.getElementById('skinner-feed');
+    const phaseEl = document.getElementById('skinner-phase-label');
+    if (phaseEl) phaseEl.textContent = 'VR-2';
+    if (feed) {
+      feed.innerHTML = '';
+      const onScroll = () => {
+        if (!skinnerState.active) return;
+        const nearBottom = feed.scrollTop + feed.clientHeight >= feed.scrollHeight - 24;
+        if (nearBottom) skinnerPressLever();
+      };
+      feed.addEventListener('scroll', onScroll);
+      skinnerState._onScroll = onScroll;
+    }
+    // Primer jalada automática para arrancar la demostración
+    skinnerPressLever();
+  }
+
+  function resetSkinnerGame() {
+    skinnerState.active = false;
+    skinnerState.presses = 0;
+    skinnerState.pellets = 0;
+    skinnerState.nextRewardAt = 2;
+    const feed = document.getElementById('skinner-feed');
+    const pressesEl = document.getElementById('skinner-presses');
+    const pelletsEl = document.getElementById('skinner-pellets');
+    const ratioEl = document.getElementById('skinner-ratio');
+    const phaseEl = document.getElementById('skinner-phase-label');
+    const concl = document.getElementById('skinner-conclusion');
+    if (feed) {
+      if (skinnerState._onScroll) {
+        feed.removeEventListener('scroll', skinnerState._onScroll);
+        skinnerState._onScroll = null;
+      }
+      feed.innerHTML = '<div class="skinner-feed-intro">Presiona <strong>Iniciar Experimento</strong> y desliza el feed para "jalar la palanca".</div>';
+    }
+    if (pressesEl) pressesEl.textContent = '0';
+    if (pelletsEl) pelletsEl.textContent = '0';
+    if (ratioEl) ratioEl.textContent = '—';
+    if (phaseEl) phaseEl.textContent = 'Sin iniciar';
+    if (concl) {
+      concl.classList.remove('extinct');
+      concl.innerHTML = 'Cada deslizamiento es una palanca. Al inicio el premio llega seguido; luego se espacia; al final ya no llega… pero la conducta continúa.';
+    }
+  }
+
 window.changeSlide = changeSlide;
 window.selectPin = selectPin;
 window.adjustValue = adjustValue;
 window.calculateCost = calculateCost;
 window.closeModal = closeModal;
+window.openModal = openModal;
+window.applyVideoClip = applyVideoClip;
+window.resetVideoClip = resetVideoClip;
+window.startSkinnerGame = startSkinnerGame;
+window.resetSkinnerGame = resetSkinnerGame;

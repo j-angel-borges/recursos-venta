@@ -21,124 +21,28 @@
         </div>
         <div class="slide-content">
           <div class="map-container">
-            <svg class="sv-map" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <!-- Glow Filters -->
-                <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="6" result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-              </defs>
-
-              <!-- Hilos/Líneas de conexión -->
-              <!-- Google to QUARZ -->
-              <path class="map-link-line" d="M 100 120 L 250 200" stroke="#533B87" stroke-width="2.5" fill="none" opacity="0.6" id="line-google" />
-              <!-- Meta to QUARZ -->
-              <path class="map-link-line" d="M 400 150 L 250 200" stroke="#533B87" stroke-width="2.5" fill="none" opacity="0.6" id="line-meta" />
-              <!-- Apple to QUARZ -->
-              <path class="map-link-line" d="M 180 320 L 250 200" stroke="#533B87" stroke-width="2.5" fill="none" opacity="0.6" id="line-apple" />
-
-              <!-- Sub-conexiones (Doble-punteadas) -->
-              <!-- Android to Google -->
-              <path d="M 80 50 L 100 120" stroke="#3DDC84" stroke-dasharray="3" stroke-width="1.5" fill="none" opacity="0.5" />
-              <!-- GitHub to Google -->
-              <path d="M 70 210 L 100 120" stroke="#24292F" stroke-dasharray="3" stroke-width="1.5" fill="none" opacity="0.5" />
-              <!-- OpenAI to Meta -->
-              <path d="M 430 260 L 400 150" stroke="#74AA9C" stroke-dasharray="3" stroke-width="1.5" fill="none" opacity="0.5" />
-              <!-- iOS to Apple -->
-              <path d="M 320 340 L 180 320" stroke="#000000" stroke-dasharray="3" stroke-width="1.5" fill="none" opacity="0.5" />
-
-              <!-- Pins -->
-              <!-- Google Cloud -->
-              <g class="map-pin active-pin" id="pin-google" onclick="selectPin('google')" transform="translate(100, 120)">
-                <g class="pin-inner">
-                  <circle r="16" fill="white" stroke="#EA4335" stroke-width="2" />
-                  <circle r="6" fill="#EA4335" />
-                  <text y="-22" font-family="'Outfit'" font-size="11" font-weight="700" text-anchor="middle" fill="#4A5160">Google Cloud</text>
-                </g>
-              </g>
-              
-              <!-- Meta -->
-              <g class="map-pin" id="pin-meta" onclick="selectPin('meta')" transform="translate(400, 150)">
-                <g class="pin-inner">
-                  <circle r="16" fill="white" stroke="#0064E0" stroke-width="2" />
-                  <circle r="6" fill="#0064E0" />
-                  <text y="-22" font-family="'Outfit'" font-size="11" font-weight="700" text-anchor="middle" fill="#4A5160">Meta</text>
-                </g>
-              </g>
-              
-              <!-- Apple Enterprise -->
-              <g class="map-pin" id="pin-apple" onclick="selectPin('apple')" transform="translate(180, 320)">
-                <g class="pin-inner">
-                  <circle r="16" fill="white" stroke="#000000" stroke-width="2" />
-                  <circle r="6" fill="#000000" />
-                  <text y="28" font-family="'Outfit'" font-size="11" font-weight="700" text-anchor="middle" fill="#4A5160">Apple Enterprise</text>
-                </g>
-              </g>
-
-              <!-- Sub-Pins (Secundarios más pequeños) -->
-              <!-- Sub-Pin: Android -->
-              <g class="map-pin" transform="translate(80, 50)">
-                <g class="pin-inner">
-                  <circle r="11" fill="white" stroke="#3DDC84" stroke-width="1.5" />
-                  <text y="3" font-family="'Outfit'" font-size="7.5" font-weight="800" text-anchor="middle" fill="#3DDC84">AND</text>
-                  <text y="20" font-family="'Outfit'" font-size="9" font-weight="600" text-anchor="middle" fill="#4A5160" opacity="0.8">Android</text>
-                </g>
-              </g>
-              
-              <!-- Sub-Pin: GitHub -->
-              <g class="map-pin" transform="translate(70, 210)">
-                <g class="pin-inner">
-                  <circle r="11" fill="white" stroke="#24292F" stroke-width="1.5" />
-                  <text y="3" font-family="'Outfit'" font-size="7.5" font-weight="800" text-anchor="middle" fill="#24292F">GH</text>
-                  <text y="20" font-family="'Outfit'" font-size="9" font-weight="600" text-anchor="middle" fill="#4A5160" opacity="0.8">GitHub</text>
-                </g>
-              </g>
-              
-              <!-- Sub-Pin: OpenAI -->
-              <g class="map-pin" transform="translate(430, 260)">
-                <g class="pin-inner">
-                  <circle r="11" fill="white" stroke="#74AA9C" stroke-width="1.5" />
-                  <text y="3" font-family="'Outfit'" font-size="7.5" font-weight="800" text-anchor="middle" fill="#74AA9C">AI</text>
-                  <text y="20" font-family="'Outfit'" font-size="9" font-weight="600" text-anchor="middle" fill="#4A5160" opacity="0.8">OpenAI</text>
-                </g>
-              </g>
-              
-              <!-- Sub-Pin: iOS -->
-              <g class="map-pin" transform="translate(320, 340)">
-                <g class="pin-inner">
-                  <circle r="11" fill="white" stroke="#000000" stroke-width="1.5" />
-                  <text y="3" font-family="'Outfit'" font-size="7" font-weight="800" text-anchor="middle" fill="#000000">iOS</text>
-                  <text y="20" font-family="'Outfit'" font-size="9" font-weight="600" text-anchor="middle" fill="#4A5160" opacity="0.8">iOS</text>
-                </g>
-              </g>
-
-              <!-- Central Node: QUARZ GROUP & ZentryOS -->
-              <g transform="translate(250, 200)" filter="url(#glow-purple)">
-                <circle r="34" fill="#533B87" />
-                <circle r="30" fill="white" stroke="#D6C8FA" stroke-width="2" />
-                <text y="-4" font-family="'Outfit'" font-size="9" font-weight="800" text-anchor="middle" fill="#533B87">QUARZ</text>
-                <text y="8" font-family="'Outfit'" font-size="7.5" font-weight="700" text-anchor="middle" fill="#4A5160">ZentryOS</text>
-              </g>
-            </svg>
+            <picture>
+              <source srcset="/imagen_integrada_logos_texto_completo.webp" type="image/webp">
+              <img src="/imagen_integrada_logos_texto_completo.jpg" alt="Infraestructura y Ecosistema Big Tech - ZentryOS & QUARZ" class="authority-integrated-img">
+            </picture>
           </div>
           
           <div class="map-info-panel">
-            <div class="info-card active-card" id="card-google">
+            <div class="info-card active-card" id="card-google" onclick="selectCard('google')">
               <h3>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 Google Cloud Platform
               </h3>
               <p>Procesamiento avanzado de telemetría y hosting bajo infraestructura de alta redundancia. Conectamos los reportes a través de Vertex AI de Google.</p>
             </div>
-            <div class="info-card" id="card-meta">
+            <div class="info-card" id="card-meta" onclick="selectCard('meta')">
               <h3>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
                 Meta Developers
               </h3>
               <p>Seguridad y arquitectura integrada para el bloqueo inteligente a nivel de API de aplicaciones sociales como Facebook, Instagram y WhatsApp.</p>
             </div>
-            <div class="info-card" id="card-apple">
+            <div class="info-card" id="card-apple" onclick="selectCard('apple')">
               <h3>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                 Apple Enterprise

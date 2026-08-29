@@ -38,22 +38,18 @@ import './style.css';
       }
     }
 
-    // Funciones específicas del mapa de la slide 1
-    function selectPin(company) {
+    // Funciones específicas del mapa / tarjetas de la slide 1
+    function selectCard(company) {
       document.querySelectorAll('.info-card').forEach(card => {
         card.classList.remove('active-card');
       });
-      document.querySelectorAll('.map-link-line').forEach(line => {
-        line.style.opacity = '0.3';
-      });
-      document.querySelectorAll('.map-pin').forEach(pin => {
-        pin.classList.remove('active-pin');
-      });
-
-      document.getElementById(`card-${company}`).classList.add('active-card');
-      document.getElementById(`line-${company}`).style.opacity = '1.0';
-      document.getElementById(`pin-${company}`).classList.add('active-pin');
+      const targetCard = document.getElementById(`card-${company}`);
+      if (targetCard) {
+        targetCard.classList.add('active-card');
+      }
     }
+    window.selectCard = selectCard;
+    window.selectPin = selectCard;
 
     // Funciones de la calculadora de la slide 3
     function adjustValue(fieldId, delta) {

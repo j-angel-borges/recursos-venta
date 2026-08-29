@@ -170,37 +170,50 @@
     }
 
     /* ========================================================
-       SLIDE 1: MAPA DE AUTORIDAD (SILICON VALLEY)
+       SLIDE 1: MAPA DE AUTORIDAD (SILICON VALLEY & BIG TECH)
        ======================================================== */
     .map-container {
       position: relative;
       width: 55%;
       height: 100%;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.35);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
     }
 
-    .map-container::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://docs.google.com/uc?export=download&id=1OYACVmcQGAs80qiWkspmwDVAkbQcyQvE') no-repeat center center;
-      background-size: cover;
-      opacity: 0.55;
-      pointer-events: none;
-      z-index: 0;
+    .map-container:hover {
+      box-shadow: 0 8px 30px rgba(83, 59, 135, 0.1);
+      border-color: rgba(83, 59, 135, 0.2);
     }
 
-    .sv-map {
+    .map-container picture {
       width: 100%;
       height: 100%;
-      position: relative;
-      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .authority-integrated-img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 14px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .authority-integrated-img:hover {
+      transform: scale(1.015);
     }
 
     .map-info-panel {

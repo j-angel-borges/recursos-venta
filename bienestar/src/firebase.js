@@ -2,13 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDOflhgWbY3dpvSs0icoVOH9uCS16w8Yl8",
-  authDomain: "zentry-hub.firebaseapp.com",
-  projectId: "zentry-hub",
-  storageBucket: "zentry-hub.firebasestorage.app",
-  messagingSenderId: "9976842702",
-  appId: "1:9976842702:web:83be01d42a4f28390d439f",
-  measurementId: "G-TDT1M5PC5B"
+  apiKey: "AIzaSyBurwKhFJL5Dkt_f5R_FAJFdsIz0QhJBEo",
+  authDomain: "quarz-group.firebaseapp.com",
+  projectId: "quarz-group",
+  storageBucket: "quarz-group.firebasestorage.app",
+  messagingSenderId: "1065709368788",
+  appId: "1:1065709368788:web:7c43a3a1cf266706db1241"
 };
 
 const app = initializeApp(firebaseConfig);

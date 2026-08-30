@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap');
+      text { font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif; }
+      .mono { font-family: "IBM Plex Mono", "Courier New", monospace; font-feature-settings: "tnum" 1, "zero" 1; }
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="#101219"/>
+<rect x="60" y="60" width="1800" height="960" fill="#181B28" rx="12"/>
+<text x="200" y="118" fill="#0AE88A" font-size="13" font-weight="700" letter-spacing="2" class="mono">LITIGIOS GLOBALES // RESPONSABILIDAD CORPORATIVA DIGITAL</text>
+<text x="200" y="158" fill="#FFFFFF" font-size="36" font-weight="700" text-anchor="start">Multas, Acuerdos y Veredictos contra Big Tech</text>
+<text x="200" y="192" fill="#8892A4" font-size="15" font-weight="400" text-anchor="start">Millones de USD · Jurisdicciones EE.UU. y Europa · 2024-2026</text>
+<rect x="520" y="234" width="1000" height="52" fill="#23293F" rx="6" opacity="0.35"/>
+<rect x="520" y="234" width="995" height="52" fill="#0AE88A" rx="6" opacity="0.9"/>
+<rect x="520" y="234" width="995" height="8" fill="rgba(255,255,255,0.2)" rx="6"/>
+<text x="504" y="266" fill="#FFFFFF" font-size="14" font-weight="500" text-anchor="end">Meta · AG Multiestatal EE.UU.</text>
+<text x="504" y="284" fill="#8892A4" font-size="12" text-anchor="end">2026</text>
+<text x="1528.7709581257304" y="266" fill="#0AE88A" font-size="17" font-weight="700" class="mono">$17.1B</text>
+<rect x="520" y="352" width="1000" height="52" fill="#23293F" rx="6" opacity="0.35"/>
+<rect x="520" y="352" width="340" height="52" fill="#8E9BF7" rx="6" opacity="0.9"/>
+<rect x="520" y="352" width="340" height="8" fill="rgba(255,255,255,0.2)" rx="6"/>
+<text x="504" y="384" fill="#FFFFFF" font-size="14" font-weight="500" text-anchor="end">Meta · Distritos Escolares (MDL 3047)</text>
+<text x="504" y="402" fill="#8892A4" font-size="12" text-anchor="end">2025</text>
+<text x="874.0858651488611" y="384" fill="#8E9BF7" font-size="17" font-weight="700" class="mono">$27M</text>
+<rect x="520" y="470" width="1000" height="52" fill="#23293F" rx="6" opacity="0.35"/>
+<rect x="520" y="470" width="199" height="52" fill="#3D51F2" rx="6" opacity="0.9"/>
+<rect x="520" y="470" width="199" height="8" fill="rgba(255,255,255,0.2)" rx="6"/>
+<text x="504" y="502" fill="#FFFFFF" font-size="14" font-weight="500" text-anchor="end">Meta+YouTube · JCCP CA (KGM)</text>
+<text x="504" y="520" fill="#8892A4" font-size="12" text-anchor="end">2025</text>
+<text x="732.6002163200451" y="502" fill="#3D51F2" font-size="17" font-weight="700" class="mono">$6M</text>
+<rect x="520" y="588" width="1000" height="52" fill="#23293F" rx="6" opacity="0.35"/>
+<rect x="520" y="588" width="60" height="52" fill="#FE7E57" rx="6" opacity="0.9"/>
+<rect x="520" y="588" width="60" height="8" fill="rgba(255,255,255,0.2)" rx="6"/>
+<text x="504" y="620" fill="#FFFFFF" font-size="14" font-weight="500" text-anchor="end">Character.ai · Garcia v. Char.AI</text>
+<text x="504" y="638" fill="#8892A4" font-size="12" text-anchor="end">2026</text>
+<text x="593.9896962643779" y="620" fill="#FE7E57" font-size="17" font-weight="700" class="mono">$800K</text>
+<rect x="520" y="706" width="1000" height="52" fill="#23293F" rx="6" opacity="0.35"/>
+<rect x="520" y="706" width="888" height="52" fill="#F0524B" rx="6" opacity="0.9"/>
+<rect x="520" y="706" width="888" height="8" fill="rgba(255,255,255,0.2)" rx="6"/>
+<text x="504" y="738" fill="#FFFFFF" font-size="14" font-weight="500" text-anchor="end">TikTok · DSA Europa (potencial 6%)</text>
+<text x="504" y="756" fill="#8892A4" font-size="12" text-anchor="end">2025</text>
+<text x="1421.8922847443753" y="738" fill="#F0524B" font-size="17" font-weight="700" class="mono">$6.0B</text>
+<rect x="520" y="824" width="1000" height="52" fill="#23293F" rx="6" opacity="0.35"/>
+<rect x="520" y="824" width="634" height="52" fill="#F2D412" rx="6" opacity="0.9"/>
+<rect x="520" y="824" width="634" height="8" fill="rgba(255,255,255,0.2)" rx="6"/>
+<text x="504" y="856" fill="#FFFFFF" font-size="14" font-weight="500" text-anchor="end">Snap+TikTok · Demandas Estatales</text>
+<text x="504" y="874" fill="#8892A4" font-size="12" text-anchor="end">2024-26</text>
+<text x="1168.46882018234" y="856" fill="#F2D412" font-size="17" font-weight="700" class="mono">$500M</text>
+<text x="520" y="970" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">Nota: Escala logarítmica visual para comparar órdenes de magnitud</text>
+<text x="200" y="1005" fill="#8892A4" font-size="12" font-weight="400">Fuentes: MDL-3047 (ND California) · JCCP 5255 (California) · AG Multiestatal EE.UU. · DSA Comisión Europea · Garcia v. Character Technologies (M.D. Florida, 2025)</text>
+</svg>

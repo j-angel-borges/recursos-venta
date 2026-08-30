@@ -495,8 +495,8 @@ import './style.css';
         clearInterval(poseTimerInterval);
       }
 
-      // Slide 10: preparar el experimento del Scroll Infinito
-      if (slideIndex === 9) {
+      // Slide 11: preparar el experimento del Scroll Infinito
+      if (slideIndex === 10) {
         if (typeof skinnerState !== 'undefined' && !skinnerState.active) {
           resetSkinnerGame();
         }

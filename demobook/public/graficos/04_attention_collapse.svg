@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap');
+      text { font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif; }
+      .mono { font-family: "IBM Plex Mono", "Courier New", monospace; font-feature-settings: "tnum" 1, "zero" 1; }
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="#101219"/>
+<rect x="60" y="60" width="1100" height="960" fill="#181B28" rx="12"/>
+<text x="180" y="118" fill="#F0524B" font-size="13" font-weight="700" letter-spacing="2" class="mono">ECONOMÍA DE LA ATENCIÓN // CRISIS COGNITIVA LABORAL</text>
+<text x="180" y="158" fill="#FFFFFF" font-size="36" font-weight="700" text-anchor="start">Colapso del Tiempo de Enfoque Sostenido</text>
+<text x="180" y="192" fill="#8892A4" font-size="15" font-weight="400" text-anchor="start">Segundos de atención continua en pantalla · UC Irvine · Dra. Gloria Mark</text>
+<line x1="180" y1="840.0" x2="1160" y2="840.0" stroke="#23293F" stroke-width="1"/>
+<text x="166" y="845.0" fill="#8892A4" font-size="13" text-anchor="end" class="mono">0s</text>
+<line x1="180" y1="685.0" x2="1160" y2="685.0" stroke="#23293F" stroke-width="1"/>
+<text x="166" y="690.0" fill="#8892A4" font-size="13" text-anchor="end" class="mono">40s</text>
+<line x1="180" y1="530.0" x2="1160" y2="530.0" stroke="#23293F" stroke-width="1"/>
+<text x="166" y="535.0" fill="#8892A4" font-size="13" text-anchor="end" class="mono">80s</text>
+<line x1="180" y1="375.0" x2="1160" y2="375.0" stroke="#23293F" stroke-width="1"/>
+<text x="166" y="380.0" fill="#8892A4" font-size="13" text-anchor="end" class="mono">120s</text>
+<line x1="180" y1="220.0" x2="1160" y2="220.0" stroke="#23293F" stroke-width="1"/>
+<text x="166" y="225.0" fill="#8892A4" font-size="13" text-anchor="end" class="mono">160s</text>
+<defs><linearGradient id="area_grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0524B" stop-opacity="0.3"/><stop offset="100%" stop-color="#F0524B" stop-opacity="0.02"/></linearGradient></defs>
+<polygon points="180.0,840 180.0,258.75 358.1818181818182,375.0 536.3636363636364,549.375 714.5454545454545,595.875 892.7272727272727,626.875 1026.3636363636365,657.875 1160.0,685.0 1160.0,840" fill="url(#area_grad)"/>
+<path d="M 180.0,258.8 L 358.2,375.0 L 536.4,549.4 L 714.5,595.9 L 892.7,626.9 L 1026.4,657.9 L 1160.0,685.0" fill="none" stroke="#F0524B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="180.0" cy="258.8" r="8" fill="#101219" stroke="#F0524B" stroke-width="3"/>
+<circle cx="180.0" cy="258.8" r="4" fill="#F0524B"/>
+<text x="180.0" y="240.8" fill="#F0524B" font-size="16" font-weight="700" text-anchor="middle" class="mono">150 seg</text>
+<text x="180.0" y="868" fill="#8892A4" font-size="13" text-anchor="middle">2004</text>
+<circle cx="358.2" cy="375.0" r="8" fill="#101219" stroke="#F0524B" stroke-width="3"/>
+<circle cx="358.2" cy="375.0" r="4" fill="#F0524B"/>
+<text x="358.2" y="868" fill="#8892A4" font-size="13" text-anchor="middle">2008</text>
+<circle cx="536.4" cy="549.4" r="8" fill="#101219" stroke="#F0524B" stroke-width="3"/>
+<circle cx="536.4" cy="549.4" r="4" fill="#F0524B"/>
+<text x="536.4" y="531.4" fill="#F0524B" font-size="16" font-weight="700" text-anchor="middle" class="mono">75 seg</text>
+<text x="536.4" y="868" fill="#8892A4" font-size="13" text-anchor="middle">2012</text>
+<circle cx="714.5" cy="595.9" r="8" fill="#101219" stroke="#F0524B" stroke-width="3"/>
+<circle cx="714.5" cy="595.9" r="4" fill="#F0524B"/>
+<text x="714.5" y="868" fill="#8892A4" font-size="13" text-anchor="middle">2016</text>
+<circle cx="892.7" cy="626.9" r="8" fill="#101219" stroke="#F0524B" stroke-width="3"/>
+<circle cx="892.7" cy="626.9" r="4" fill="#F0524B"/>
+<text x="892.7" y="868" fill="#8892A4" font-size="13" text-anchor="middle">2020</text>
+<circle cx="1026.4" cy="657.9" r="8" fill="#101219" stroke="#F0524B" stroke-width="3"/>
+<circle cx="1026.4" cy="657.9" r="4" fill="#F0524B"/>
+<text x="1026.4" y="639.9" fill="#F0524B" font-size="16" font-weight="700" text-anchor="middle" class="mono">47 seg</text>
+<text x="1026.4" y="868" fill="#8892A4" font-size="13" text-anchor="middle">2023</text>
+<circle cx="1160.0" cy="685.0" r="8" fill="#101219" stroke="#F0524B" stroke-width="3"/>
+<circle cx="1160.0" cy="685.0" r="4" fill="#F0524B"/>
+<text x="1160.0" y="667.0" fill="#F0524B" font-size="16" font-weight="700" text-anchor="middle" class="mono">~40 seg</text>
+<text x="1160.0" y="868" fill="#8892A4" font-size="13" text-anchor="middle">2026</text>
+<line x1="180" y1="840" x2="1160" y2="840" stroke="#23293F" stroke-width="1" stroke-linecap="round"/>
+<text x="1100.0" y="633.0" fill="#F2D412" font-size="28" font-weight="700" class="mono">-73%</text>
+<text x="1100.0" y="657.0" fill="#8892A4" font-size="13">desde 2004</text>
+<rect x="1220" y="80" width="640" height="154" fill="#202538" rx="10"/>
+<text x="1380" y="142" fill="#F0524B" font-size="36" font-weight="700" text-anchor="middle" class="mono">23min 15s</text>
+<text x="1256" y="176" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">Recuperación de atención plena</text>
+<text x="1256" y="196" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">tras interrupción digital</text>
+<rect x="1220" y="80" width="6" height="154" fill="#F0524B" rx="3"/>
+<rect x="1220" y="258" width="640" height="154" fill="#202538" rx="10"/>
+<text x="1380" y="320" fill="#FE7E57" font-size="36" font-weight="700" text-anchor="middle" class="mono">44%</text>
+<text x="1256" y="354" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">Interrupciones autoinducidas</text>
+<text x="1256" y="374" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">por revisión compulsiva</text>
+<rect x="1220" y="258" width="6" height="154" fill="#FE7E57" rx="3"/>
+<rect x="1220" y="436" width="640" height="154" fill="#202538" rx="10"/>
+<text x="1380" y="498" fill="#F2D412" font-size="36" font-weight="700" text-anchor="middle" class="mono">$9.6T</text>
+<text x="1256" y="532" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">Costo global desenganche</text>
+<text x="1256" y="552" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">laboral/año (Gallup 2026)</text>
+<rect x="1220" y="436" width="6" height="154" fill="#F2D412" rx="3"/>
+<rect x="1220" y="614" width="640" height="154" fill="#202538" rx="10"/>
+<text x="1380" y="676" fill="#3D51F2" font-size="36" font-weight="700" text-anchor="middle" class="mono">15 pts</text>
+<text x="1256" y="710" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">Caída PISA Matemáticas</text>
+<text x="1256" y="730" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">2018–2022 (OCDE)</text>
+<rect x="1220" y="614" width="6" height="154" fill="#3D51F2" rx="3"/>
+<rect x="1220" y="792" width="640" height="154" fill="#202538" rx="10"/>
+<text x="1380" y="854" fill="#F0524B" font-size="36" font-weight="700" text-anchor="middle" class="mono">-3%</text>
+<text x="1256" y="888" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">Contracción PIB tendencial</text>
+<text x="1256" y="908" fill="#8892A4" font-size="13" font-weight="400" text-anchor="start">por pérdida educativa</text>
+<rect x="1220" y="792" width="6" height="154" fill="#F0524B" rx="3"/>
+<text x="180" y="1010" fill="#8892A4" font-size="12" font-weight="400">Fuentes: Dr. Gloria Mark, UC Irvine (2004-2023) · Gallup State of Global Workplace (2025-2026) · OCDE PISA (2022)</text>
+</svg>

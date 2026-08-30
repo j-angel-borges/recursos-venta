@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-08-29",
+  "theme": "platzi_dark",
+  "source_research": [
+    "https://share.gemini.google/wv8rDXeBukrj",
+    "https://share.gemini.google/KMCpkbkxBGoQ"
+  ],
+  "charts": [
+    "01_screen_time_region.svg",
+    "02_mental_health_screen.svg",
+    "03_cognitive_debt.svg",
+    "04_attention_collapse.svg",
+    "05_litigation_tech.svg",
+    "06_brazil_bets.svg",
+    "07_latam_platforms.svg",
+    "08_executive_slide.svg",
+    {
+      "title": "Crecimiento del Ecosistema Tech en América Latina (2020-2026)",
+      "slug": "crecimiento_del_ecosistema_tech_en_america_latina_2020_2026",
+      "type": "bar",
+      "theme": "platzi-dark",
+      "formats_generated": [
+        "png",
+        "svg",
+        "mp4",
+        "gif",
+        "html"
+      ],
+      "files": {
+        "png": "crecimiento_del_ecosistema_tech_en_america_latina_2020_2026.png",
+        "svg": "crecimiento_del_ecosistema_tech_en_america_latina_2020_2026.svg",
+        "mp4": "crecimiento_del_ecosistema_tech_en_america_latina_2020_2026.mp4",
+        "gif": "crecimiento_del_ecosistema_tech_en_america_latina_2020_2026.gif",
+        "html": "crecimiento_del_ecosistema_tech_en_america_latina_2020_2026.html"
+      },
+      "data_sources_count": 94,
+      "metrics_summary": {
+        "primary_kpi": "1.62M",
+        "total_devs_2026": "1.62M",
+        "vc_tech_funding_2026": "$7.5B",
+        "ai_tool_adoption": "94.2%",
+        "unicorns_activos": "46"
+      },
+      "dimensions": "1200x800",
+      "scale_factor": 2.0,
+      "timestamp": "2026-08-29T16:14:36.371876+00:00",
+      "id": "chart-20260829-161436-09"
+    }
+  ],
+  "last_updated": "2026-08-29T16:14:36.371876+00:00"
+}

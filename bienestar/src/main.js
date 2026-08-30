@@ -18,6 +18,13 @@ function showStep(num, direction = 'next') {
   } else {
     current.classList.remove('active'); next.classList.add('active');
   }
+
+  // Update Progress Bar
+  const progressMap = { 1: 25, 2: 50, 3: 75, 4: 100, 5: 100 };
+  const bar = document.getElementById('progressBar');
+  const wrapper = document.getElementById('progressWrapper');
+  if (bar) bar.style.width = (progressMap[num] || 25) + '%';
+  if (wrapper) wrapper.style.display = num === 5 ? 'none' : 'block';
 }
 
 function nextStep(currentNum) {
@@ -31,13 +38,19 @@ function validateStep(num) {
     let valid = true;
     inputs.forEach(id => {
       const el = document.getElementById(id);
-      if(!el.value) { el.style.borderColor = 'var(--danger)'; valid = false; }
-      else { el.style.borderColor = 'var(--card-border)'; }
+      if(!el.value) {
+        el.style.borderColor = 'var(--danger)';
+        el.style.boxShadow = '0 0 0 3px var(--danger-bg)';
+        valid = false;
+      } else {
+        el.style.borderColor = 'var(--input-border)';
+        el.style.boxShadow = 'none';
+      }
     });
     return valid;
   }
-  if(num === 2) { if(!state.prioridadTech || !state.comportamiento) { alert("Responda todas las preguntas."); return false; } }
-  if(num === 4) { if(!state.riesgoAislamiento || !state.riesgoContenido || !state.riesgoAnsiedad || !state.riesgoIdentidad) { alert("Califique todos los escenarios."); return false; } }
+  if(num === 2) { if(!state.prioridadTech || !state.comportamiento) { alert("Por favor, responda todas las preguntas."); return false; } }
+  if(num === 4) { if(!state.riesgoAislamiento || !state.riesgoContenido || !state.riesgoAnsiedad || !state.riesgoIdentidad) { alert("Por favor, califique todos los escenarios."); return false; } }
   return true;
 }
 
@@ -109,7 +122,7 @@ function onSuccess() {
 
 function onError(error) { alert("Error: " + error); resetForm(); }
 
-// NUEVA FUNCIÓN: Reinicia el formulario sin recargar la página (evita la pantalla blanca)
+// Reinicia el formulario sin recargar la página
 function resetForm() {
   // 1. Limpiar el estado interno
   state.asesor = ''; state.nombrePadres = ''; state.celular = ''; state.nombreHijo = ''; state.edadHijo = '';
@@ -136,7 +149,13 @@ function resetForm() {
   document.getElementById('successState').style.display = 'none';
   document.getElementById('loadingState').style.display = 'flex';
 
-  // 6. Volver al Paso 1
+  // 6. Restaurar la barra de progreso
+  const bar = document.getElementById('progressBar');
+  const wrapper = document.getElementById('progressWrapper');
+  if (bar) bar.style.width = '25%';
+  if (wrapper) wrapper.style.display = 'block';
+
+  // 7. Volver al Paso 1
   document.querySelectorAll('.step').forEach(step => {
     step.classList.remove('active');
     step.classList.remove('exit');
@@ -170,7 +189,7 @@ window.openAdminModal = async function() {
     overlay.innerHTML = `
       <div class="admin-modal-content">
         <div class="admin-modal-header">
-          <h2 style="margin: 0; font-size: 1.5rem;">Registros de Bienestar</h2>
+          <h2 style="margin: 0; font-size: 1.4rem; color: #D6C8FA;">Registros de Diagnóstico • ZentryOS</h2>
           <button class="admin-close-btn" onclick="closeAdminModal()">×</button>
         </div>
         <div class="admin-modal-body" style="overflow-x: auto;">
@@ -191,11 +210,11 @@ window.openAdminModal = async function() {
                 <th>R. Contenido</th>
                 <th>R. Ansiedad</th>
                 <th>R. Identidad</th>
-                <th style="position: sticky; right: 0; background: rgba(25,25,35,0.95);">Acciones</th>
+                <th style="position: sticky; right: 0; background: rgba(28, 20, 48, 0.98);">Acciones</th>
               </tr>
             </thead>
             <tbody id="adminTableBody">
-              <tr><td colspan="15">Cargando datos...</td></tr>
+              <tr><td colspan="15">Cargando registros...</td></tr>
             </tbody>
           </table>
         </div>
@@ -236,7 +255,7 @@ window.fetchAdminData = async function() {
           <td><input type="text" name="riesgoContenido" class="edit-input" value="${data.riesgoContenido || ''}" disabled /></td>
           <td><input type="text" name="riesgoAnsiedad" class="edit-input" value="${data.riesgoAnsiedad || ''}" disabled /></td>
           <td><input type="text" name="riesgoIdentidad" class="edit-input" value="${data.riesgoIdentidad || ''}" disabled /></td>
-          <td style="position: sticky; right: 0; background: rgba(35,35,45,1); display: flex; gap: 8px;">
+          <td style="position: sticky; right: 0; background: rgba(38, 27, 64, 0.98); display: flex; gap: 8px;">
             <button class="admin-action-btn admin-edit-btn" onclick="toggleEdit('${docSnap.id}')" title="Editar">✏️</button>
             <button class="admin-action-btn admin-delete-btn" onclick="deleteRecord('${docSnap.id}')" title="Eliminar">🗑️</button>
           </td>
@@ -245,7 +264,7 @@ window.fetchAdminData = async function() {
     });
     tbody.innerHTML = html || '<tr><td colspan="15">No hay registros</td></tr>';
   } catch(e) {
-    tbody.innerHTML = `<tr><td colspan="15" style="color:red">Error al cargar datos: ${e.message}</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="15" style="color: #EF4444;">Error al cargar datos: ${e.message}</td></tr>`;
   }
 };
 

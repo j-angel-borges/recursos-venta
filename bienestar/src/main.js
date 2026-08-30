@@ -1,6 +1,6 @@
 import './style.css'
 import { db } from './firebase.js';
-import { collection, addDoc, serverTimestamp, getDocs, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp, getDocs, deleteDoc, doc } from 'firebase/firestore';
 
 const state = {
   asesor: '', nombrePadres: '', celular: '', nombreHijo: '', edadHijo: '',
@@ -54,15 +54,31 @@ function validateStep(num) {
   return true;
 }
 
+function collectAllFormData() {
+  const asesorEl = document.getElementById('asesor');
+  if (asesorEl && asesorEl.value) state.asesor = asesorEl.value.trim();
+
+  const padresEl = document.getElementById('nombrePadres');
+  if (padresEl && padresEl.value) state.nombrePadres = padresEl.value.trim();
+
+  const celEl = document.getElementById('celular');
+  if (celEl && celEl.value) state.celular = celEl.value.trim();
+
+  const hijoEl = document.getElementById('nombreHijo');
+  if (hijoEl && hijoEl.value) state.nombreHijo = hijoEl.value.trim();
+
+  const edadEl = document.getElementById('edadHijo');
+  if (edadEl && edadEl.value) state.edadHijo = edadEl.value.trim();
+
+  const impEl = document.getElementById('importancia1_10');
+  if (impEl && impEl.value) state.importancia1_10 = impEl.value;
+
+  const horasEl = document.getElementById('horasPantalla');
+  if (horasEl) state.horasPantalla = parseInt(horasEl.innerText) || state.horasPantalla;
+}
+
 function saveStepData(num) {
-  if(num === 1) {
-    state.asesor = document.getElementById('asesor').value;
-    state.nombrePadres = document.getElementById('nombrePadres').value;
-    state.celular = document.getElementById('celular').value;
-    state.nombreHijo = document.getElementById('nombreHijo').value;
-    state.edadHijo = document.getElementById('edadHijo').value;
-  }
-  if(num === 2) state.importancia1_10 = document.getElementById('importancia1_10').value;
+  collectAllFormData();
 }
 
 function selectBtnGroup(btn, groupName) {
@@ -99,6 +115,7 @@ function selectRisk(btn, groupName) {
 
 async function submitData() {
   if(validateStep(4)) {
+    collectAllFormData();
     showStep(5, 'next');
     
     try {
@@ -124,38 +141,31 @@ function onError(error) { alert("Error: " + error); resetForm(); }
 
 // Reinicia el formulario sin recargar la página
 function resetForm() {
-  // 1. Limpiar el estado interno
   state.asesor = ''; state.nombrePadres = ''; state.celular = ''; state.nombreHijo = ''; state.edadHijo = '';
   state.importancia1_10 = 10; state.prioridadTech = ''; state.comportamiento = '';
   state.plataformas = []; state.horasPantalla = 4;
   state.riesgoAislamiento = ''; state.riesgoContenido = ''; state.riesgoAnsiedad = ''; state.riesgoIdentidad = '';
 
-  // 2. Limpiar los inputs visuales
   document.getElementById('asesor').value = '';
   document.getElementById('nombrePadres').value = '';
   document.getElementById('celular').value = '';
   document.getElementById('nombreHijo').value = '';
   document.getElementById('edadHijo').value = '';
   
-  // 3. Restaurar sliders y contadores a sus valores por defecto
   document.getElementById('importancia1_10').value = 10;
   document.getElementById('sliderVal').innerText = '10';
   document.getElementById('horasPantalla').innerText = '4';
 
-  // 4. Quitar la selección visual de todos los botones y tarjetas
   document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
 
-  // 5. Restaurar la vista de carga/éxito
   document.getElementById('successState').style.display = 'none';
   document.getElementById('loadingState').style.display = 'flex';
 
-  // 6. Restaurar la barra de progreso
   const bar = document.getElementById('progressBar');
   const wrapper = document.getElementById('progressWrapper');
   if (bar) bar.style.width = '25%';
   if (wrapper) wrapper.style.display = 'block';
 
-  // 7. Volver al Paso 1
   document.querySelectorAll('.step').forEach(step => {
     step.classList.remove('active');
     step.classList.remove('exit');
@@ -163,7 +173,7 @@ function resetForm() {
   document.getElementById('step-1').classList.add('active');
 }
 
-// Bind functions to window
+// Bind global functions
 window.showStep = showStep;
 window.nextStep = nextStep;
 window.prevStep = prevStep;
@@ -179,7 +189,39 @@ window.onSuccess = onSuccess;
 window.onError = onError;
 window.resetForm = resetForm;
 
-// --- Admin Panel Logic ---
+// ==========================================
+// --- ADMIN DASHBOARD & FICHA TÉCNICA ---
+// ==========================================
+
+let adminRecordsCache = [];
+
+function formatTimestamp(ts) {
+  if (!ts) return 'Reciente';
+  try {
+    let date;
+    if (ts.toDate) date = ts.toDate();
+    else if (ts.seconds) date = new Date(ts.seconds * 1000);
+    else date = new Date(ts);
+    return date.toLocaleString('es-ES', {
+      day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', hour12: true
+    });
+  } catch (e) {
+    return 'Reciente';
+  }
+}
+
+function getRiskBadge(val) {
+  if (!val) return '<span class="admin-badge admin-badge-muted">-</span>';
+  const v = val.trim().toLowerCase();
+  if (v.startsWith('alto')) {
+    return `<span class="admin-badge badge-risk-alto">Alto</span>`;
+  } else if (v.startsWith('mod')) {
+    return `<span class="admin-badge badge-risk-moderado">Moderado</span>`;
+  } else {
+    return `<span class="admin-badge badge-risk-bajo">Bajo</span>`;
+  }
+}
+
 window.openAdminModal = async function() {
   let overlay = document.getElementById('adminModal');
   if (!overlay) {
@@ -189,34 +231,38 @@ window.openAdminModal = async function() {
     overlay.innerHTML = `
       <div class="admin-modal-content">
         <div class="admin-modal-header">
-          <h2 style="margin: 0; font-size: 1.4rem; color: #D6C8FA;">Registros de Diagnóstico • ZentryOS</h2>
-          <button class="admin-close-btn" onclick="closeAdminModal()">×</button>
+          <div class="admin-title-wrap">
+            <h2 class="admin-title">📋 Registros de Diagnóstico • ZentryOS</h2>
+            <span class="admin-badge-count" id="adminTotalCount">Cargando...</span>
+          </div>
+          <div class="admin-header-actions">
+            <input type="text" id="adminSearchInput" class="admin-search-input" placeholder="🔍 Buscar asesor, familia, celular..." oninput="filterAdminTable()" />
+            <button class="admin-btn-tool" onclick="exportAdminCSV()" title="Exportar a CSV">📥 CSV</button>
+            <button class="admin-btn-tool" onclick="fetchAdminData()" title="Refrescar">🔄</button>
+            <button class="admin-close-btn" onclick="closeAdminModal()">×</button>
+          </div>
         </div>
-        <div class="admin-modal-body" style="overflow-x: auto;">
-          <table class="admin-table" style="min-width: 1500px;">
-            <thead>
-              <tr>
-                <th>Asesor</th>
-                <th>Padre/Madre</th>
-                <th>Celular</th>
-                <th>Hijo/a</th>
-                <th>Edad</th>
-                <th>Importancia (1-10)</th>
-                <th>Prioridad Tech</th>
-                <th>Comportamiento</th>
-                <th>Plataformas</th>
-                <th>Horas Pantalla</th>
-                <th>R. Aislamiento</th>
-                <th>R. Contenido</th>
-                <th>R. Ansiedad</th>
-                <th>R. Identidad</th>
-                <th style="position: sticky; right: 0; background: rgba(28, 20, 48, 0.98);">Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="adminTableBody">
-              <tr><td colspan="15">Cargando registros...</td></tr>
-            </tbody>
-          </table>
+        <div class="admin-modal-body">
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Asesor</th>
+                  <th>Familia</th>
+                  <th>Celular</th>
+                  <th>Menor</th>
+                  <th>Impacto Tech</th>
+                  <th>Pantalla</th>
+                  <th>Matriz de Riesgo</th>
+                  <th class="th-actions">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="adminTableBody">
+                <tr><td colspan="9" class="admin-loading-row"><div class="admin-mini-spinner"></div> Cargando registros de GCP...</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     `;
@@ -233,94 +279,260 @@ window.closeAdminModal = function() {
 
 window.fetchAdminData = async function() {
   const tbody = document.getElementById('adminTableBody');
+  const countEl = document.getElementById('adminTotalCount');
+  if (tbody) {
+    tbody.innerHTML = '<tr><td colspan="9" class="admin-loading-row"><div class="admin-mini-spinner"></div> Actualizando desde Google Cloud...</td></tr>';
+  }
   try {
     const querySnapshot = await getDocs(collection(db, "bienestar_diagnostics"));
-    let html = '';
+    adminRecordsCache = [];
     querySnapshot.forEach((docSnap) => {
-      const data = docSnap.data();
-      const plats = Array.isArray(data.plataformas) ? data.plataformas.join(', ') : (data.plataformas || '');
-      html += `
-        <tr id="row-${docSnap.id}">
-          <td><input type="text" name="asesor" class="edit-input" value="${data.asesor || ''}" disabled /></td>
-          <td><input type="text" name="nombrePadres" class="edit-input" value="${data.nombrePadres || ''}" disabled /></td>
-          <td><input type="text" name="celular" class="edit-input" value="${data.celular || ''}" disabled /></td>
-          <td><input type="text" name="nombreHijo" class="edit-input" value="${data.nombreHijo || ''}" disabled /></td>
-          <td><input type="text" name="edadHijo" class="edit-input" value="${data.edadHijo || ''}" disabled /></td>
-          <td><input type="text" name="importancia1_10" class="edit-input" value="${data.importancia1_10 || ''}" disabled /></td>
-          <td><input type="text" name="prioridadTech" class="edit-input" value="${data.prioridadTech || ''}" disabled /></td>
-          <td><input type="text" name="comportamiento" class="edit-input" value="${data.comportamiento || ''}" disabled /></td>
-          <td><input type="text" name="plataformas" class="edit-input" value="${plats}" disabled /></td>
-          <td><input type="text" name="horasPantalla" class="edit-input" value="${data.horasPantalla || ''}" disabled /></td>
-          <td><input type="text" name="riesgoAislamiento" class="edit-input" value="${data.riesgoAislamiento || ''}" disabled /></td>
-          <td><input type="text" name="riesgoContenido" class="edit-input" value="${data.riesgoContenido || ''}" disabled /></td>
-          <td><input type="text" name="riesgoAnsiedad" class="edit-input" value="${data.riesgoAnsiedad || ''}" disabled /></td>
-          <td><input type="text" name="riesgoIdentidad" class="edit-input" value="${data.riesgoIdentidad || ''}" disabled /></td>
-          <td style="position: sticky; right: 0; background: rgba(38, 27, 64, 0.98); display: flex; gap: 8px;">
-            <button class="admin-action-btn admin-edit-btn" onclick="toggleEdit('${docSnap.id}')" title="Editar">✏️</button>
-            <button class="admin-action-btn admin-delete-btn" onclick="deleteRecord('${docSnap.id}')" title="Eliminar">🗑️</button>
-          </td>
-        </tr>
-      `;
+      adminRecordsCache.push({ id: docSnap.id, ...docSnap.data() });
     });
-    tbody.innerHTML = html || '<tr><td colspan="15">No hay registros</td></tr>';
+
+    // Ordenar por fecha descendente
+    adminRecordsCache.sort((a, b) => {
+      const ta = a.createdAt?.seconds || 0;
+      const tb = b.createdAt?.seconds || 0;
+      return tb - ta;
+    });
+
+    if (countEl) countEl.innerText = `${adminRecordsCache.length} registros`;
+    renderAdminRows(adminRecordsCache);
   } catch(e) {
-    tbody.innerHTML = `<tr><td colspan="15" style="color: #EF4444;">Error al cargar datos: ${e.message}</td></tr>`;
+    console.error("Error fetching admin data:", e);
+    if (tbody) tbody.innerHTML = `<tr><td colspan="9" style="color: #EF4444; padding: 24px; text-align: center;">Error al cargar datos de Firestore: ${e.message}</td></tr>`;
+    if (countEl) countEl.innerText = `Error`;
   }
 };
 
-window.toggleEdit = async function(id) {
-  const row = document.getElementById('row-' + id);
-  const isEditing = row.classList.toggle('editing');
-  const inputs = row.querySelectorAll('.edit-input');
-  const editBtn = row.querySelector('.admin-edit-btn');
-  
-  if (isEditing) {
-    inputs.forEach(input => input.disabled = false);
-    editBtn.innerText = '💾';
-    editBtn.title = 'Guardar';
-  } else {
-    inputs.forEach(input => input.disabled = true);
-    editBtn.innerText = '⏳';
-    
-    // Save to Firestore
-    try {
-      const updates = {};
-      inputs.forEach(input => {
-        if(input.name === 'plataformas') {
-          updates[input.name] = input.value.split(',').map(s => s.trim()).filter(Boolean);
-        } else {
-          updates[input.name] = input.value;
-        }
-      });
-      await updateDoc(doc(db, "bienestar_diagnostics", id), updates);
-      editBtn.innerText = '✏️';
-      editBtn.title = 'Editar';
-    } catch(e) {
-      alert('Error guardando: ' + e.message);
-      editBtn.innerText = '💾';
-      row.classList.add('editing');
-      inputs.forEach(input => input.disabled = false);
-    }
+function renderAdminRows(records) {
+  const tbody = document.getElementById('adminTableBody');
+  if (!tbody) return;
+
+  if (records.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="9" class="admin-empty-row">No se encontraron diagnósticos registrados.</td></tr>';
+    return;
   }
+
+  let html = '';
+  records.forEach((r) => {
+    const dateFormatted = formatTimestamp(r.createdAt);
+    const pTechBadge = r.prioridadTech === 'Sí' 
+      ? '<span class="admin-badge badge-priority-si">Prioridad Sí</span>' 
+      : '<span class="admin-badge badge-priority-no">Prioridad No</span>';
+    
+    const waLink = r.celular ? `https://wa.me/${r.celular.replace(/\D/g, '')}` : '#';
+
+    html += `
+      <tr id="row-${r.id}">
+        <td><span class="cell-date">${dateFormatted}</span></td>
+        <td><span class="cell-asesor">${r.asesor || 'Sin Asesor'}</span></td>
+        <td>
+          <div class="cell-family">
+            <strong>${r.nombrePadres || 'No indicado'}</strong>
+          </div>
+        </td>
+        <td>
+          <div class="cell-phone">
+            <span>${r.celular || '-'}</span>
+            ${r.celular ? `<a href="${waLink}" target="_blank" class="wa-btn" title="Abrir WhatsApp">💬</a>` : ''}
+          </div>
+        </td>
+        <td>
+          <div class="cell-kid">
+            <span class="kid-name">${r.nombreHijo || '-'}</span>
+            <span class="kid-age">${r.edadHijo ? `${r.edadHijo} años` : ''}</span>
+          </div>
+        </td>
+        <td>
+          <div class="cell-tech">
+            <span class="cell-score">Desarrollo: <strong>${r.importancia1_10 || 10}/10</strong></span>
+            ${pTechBadge}
+          </div>
+        </td>
+        <td>
+          <span class="badge-screen-time">${r.horasPantalla || 4} hrs/día</span>
+        </td>
+        <td>
+          <div class="risk-matrix-pills">
+            <span title="Aislamiento Social">Aisl: ${getRiskBadge(r.riesgoAislamiento)}</span>
+            <span title="Sesgo Contenido">Cont: ${getRiskBadge(r.riesgoContenido)}</span>
+            <span title="Ansiedad Notificaciones">Ans: ${getRiskBadge(r.riesgoAnsiedad)}</span>
+            <span title="Alteración Identidad">Iden: ${getRiskBadge(r.riesgoIdentidad)}</span>
+          </div>
+        </td>
+        <td class="td-actions">
+          <button class="admin-action-btn admin-view-btn" onclick="openDetailModal('${r.id}')" title="Ver Ficha Completa">👁️ Ficha</button>
+          <button class="admin-action-btn admin-delete-btn" onclick="deleteRecord('${r.id}')" title="Eliminar">🗑️</button>
+        </td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+window.filterAdminTable = function() {
+  const q = (document.getElementById('adminSearchInput')?.value || '').toLowerCase().trim();
+  if (!q) {
+    renderAdminRows(adminRecordsCache);
+    return;
+  }
+  const filtered = adminRecordsCache.filter(r => {
+    return (r.asesor || '').toLowerCase().includes(q) ||
+           (r.nombrePadres || '').toLowerCase().includes(q) ||
+           (r.celular || '').toLowerCase().includes(q) ||
+           (r.nombreHijo || '').toLowerCase().includes(q);
+  });
+  renderAdminRows(filtered);
+};
+
+window.openDetailModal = function(id) {
+  const r = adminRecordsCache.find(x => x.id === id);
+  if (!r) return;
+
+  let modal = document.getElementById('detailModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'detailModal';
+    modal.className = 'detail-modal-overlay';
+    document.body.appendChild(modal);
+  }
+
+  const plats = Array.isArray(r.plataformas) ? r.plataformas : (r.plataformas ? [r.plataformas] : []);
+  const platsHtml = plats.length > 0
+    ? plats.map(p => `<span class="plat-tag">${p}</span>`).join('')
+    : '<span style="color: #94A3B8;">Ninguna especificada</span>';
+
+  modal.innerHTML = `
+    <div class="detail-modal-content">
+      <div class="detail-modal-header">
+        <div>
+          <span class="detail-badge-lead">Ficha Técnica de Evaluación</span>
+          <h3 class="detail-title">Familia ${r.nombrePadres || 'General'}</h3>
+          <p class="detail-meta">Registrado el ${formatTimestamp(r.createdAt)} • Asesor: <strong>${r.asesor || 'No registrado'}</strong></p>
+        </div>
+        <button class="detail-close-btn" onclick="closeDetailModal()">×</button>
+      </div>
+      <div class="detail-modal-body">
+        
+        <div class="detail-grid-2">
+          <!-- Datos Familiares -->
+          <div class="detail-card">
+            <h4 class="detail-card-title">👨‍👩‍👧 Datos del Menor y Padres</h4>
+            <div class="detail-row"><span class="detail-lbl">Padre/Madre:</span> <span class="detail-val">${r.nombrePadres || '-'}</span></div>
+            <div class="detail-row"><span class="detail-lbl">Celular:</span> <span class="detail-val">${r.celular || '-'} ${r.celular ? `<a href="https://wa.me/${r.celular.replace(/\D/g, '')}" target="_blank" class="wa-text-link">Enviar WhatsApp ↗</a>` : ''}</span></div>
+            <div class="detail-row"><span class="detail-lbl">Menor / Edad:</span> <span class="detail-val"><strong>${r.nombreHijo || '-'}</strong> (${r.edadHijo || '?'} años)</span></div>
+            <div class="detail-row"><span class="detail-lbl">Horas en Pantalla:</span> <span class="detail-val highlight-val">${r.horasPantalla || 4} horas diarias</span></div>
+          </div>
+
+          <!-- Concienciación -->
+          <div class="detail-card">
+            <h4 class="detail-card-title">🎯 Concienciación & Hábitos</h4>
+            <div class="detail-row"><span class="detail-lbl">Importancia Desarrollo Mental:</span> <span class="detail-val"><strong>${r.importancia1_10 || 10} / 10</strong></span></div>
+            <div class="detail-row"><span class="detail-lbl">¿Prioridad HOY tecnología?:</span> <span class="detail-val">${r.prioridadTech === 'Sí' ? '<span class="admin-badge badge-priority-si">Sí</span>' : '<span class="admin-badge badge-priority-no">No</span>'}</span></div>
+            <div class="detail-row" style="flex-direction: column; align-items: flex-start; gap: 4px;">
+              <span class="detail-lbl">Comportamiento Observado:</span>
+              <span class="detail-val-quote">“${r.comportamiento || 'Sin observaciones'}”</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plataformas -->
+        <div class="detail-card" style="margin-top: 14px;">
+          <h4 class="detail-card-title">📱 Plataformas de Mayor Consumo</h4>
+          <div class="detail-plats-wrap">${platsHtml}</div>
+        </div>
+
+        <!-- Matriz de Riesgo -->
+        <div class="detail-card" style="margin-top: 14px;">
+          <h4 class="detail-card-title">⚠️ Matriz de Escenarios de Riesgo</h4>
+          <div class="detail-risk-grid">
+            <div class="risk-item">
+              <span class="risk-item-name">Aislamiento Social Progresivo</span>
+              <div class="risk-item-badge">${getRiskBadge(r.riesgoAislamiento)}</div>
+            </div>
+            <div class="risk-item">
+              <span class="risk-item-name">Sesgo de Contenido & Apuestas</span>
+              <div class="risk-item-badge">${getRiskBadge(r.riesgoContenido)}</div>
+            </div>
+            <div class="risk-item">
+              <span class="risk-item-name">Ansiedad por Notificaciones</span>
+              <div class="risk-item-badge">${getRiskBadge(r.riesgoAnsiedad)}</div>
+            </div>
+            <div class="risk-item">
+              <span class="risk-item-name">Alteración de Identidad</span>
+              <div class="risk-item-badge">${getRiskBadge(r.riesgoIdentidad)}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  `;
+  modal.style.display = 'flex';
+};
+
+window.closeDetailModal = function() {
+  const modal = document.getElementById('detailModal');
+  if (modal) modal.style.display = 'none';
+};
+
+window.exportAdminCSV = function() {
+  if (!adminRecordsCache.length) {
+    alert("No hay registros para exportar.");
+    return;
+  }
+  const headers = ["ID", "Fecha", "Asesor", "Padre_Madre", "Celular", "Hijo", "Edad", "Importancia_1_10", "Prioridad_Tech", "Comportamiento", "Horas_Pantalla", "Plataformas", "Riesgo_Aislamiento", "Riesgo_Contenido", "Riesgo_Ansiedad", "Riesgo_Identidad"];
+  
+  const csvRows = [headers.join(",")];
+  adminRecordsCache.forEach(r => {
+    const dateFormatted = formatTimestamp(r.createdAt).replace(/,/g, '');
+    const plats = (Array.isArray(r.plataformas) ? r.plataformas.join("; ") : (r.plataformas || '')).replace(/"/g, '""');
+    const comp = (r.comportamiento || '').replace(/"/g, '""');
+    
+    const row = [
+      `"${r.id}"`,
+      `"${dateFormatted}"`,
+      `"${(r.asesor || '').replace(/"/g, '""')}"`,
+      `"${(r.nombrePadres || '').replace(/"/g, '""')}"`,
+      `"${(r.celular || '').replace(/"/g, '""')}"`,
+      `"${(r.nombreHijo || '').replace(/"/g, '""')}"`,
+      `"${r.edadHijo || ''}"`,
+      `"${r.importancia1_10 || ''}"`,
+      `"${r.prioridadTech || ''}"`,
+      `"${comp}"`,
+      `"${r.horasPantalla || ''}"`,
+      `"${plats}"`,
+      `"${r.riesgoAislamiento || ''}"`,
+      `"${r.riesgoContenido || ''}"`,
+      `"${r.riesgoAnsiedad || ''}"`,
+      `"${r.riesgoIdentidad || ''}"`
+    ];
+    csvRows.push(row.join(","));
+  });
+
+  const blob = new Blob(["\uFEFF" + csvRows.join("\n")], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", `diagnosticos_zentryos_${new Date().toISOString().slice(0, 10)}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 
 window.deleteRecord = async function(id) {
-  if (confirm('¿Seguro que deseas eliminar este registro?')) {
+  if (confirm('¿Seguro que deseas eliminar este registro de diagnóstico?')) {
     try {
       await deleteDoc(doc(db, "bienestar_diagnostics", id));
-      document.getElementById('row-' + id).remove();
+      adminRecordsCache = adminRecordsCache.filter(r => r.id !== id);
+      renderAdminRows(adminRecordsCache);
+      const countEl = document.getElementById('adminTotalCount');
+      if (countEl) countEl.innerText = `${adminRecordsCache.length} registros`;
     } catch(e) {
-      alert('Error eliminando: ' + e.message);
+      alert('Error al eliminar: ' + e.message);
     }
-  }
-};
-
-window.updateRecord = async function(id, field, value) {
-  try {
-    const ref = doc(db, "bienestar_diagnostics", id);
-    await updateDoc(ref, { [field]: value });
-  } catch(e) {
-    alert('Error editando: ' + e.message);
   }
 };
 
@@ -330,7 +542,5 @@ document.addEventListener('click', (e) => {
   }
 });
 
-window.updateRecord = updateRecord;
-window.deleteRecord = deleteRecord;
-window.closeAdminModal = closeAdminModal;
-window.toggleEdit = toggleEdit;
+window.renderAdminRows = renderAdminRows;
+window.formatTimestamp = formatTimestamp;

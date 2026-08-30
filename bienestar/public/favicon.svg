@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Exact soft pastel gradient matching Zentry design system -->
+    <linearGradient id="bienestarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0c3fc"/>
+      <stop offset="45%" stop-color="#cebafe"/>
+      <stop offset="80%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#b5dffc"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#8b5cf6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="512" height="512" rx="112" fill="url(#bienestarGrad)"/>
+
+  <!-- Minimalist White Squircle Inset Border (matches launcher icon) -->
+  <rect x="28" y="28" width="456" height="456" rx="92" fill="none" stroke="#ffffff" stroke-width="12" stroke-opacity="0.35"/>
+
+  <!-- Clean, bold, elegant FB Monogram in Pure White -->
+  <g filter="url(#softGlow)" fill="#ffffff">
+    <!-- "F" Glyph (Clean Geometric) -->
+    <path d="
+      M 101 160 
+      H 231 
+      V 210 
+      H 151 
+      V 245 
+      H 211 
+      V 295 
+      H 151 
+      V 352 
+      H 101 
+      Z
+    "/>
+
+    <!-- "B" Glyph (Harmonized Geometric) -->
+    <path d="
+      M 259 160 
+      H 351 
+      C 383 160 403 176 403 210 
+      C 403 238 386 252 359 256 
+      C 391 260 411 276 411 306 
+      C 411 338 385 352 351 352 
+      H 259 
+      Z 
+      M 309 202 
+      V 224 
+      H 346 
+      C 357 224 363 219 363 213 
+      C 363 207 357 202 346 202 
+      Z 
+      M 309 288 
+      V 310 
+      H 349 
+      C 361 310 369 304 369 299 
+      C 369 294 361 288 349 288 
+      Z
+    "/>
+  </g>
+</svg>

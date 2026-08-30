@@ -1,0 +1,28 @@
+{
+  "short_name": "Bienestar",
+  "name": "ZentryOS - Evaluación de Bienestar Digital",
+  "icons": [
+    {
+      "src": "/pwa-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/pwa-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/pwa-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#EBF1F5",
+  "theme_color": "#533B87",
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "ZentryOS Evaluación y Diagnóstico de Bienestar Digital Familiar"
+}

@@ -1,0 +1,28 @@
+{
+  "short_name": "DemoBook",
+  "name": "ZentryOS - DemoBook Slides",
+  "icons": [
+    {
+      "src": "/pwa-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/pwa-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/pwa-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0a0d14",
+  "theme_color": "#0a0d14",
+  "display": "standalone",
+  "orientation": "landscape",
+  "description": "ZentryOS DemoBook & Slides de Presentación Comercial y Técnica"
+}

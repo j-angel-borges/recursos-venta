@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Exact soft pastel gradient matching Zentry design system -->
+    <linearGradient id="demobookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0c3fc"/>
+      <stop offset="45%" stop-color="#cebafe"/>
+      <stop offset="80%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#b5dffc"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#8b5cf6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="512" height="512" rx="112" fill="url(#demobookGrad)"/>
+
+  <!-- Minimalist White Squircle Inset Border (matches launcher icon) -->
+  <rect x="28" y="28" width="456" height="456" rx="92" fill="none" stroke="#ffffff" stroke-width="12" stroke-opacity="0.35"/>
+
+  <!-- Clean, bold, elegant Monogram "D" in Pure White -->
+  <g filter="url(#softGlow)" fill="#ffffff">
+    <!-- "D" Glyph (Harmonized Geometric) -->
+    <path d="
+      M 160 160 
+      H 265 
+      C 318 160 355 198 355 256 
+      C 355 314 318 352 265 352 
+      H 160 
+      Z 
+      M 210 210 
+      V 302 
+      H 260 
+      C 288 302 305 282 305 256 
+      C 305 230 288 210 260 210 
+      Z
+    "/>
+  </g>
+</svg>

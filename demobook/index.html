@@ -216,7 +216,6 @@
                     <div class="hole" data-index="6"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
                     <div class="hole" data-index="7"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
                     <div class="hole" data-index="8"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
-                    <div class="hole" data-index="9"><div class="rabbit-target"><img src="data:," alt="rabbit"></div></div>
                 </div>
 
                 <button class="btn-primary" id="btnStartWhack" style="margin-top: 5px;">Iniciar Juego</button>
@@ -377,159 +376,162 @@
         </div>
       </div>
 
-      <!-- SLIDE 6: EVIDENCIA EN VIDEO 1/2 -->
+      <!-- SLIDE 6: EVIDENCIA EN VIDEO (YOUTUBE EMBEDS CON RECORTE START/END) -->
       <div class="slide" id="slide-5">
         <div class="slide-header">
           <h2 class="slide-title">Evidencia en Video</h2>
+          <p class="slide-subtitle">Testimonios y análisis reales sobre IA, dopamina y economía de la atención. Usa los campos de recorte para integrar solo los segundos o minutos que refuercen tu argumento.</p>
         </div>
         <div class="slide-content video-slide-content">
-          <div class="video-rows">
+          <div class="video-grid">
 
-            <!-- FILA VIDEO 1 -->
-            <div class="video-row">
-              <div class="video-card" id="video-card-1">
-                <div class="video-card-head">
-                  <span class="video-card-badge">DW Español</span>
-                  <h3>La IA preocupa a sus propios creadores</h3>
-                </div>
-                <div class="video-frame">
-                  <iframe id="yt-1" class="yt-embed" src="https://www.youtube.com/embed/0VzVoaUY79k?rel=0&modestbranding=1" title="La IA preocupa a sus propios creadores" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-clip-controls">
-                  <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
-                  <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
-                  <button type="button" class="btn-clip" onclick="applyVideoClip('1','0VzVoaUY79k')">Aplicar recorte</button>
-                  <button type="button" class="btn-clip ghost" onclick="resetVideoClip('1','0VzVoaUY79k')">Ver completo</button>
-                </div>
+            <!-- VIDEO 1 -->
+            <div class="video-card" id="video-card-1">
+              <div class="video-card-head">
+                <span class="video-card-badge">DW Español</span>
+                <h3>La IA preocupa a sus propios creadores</h3>
               </div>
-              <div class="video-ref">
-                <p class="video-ref-quote">“Los propios creadores de la IA ya advierten que su tecnología puede descontrolarse.”</p>
+              <div class="video-frame">
+                <iframe id="yt-1" class="yt-embed" src="https://www.youtube.com/embed/0VzVoaUY79k?rel=0&modestbranding=1" title="La IA preocupa a sus propios creadores" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
+              <div class="video-clip-controls">
+                <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
+                <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
+                <button type="button" class="btn-clip" onclick="applyVideoClip('1','0VzVoaUY79k')">Aplicar recorte</button>
+                <button type="button" class="btn-clip ghost" onclick="resetVideoClip('1','0VzVoaUY79k')">Ver completo</button>
+              </div>
+              <p class="video-card-note">Contexto: los propios creadores de IA advierten sobre los riesgos de la tecnología que construyen.</p>
             </div>
 
-            <!-- FILA VIDEO 2 -->
-            <div class="video-row">
-              <div class="video-card" id="video-card-2">
-                <div class="video-card-head">
-                  <span class="video-card-badge">El Robot de Platón</span>
-                  <h3>El MIT Muestra el Peligro del ChatGPT</h3>
-                </div>
-                <div class="video-frame">
-                  <iframe id="yt-2" class="yt-embed" src="https://www.youtube.com/embed/P_gwEo9qz3w?rel=0&modestbranding=1" title="El MIT Muestra el Peligro del ChatGPT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-clip-controls">
-                  <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
-                  <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
-                  <button type="button" class="btn-clip" onclick="applyVideoClip('2','P_gwEo9qz3w')">Aplicar recorte</button>
-                  <button type="button" class="btn-clip ghost" onclick="resetVideoClip('2','P_gwEo9qz3w')">Ver completo</button>
-                </div>
+            <!-- VIDEO 2 -->
+            <div class="video-card" id="video-card-2">
+              <div class="video-card-head">
+                <span class="video-card-badge">El Robot de Platón</span>
+                <h3>El MIT Muestra el Peligro del ChatGPT</h3>
               </div>
-              <div class="video-ref">
-                <p class="video-ref-quote">“El MIT demuestra cómo un modelo de lenguaje puede manipular tus decisiones.”</p>
+              <div class="video-frame">
+                <iframe id="yt-2" class="yt-embed" src="https://www.youtube.com/embed/P_gwEo9qz3w?rel=0&modestbranding=1" title="El MIT Muestra el Peligro del ChatGPT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
+              <div class="video-clip-controls">
+                <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
+                <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
+                <button type="button" class="btn-clip" onclick="applyVideoClip('2','P_gwEo9qz3w')">Aplicar recorte</button>
+                <button type="button" class="btn-clip ghost" onclick="resetVideoClip('2','P_gwEo9qz3w')">Ver completo</button>
+              </div>
+              <p class="video-card-note">Contexto: el MIT demuestra cómo los modelos de lenguaje pueden ser utilizados para manipular.</p>
+            </div>
+
+            <!-- VIDEO 3 -->
+            <div class="video-card" id="video-card-3">
+              <div class="video-card-head">
+                <span class="video-card-badge">DW Cómo te afecta</span>
+                <h3>Por qué es peligroso contarle tus problemas a ChatGPT</h3>
+              </div>
+              <div class="video-frame">
+                <iframe id="yt-3" class="yt-embed" src="https://www.youtube.com/embed/4Ax6hGhRvnI?rel=0&modestbranding=1" title="Por qué es peligroso contarle tus problemas a ChatGPT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="video-clip-controls">
+                <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
+                <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
+                <button type="button" class="btn-clip" onclick="applyVideoClip('3','4Ax6hGhRvnI')">Aplicar recorte</button>
+                <button type="button" class="btn-clip ghost" onclick="resetVideoClip('3','4Ax6hGhRvnI')">Ver completo</button>
+              </div>
+              <p class="video-card-note">Contexto: la dependencia emocional de los chatbots y la ilusión de intimidad con una máquina.</p>
+            </div>
+
+            <!-- VIDEO 4 -->
+            <div class="video-card" id="video-card-4">
+              <div class="video-card-head">
+                <span class="video-card-badge">EDteam</span>
+                <h3>¿Se acerca el dominio de Linux gracias a la IA?</h3>
+              </div>
+              <div class="video-frame">
+                <iframe id="yt-4" class="yt-embed" src="https://www.youtube.com/embed/a-xYN6kfK-Q?rel=0&modestbranding=1" title="¿Se acerca el dominio de Linux gracias a la IA?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="video-clip-controls">
+                <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
+                <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
+                <button type="button" class="btn-clip" onclick="applyVideoClip('4','a-xYN6kfK-Q')">Aplicar recorte</button>
+                <button type="button" class="btn-clip ghost" onclick="resetVideoClip('4','a-xYN6kfK-Q')">Ver completo</button>
+              </div>
+              <p class="video-card-note">Contexto: cómo la IA está reconfigurando el ecosistema tecnológico y el software libre.</p>
             </div>
 
           </div>
         </div>
       </div>
 
-      <!-- SLIDE 7: EVIDENCIA EN VIDEO 2/2 -->
+      <!-- SLIDE 7: STATS PLACEHOLDER · BARRAS COMPARATIVAS (HANADEMI/PLATZI) -->
       <div class="slide" id="slide-6">
         <div class="slide-header">
-          <h2 class="slide-title">Evidencia en Video</h2>
+          <h2 class="slide-title">Impacto por Comparación</h2>
+          <p class="slide-subtitle">Gráfico estadístico · barras comparativas — slot preparado para integrar un gráfico estilo Hanademi/Platzi</p>
         </div>
-        <div class="slide-content video-slide-content">
-          <div class="video-rows">
-
-            <!-- FILA VIDEO 3 -->
-            <div class="video-row">
-              <div class="video-card" id="video-card-3">
-                <div class="video-card-head">
-                  <span class="video-card-badge">DW Cómo te afecta</span>
-                  <h3>Por qué es peligroso contarle tus problemas a ChatGPT</h3>
-                </div>
-                <div class="video-frame">
-                  <iframe id="yt-3" class="yt-embed" src="https://www.youtube.com/embed/4Ax6hGhRvnI?rel=0&modestbranding=1" title="Por qué es peligroso contarle tus problemas a ChatGPT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-clip-controls">
-                  <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
-                  <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
-                  <button type="button" class="btn-clip" onclick="applyVideoClip('3','4Ax6hGhRvnI')">Aplicar recorte</button>
-                  <button type="button" class="btn-clip ghost" onclick="resetVideoClip('3','4Ax6hGhRvnI')">Ver completo</button>
-                </div>
+        <div class="slide-content stats-slide-content">
+          <div class="stat-slot" id="stat-slot-7" data-stat-slot="slide-7" data-chart-type="reference_bars" data-aspect="4:3">
+            <div class="stat-slot-placeholder">
+              <div class="stat-ghost-bars" aria-hidden="true">
+                <span style="--h:30%"></span><span style="--h:46%"></span><span style="--h:62%"></span><span style="--h:84%"></span>
               </div>
-              <div class="video-ref">
-                <p class="video-ref-quote">“Contarle tus problemas a un chatbot es una intimidad falsa con una máquina.”</p>
+              <div class="stat-slot-meta">
+                <span class="stat-slot-kicker">SLOT · BARRAS COMPARATIVAS</span>
+                <strong>Gráfico Hanademi/Platzi</strong>
+                <p>Monta aquí el SVG 1600×1200 (o PNG) generado por la habilidad de gráficos estadísticos. Formato objetivo: barras animadas desde cero, claim en grande, acento púrpura Zentry y fuentes citadas al pie.</p>
               </div>
             </div>
-
-            <!-- FILA VIDEO 4 -->
-            <div class="video-row">
-              <div class="video-card" id="video-card-4">
-                <div class="video-card-head">
-                  <span class="video-card-badge">EDteam</span>
-                  <h3>¿Se acerca el dominio de Linux gracias a la IA?</h3>
-                </div>
-                <div class="video-frame">
-                  <iframe id="yt-4" class="yt-embed" src="https://www.youtube.com/embed/a-xYN6kfK-Q?rel=0&modestbranding=1" title="¿Se acerca el dominio de Linux gracias a la IA?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-clip-controls">
-                  <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
-                  <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
-                  <button type="button" class="btn-clip" onclick="applyVideoClip('4','a-xYN6kfK-Q')">Aplicar recorte</button>
-                  <button type="button" class="btn-clip ghost" onclick="resetVideoClip('4','a-xYN6kfK-Q')">Ver completo</button>
-                </div>
-              </div>
-              <div class="video-ref">
-                <p class="video-ref-quote">“La IA está reconfigurando el poder en el ecosistema tecnológico global.”</p>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
 
-      <!-- SLIDE 8: GRÁFICO BARRAS · PLATAFORMAS DIGITALES EN MENORES LATAM -->
+      <!-- SLIDE 8: STATS PLACEHOLDER · LÍNEA DE TENDENCIA -->
       <div class="slide" id="slide-7">
         <div class="slide-header">
-          <h2 class="slide-title">Impacto por Comparación</h2>
-          <p class="slide-subtitle">Uso de plataformas digitales en menores de 9-17 años · Brasil 2024 · ICT Kids Online Brasil / Cetic.br / UNESCO</p>
+          <h2 class="slide-title">Tendencia del Drenaje</h2>
+          <p class="slide-subtitle">Gráfico estadístico · línea de tendencia — slot preparado para integrar un gráfico estilo Hanademi/Platzi</p>
         </div>
         <div class="slide-content stats-slide-content">
-          <div class="stat-slot" id="stat-slot-7" data-stat-slot="slide-8" data-chart-type="reference_bars" data-aspect="4:3">
-            <img class="stat-chart-img" src="/graficos/04_attention_collapse.svg" alt="Colapso del Tiempo de Enfoque Sostenido · UC Irvine · Dra. Gloria Mark">
+          <div class="stat-slot" id="stat-slot-8" data-stat-slot="slide-8" data-chart-type="line" data-aspect="4:3">
+            <div class="stat-slot-placeholder">
+              <svg class="stat-ghost-line" viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true">
+                <polyline points="0,230 90,210 180,180 270,160 360,120 450,90 540,50 600,30" fill="none" stroke="#D6C8FA" stroke-width="4" stroke-dasharray="8 8"></polyline>
+                <polyline points="0,240 90,225 180,200 270,185 360,160 450,140 540,110 600,90" fill="none" stroke="#533B87" stroke-width="4" opacity="0.45"></polyline>
+              </svg>
+              <div class="stat-slot-meta">
+                <span class="stat-slot-kicker">SLOT · LÍNEA DE TENDENCIA</span>
+                <strong>Gráfico Hanademi/Platzi</strong>
+                <p>Monta aquí el SVG 1600×1200 (o PNG) generado por la habilidad. Formato objetivo: línea que dibuja desde cero, eje temporal, hito anotado y fuentes citadas al pie.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- SLIDE 9: GRÁFICO TENDENCIA · CRECIMIENTO ECOSISTEMA TECH LATAM -->
+      <!-- SLIDE 9: STATS PLACEHOLDER · BIG NUMBERS / CONTADORES -->
       <div class="slide" id="slide-8">
         <div class="slide-header">
-          <h2 class="slide-title">Tendencia del Drenaje</h2>
-          <p class="slide-subtitle">Multas, acuerdos y veredictos contra Big Tech · Millones de USD · EE.UU. y Europa · 2024-2026</p>
-        </div>
-        <div class="slide-content stats-slide-content">
-          <div class="stat-slot" id="stat-slot-8" data-stat-slot="slide-9" data-chart-type="line" data-aspect="4:3">
-            <img class="stat-chart-img" src="/graficos/05_litigation_tech.svg" alt="Multas, Acuerdos y Veredictos contra Big Tech">
-          </div>
-        </div>
-      </div>
-
-      <!-- SLIDE 10: GRÁFICO BIG NUMBERS · COSTO DEL JUEGO DIGITAL -->
-      <div class="slide" id="slide-9">
-        <div class="slide-header">
           <h2 class="slide-title">El Costo en Números</h2>
-          <p class="slide-subtitle">Colapso del Tiempo de Enfoque Sostenido · Segundos de atención continua · UC Irvine · Dra. Gloria Mark</p>
+          <p class="slide-subtitle">Gráfico estadístico · big numbers y contadores animados — slot preparado para integrar un gráfico estilo Hanademi/Platzi</p>
         </div>
         <div class="slide-content stats-slide-content">
-          <div class="stat-slot" id="stat-slot-9" data-stat-slot="slide-10" data-chart-type="big_numbers" data-aspect="4:3">
-            <img class="stat-chart-img" src="/graficos/04_attention_collapse.svg" alt="Colapso del Tiempo de Enfoque Sostenido · UC Irvine · Dra. Gloria Mark">
+          <div class="stat-slot" id="stat-slot-9" data-stat-slot="slide-9" data-chart-type="big_numbers" data-aspect="4:3">
+            <div class="stat-slot-placeholder">
+              <div class="stat-ghost-numbers">
+                <div class="stat-ghost-num"><span>+S/ 412 M</span><small>Facturación META Perú</small></div>
+                <div class="stat-ghost-num"><span>31 M</span><small>Usuarios activos</small></div>
+                <div class="stat-ghost-num"><span>1 cént.</span><small>Por hora de tu hijo</small></div>
+              </div>
+              <div class="stat-slot-meta">
+                <span class="stat-slot-kicker">SLOT · BIG NUMBERS / CONTADORES</span>
+                <strong>Gráfico Hanademi/Platzi</strong>
+                <p>Monta aquí el SVG 1600×1200 (o PNG) generado por la habilidad. Formato objetivo: contadores animados al entrar en viewport, cifras gigantes, color menta/púrpura y fuentes citadas al pie.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- SLIDE 11: SCROLL INFINITO VS CAJA DE SKINNER -->
-      <div class="slide" id="slide-10">
+      <!-- SLIDE 10: SCROLL INFINITO VS CAJA DE SKINNER -->
+      <div class="slide" id="slide-9">
         <div class="slide-header">
           <h2 class="slide-title">Scroll Infinito: La Caja de Skinner</h2>
           <p class="slide-subtitle">Experimento interactivo — refuerzo de razón variable y resistencia a la extinción (Skinner, 1938 · Ferster &amp; Skinner, 1957)</p>
@@ -601,7 +603,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
         Atrás
       </button>
-      <div class="slide-indicator" id="slide-ind">1 / 11</div>
+      <div class="slide-indicator" id="slide-ind">1 / 10</div>
       <button class="nav-btn" id="next-btn" onclick="changeSlide(1)">
         Siguiente
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>

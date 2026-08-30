@@ -1,0 +1,87 @@
+{
+  "suite_topic": "Adopción de Inteligencia Artificial Generativa y Productividad en el Trabajo en América Latina y el Mundo (2024-2026)",
+  "timestamp": "2026-08-30T02:16:11.906112+00:00",
+  "theme": "project-adapted-recursos-venta",
+  "theme_mode": "dark",
+  "workspace_root": "D:\\1_jose_angel\\1_GitHub\\Zentry\\recursos-venta",
+  "output_directory": "D:\\1_jose_angel\\1_GitHub\\Zentry\\recursos-venta\\generaciones_graficos\\Gráficos Adopción de Inteligencia Artificial Generativa y Productividad en el T 29-08-26",
+  "total_charts": 5,
+  "total_files": 25,
+  "charts": [
+    {
+      "id": "grafico_1",
+      "title": "Tasa de Adopción Corporativa de IA Generativa (2024 - 2026)",
+      "subtitle": "Porcentaje de empresas con pilotos y soluciones GenAI en producción (%)",
+      "type": "grouped_bar",
+      "badge": "TRANSFORMACIÓN DIGITAL // ADOPCIÓN CORPORATIVA",
+      "source": "Microsoft WTI, IDC Latin America, McKinsey State of AI, INEI Perú (120 fuentes)",
+      "files": {
+        "svg": "grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.svg",
+        "html": "grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.html",
+        "png": "grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.png",
+        "mp4": "grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.mp4",
+        "gif": "grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.gif"
+      }
+    },
+    {
+      "id": "grafico_2",
+      "title": "Difusión Activa de Herramientas IA en Trabajadores de América Latina",
+      "subtitle": "Porcentaje de fuerza laboral activa formal que utiliza GenAI en sus flujos diarios (%)",
+      "type": "bar_vertical",
+      "badge": "LATAM // DIFUSIÓN LABORAL",
+      "source": "Microsoft AI Diffusion Tracker, BID / CENIA ILIA, OIT, CEPAL, INEI (120 fuentes)",
+      "files": {
+        "svg": "grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.svg",
+        "html": "grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.html",
+        "png": "grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.png",
+        "mp4": "grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.mp4",
+        "gif": "grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.gif"
+      }
+    },
+    {
+      "id": "grafico_3",
+      "title": "Ahorro de Tiempo Semanal y Aceleración de Tareas por Función Laboral",
+      "subtitle": "Horas promedio ahorradas por semana en puestos del conocimiento (2025/2026)",
+      "type": "bar_vertical",
+      "badge": "EFICIENCIA // IMPACTO OPERATIVO",
+      "source": "Stanford HAI, MIT Brynjolfsson, GitHub Copilot Studies, McKinsey (120 fuentes)",
+      "files": {
+        "svg": "grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.svg",
+        "html": "grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.html",
+        "png": "grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.png",
+        "mp4": "grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.mp4",
+        "gif": "grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.gif"
+      }
+    },
+    {
+      "id": "grafico_4",
+      "title": "Estructura del Impacto de GenAI en la Fuerza Laboral Regional",
+      "subtitle": "Distribución del empleo en América Latina según exposición tecnológica (CEPAL / OIT / BID)",
+      "type": "donut",
+      "badge": "MERCADO LABORAL // CEPAL & OIT",
+      "source": "OIT, CEPAL, Banco Mundial, INEI Perú ENAHO (120 fuentes)",
+      "files": {
+        "svg": "grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.svg",
+        "html": "grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.html",
+        "png": "grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.png",
+        "mp4": "grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.mp4",
+        "gif": "grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.gif"
+      }
+    },
+    {
+      "id": "grafico_5",
+      "title": "Retorno de Inversión (ROI) y Eficiencia Operativa de la IA Generativa",
+      "subtitle": "Multiplicador de retorno estimado y período de recuperación en empresas (2024 - 2026)",
+      "type": "slide_deck",
+      "badge": "DIRECTORIO // REPORTE EJECUTIVO 16:9",
+      "source": "IDC Enterprise AI Survey, McKinsey, CEPAL, Microsoft WTI, INEI Perú (120 fuentes)",
+      "files": {
+        "svg": "grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.svg",
+        "html": "grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.html",
+        "png": "grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.png",
+        "mp4": "grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.mp4",
+        "gif": "grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.gif"
+      }
+    }
+  ]
+}

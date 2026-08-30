@@ -1,0 +1,692 @@
+{
+  "timestamp": "2026-08-30T02:16:12.152504+00:00",
+  "target": "D:\\1_jose_angel\\1_GitHub\\Zentry\\recursos-venta\\generaciones_graficos\\Gráficos Adopción de Inteligencia Artificial Generativa y Productividad en el T 29-08-26",
+  "verdict": "WARN",
+  "total_checks": 96,
+  "passed_checks": 94,
+  "failed_checks": 2,
+  "healed_actions_count": 0,
+  "healed_actions": [],
+  "details": [
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File charts_manifest.json (5.1 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in charts_manifest.json",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File deep_research_chart.json (36.2 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in deep_research_chart.json",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File deep_research_report.md (12.0 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in deep_research_report.md",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.gif (1232.9 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.html (7.8 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.mp4 (268.9 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.png (99.5 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.svg (6.6 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_1_tasa_de_adopcion_corporativa_de_ia_generativa_2024_2026.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Layout clearance and anti-collision geometry verified",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.gif (1057.2 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.html (7.5 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.mp4 (235.5 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.png (84.3 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.svg (6.3 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_2_difusion_activa_de_herramientas_ia_en_trabajadores_de_america_la.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": false,
+      "severity": "WARNING",
+      "details": "Dense X-axis labels (>=6 items) without multiline separation or rotation risk horizontal collision",
+      "data": {
+        "issues": [
+          "Dense X-axis labels (>=6 items) without multiline separation or rotation risk horizontal collision"
+        ]
+      }
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.gif (947.2 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.html (7.1 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.mp4 (240.1 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.png (98.5 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.svg (5.9 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_3_ahorro_de_tiempo_semanal_y_aceleracion_de_tareas_por_funcion_lab.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Layout clearance and anti-collision geometry verified",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.gif (880.3 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.html (6.7 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.mp4 (264.7 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.png (167.6 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.svg (5.5 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_4_estructura_del_impacto_de_genai_en_la_fuerza_laboral_regional.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Layout clearance and anti-collision geometry verified",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.gif (1637.7 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.html (8.5 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.mp4 (382.6 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from raw text scan",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.png (186.9 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Binary media exempt from encoding scan",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.svg (7.2 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_5_retorno_de_inversion_roi_y_eficiencia_operativa_de_la_ia_generat.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": false,
+      "severity": "WARNING",
+      "details": "Dense X-axis labels (>=6 items) without multiline separation or rotation risk horizontal collision",
+      "data": {
+        "issues": [
+          "Dense X-axis labels (>=6 items) without multiline separation or rotation risk horizontal collision"
+        ]
+      }
+    },
+    {
+      "name": "Geographic Benchmark Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Non-LATAM topic; geographic benchmark optional",
+      "data": {}
+    },
+    {
+      "name": "Suite Multi-Format Completeness Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All charts possess verified 5/5 format deliverables (PNG, SVG, MP4, GIF, HTML)",
+      "data": {}
+    }
+  ]
+}

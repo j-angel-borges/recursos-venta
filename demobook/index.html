@@ -532,71 +532,6 @@
         </div>
       </div>
 
-      <!-- SLIDE 11: SCROLL INFINITO VS CAJA DE SKINNER -->
-      <div class="slide" id="slide-10">
-        <div class="slide-header">
-          <h2 class="slide-title">Scroll Infinito: La Caja de Skinner</h2>
-          <p class="slide-subtitle">Experimento interactivo — refuerzo de razón variable y resistencia a la extinción (Skinner, 1938 · Ferster &amp; Skinner, 1957)</p>
-        </div>
-        <div class="slide-content skinner-slide-content">
-          <div class="skinner-grid">
-
-            <!-- PANEL IZQUIERDO: FEED -->
-            <div class="skinner-panel">
-              <div class="skinner-panel-head">
-                <span>📱 Tu Feed</span>
-                <span class="skinner-phase" id="skinner-phase-label">Sin iniciar</span>
-              </div>
-              <div class="skinner-feed" id="skinner-feed">
-                <div class="skinner-feed-intro">Presiona <strong>Iniciar Experimento</strong> y desliza el feed para "jalar la palanca".</div>
-              </div>
-              <div class="skinner-controls">
-                <button type="button" class="btn-clip" id="skinner-start-btn" onclick="startSkinnerGame()">Iniciar Experimento</button>
-                <button type="button" class="btn-clip ghost" onclick="resetSkinnerGame()">Reiniciar</button>
-              </div>
-            </div>
-
-            <!-- PANEL DERECHO: CAJA DE SKINNER -->
-            <div class="skinner-panel">
-              <div class="skinner-panel-head">
-                <span>🐀 La Caja de Skinner</span>
-                <span>Refuerzo intermitente</span>
-              </div>
-              <div class="skinner-box">
-                <div class="skinner-pellet" id="skinner-pellet"></div>
-                <svg class="skinner-svg" viewBox="0 0 320 240" role="img" aria-label="Caja de Skinner con rata y palanca">
-                  <rect x="10" y="10" width="300" height="220" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"></rect>
-                  <rect x="204" y="18" width="62" height="34" rx="6" fill="#533B87"></rect>
-                  <rect x="220" y="52" width="30" height="26" fill="#D6C8FA"></rect>
-                  <g id="skinner-lever" class="skinner-lever">
-                    <rect x="70" y="98" width="12" height="58" rx="4" fill="#94A3B8"></rect>
-                    <rect x="58" y="88" width="36" height="14" rx="6" fill="#533B87"></rect>
-                  </g>
-                  <g class="skinner-rat">
-                    <path d="M118 168 Q100 168 92 156" stroke="#EF9FB5" stroke-width="5" fill="none" stroke-linecap="round"></path>
-                    <ellipse cx="130" cy="166" rx="26" ry="16" fill="#F4C2CF"></ellipse>
-                    <circle cx="154" cy="152" r="12" fill="#F4C2CF"></circle>
-                    <circle cx="160" cy="149" r="4.5" fill="#7A4E5F"></circle>
-                    <circle cx="150" cy="146" r="5" fill="#EF9FB5"></circle>
-                  </g>
-                  <ellipse cx="140" cy="216" rx="34" ry="10" fill="#C2F4E7" stroke="#533B87" stroke-width="2"></ellipse>
-                  <text x="160" y="26" font-family="Outfit, sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle">DISPENSADOR</text>
-                </svg>
-              </div>
-              <div class="skinner-stats">
-                <div class="skinner-stat"><span id="skinner-presses">0</span> jaladas de palanca</div>
-                <div class="skinner-stat"><span id="skinner-pellets">0</span> pellets recibidos</div>
-                <div class="skinner-stat"><span id="skinner-ratio">—</span> razón actual</div>
-              </div>
-              <div class="skinner-conclusion" id="skinner-conclusion">
-                Cada deslizamiento es una palanca. Al inicio el premio llega seguido; luego se espacia; al final ya no llega… pero la conducta continúa.
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-  
     </div>
 
     <!-- CONTROLES -->
@@ -605,7 +540,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
         Atrás
       </button>
-      <div class="slide-indicator" id="slide-ind">1 / 11</div>
+      <div class="slide-indicator" id="slide-ind">1 / 10</div>
       <button class="nav-btn" id="next-btn" onclick="changeSlide(1)">
         Siguiente
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retorno de Inversión (ROI) y Eficiencia Operativa de la IA Generativa</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: #0A0F1D;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  .chart-container {
+    width: 1920px;
+    height: 1080px;
+    display: block;
+    position: relative;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+  }
+  .chart-container svg {
+    display: block;
+    width: 1920px;
+    height: 1080px;
+  }
+  .interactive-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: #202538;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid #2E3856;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    opacity: 0;
+    transition: opacity 150ms ease;
+  }
+</style>
+</head>
+<body>
+<div class="chart-container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&amp;family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap');
+.bg { fill: #0A0F1D; }
+.card-bg { fill: #131827; stroke: #2E3856; stroke-width: 1.5px; rx: 24px; }
+.hero-card { fill: #202538; stroke: #23293F; stroke-width: 1px; rx: 16px; }
+.badge { font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace; font-size: 13px; font-weight: 700; fill: #00F2FE; letter-spacing: 0.08em; }
+.slide-title { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 38px; font-weight: 700; fill: #FFFFFF; letter-spacing: -0.02em; }
+.slide-sub { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 18px; font-weight: 400; fill: #94A3B8; }
+.kpi-num { font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace; font-size: 42px; font-weight: 700; fill: #FFFFFF; font-feature-settings: "tnum" 1, "zero" 1; }
+.kpi-lbl { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #E2E8F0; }
+.takeaway-title { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #00F2FE; letter-spacing: 0.04em; }
+.takeaway-body { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 400; fill: #E2E8F0; line-height: 1.5; }
+.footer-text { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 400; fill: #64748B; }
+]]></style>
+<rect width="1920" height="1080" class="bg"/>
+<rect x="40" y="40" width="1840" height="1000" class="card-bg"/>
+<text x="90" y="100" class="badge">DIRECTORIO // REPORTE EJECUTIVO 16:9</text>
+<text x="90" y="150" class="slide-title">Retorno de Inversión (ROI) y Eficiencia Operativa de la IA Generativa</text>
+<text x="90" y="185" class="slide-sub">Multiplicador de retorno estimado y período de recuperación en empresas (2024 - 2026)</text>
+<g transform="translate(60, 210)">
+
+  <g id="background">
+    <rect width="1120" height="720" class="canvas-bg"/>
+    <rect x="20" y="20" width="1080" height="680" class="card-surface"/>
+  </g>
+  <g id="grid">
+    <line x1="90" y1="635.0" x2="1060" y2="635.0" class="grid-line"/>
+    <line x1="90" y1="549.2" x2="1060" y2="549.2" class="grid-line"/>
+    <line x1="90" y1="463.3" x2="1060" y2="463.3" class="grid-line"/>
+    <line x1="90" y1="377.5" x2="1060" y2="377.5" class="grid-line"/>
+    <line x1="90" y1="291.7" x2="1060" y2="291.7" class="grid-line"/>
+    <line x1="90" y1="205.8" x2="1060" y2="205.8" class="grid-line"/>
+    <line x1="90" y1="120.0" x2="1060" y2="120.0" class="grid-line"/>
+  </g>
+  <g id="axes">
+    <text x="78" y="639.0" class="tick-label" text-anchor="end">3</text>
+    <text x="78" y="553.2" class="tick-label" text-anchor="end">3</text>
+    <text x="78" y="467.3" class="tick-label" text-anchor="end">3</text>
+    <text x="78" y="381.5" class="tick-label" text-anchor="end">3</text>
+    <text x="78" y="295.7" class="tick-label" text-anchor="end">3</text>
+    <text x="78" y="209.8" class="tick-label" text-anchor="end">4</text>
+    <text x="78" y="124.0" class="tick-label" text-anchor="end">4</text>
+    <text x="159.3" y="657.0" class="axis-label" text-anchor="middle">EE.UU.</text>
+    <text x="297.9" y="657.0" class="axis-label" text-anchor="middle">Global</text>
+    <text x="436.4" y="657.0" class="axis-label" text-anchor="middle">Brasil</text>
+    <text x="575.0" y="657.0" class="axis-label" text-anchor="middle">México</text>
+    <text x="713.6" y="657.0" class="axis-label" text-anchor="middle">Colombia</text>
+    <text x="852.1" y="657.0" class="axis-label" text-anchor="middle">Perú</text>
+    <text x="990.7" y="657.0" class="axis-label" text-anchor="middle">Chile</text>
+    <line x1="90" y1="1750.8" x2="1060" y2="1750.8" class="axis-line"/>
+  </g>
+  <g id="series">
+    <rect x="135.3" y="120.0" width="42.2" height="1630.8" fill="#3D51F2" rx="4"/>
+    <rect x="273.9" y="248.7" width="42.2" height="1502.1" fill="#8E9BF7" rx="4"/>
+    <rect x="412.4" y="420.4" width="42.2" height="1330.4" fill="#00F0FF" rx="4"/>
+    <rect x="551.0" y="506.3" width="42.2" height="1244.6" fill="#FE7E57" rx="4"/>
+    <rect x="689.6" y="549.2" width="42.2" height="1201.7" fill="#F2D412" rx="4"/>
+    <rect x="828.1" y="592.1" width="42.2" height="1158.8" fill="#0AE88A" rx="4"/>
+    <rect x="966.7" y="635.0" width="42.2" height="1115.8" fill="#F0524B" rx="4"/>
+  </g>
+  <g id="labels">
+  <g id="header">
+    <circle cx="50" cy="51" r="4" fill="#00F2FE"/>
+    <text x="62" y="55" class="badge-text">DIRECTORIO // REPORTE EJECUTIVO 16:9</text>
+    <text x="50" y="85" class="chart-title">Retorno de Inversión (ROI) y Eficiencia Operativa de la IA Generativa</text>
+    <text x="50" y="108" class="chart-subtitle">Multiplicador de retorno estimado y período de recuperación en empresas (2024 - 2026)</text>
+  </g>
+  </g>
+  <g id="source">
+  <g id="footer">
+    <text x="50" y="685" class="footer-text">Fuente: IDC Enterprise AI Survey, McKinsey, CEPAL, Microsoft WTI, INEI Perú (120 fuentes)</text>
+  </g>
+  </g>
+
+</g>
+<rect x="1240" y="230" width="580" height="125" class="hero-card"/>
+<line x1="1240" y1="234" x2="1285" y2="234" stroke="#0AE88A" stroke-width="4" stroke-linecap="round"/>
+<text x="1265" y="270" class="kpi-lbl">ROI Medio Regional</text>
+<text x="1265" y="318" class="kpi-num">3.2x</text>
+<text x="1795" y="318" class="takeaway-title" fill="#00F2FE" text-anchor="end">+45.5%</text>
+<rect x="1240" y="370" width="580" height="125" class="hero-card"/>
+<line x1="1240" y1="374" x2="1285" y2="374" stroke="#00F0FF" stroke-width="4" stroke-linecap="round"/>
+<text x="1265" y="410" class="kpi-lbl">Ahorro Semanal Medio</text>
+<text x="1265" y="458" class="kpi-num">4.7 hrs</text>
+<text x="1795" y="458" class="takeaway-title" fill="#00F2FE" text-anchor="end">+35.8%</text>
+<rect x="1240" y="520" width="580" height="420" class="hero-card"/>
+<text x="1265" y="556" class="takeaway-title">HALLAZGOS CLAVE &amp; CONCLUSIONES</text>
+<circle cx="1270" cy="585" r="3" fill="#00F2FE"/>
+<text x="1284" y="590" class="takeaway-body">Tendencia de crecimiento sostenido a lo largo del período ev</text>
+<circle cx="1270" cy="620" r="3" fill="#00F2FE"/>
+<text x="1284" y="625" class="takeaway-body">Consolidación de adopción en segmentos clave de mercado.</text>
+<circle cx="1270" cy="655" r="3" fill="#00F2FE"/>
+<text x="1284" y="660" class="takeaway-body">Eficiencia operativa reflejada en métricas de rendimiento.</text>
+<text x="90" y="1015" class="footer-text">Fuente: IDC Enterprise AI Survey, McKinsey, CEPAL, Microsoft WTI, INEI Perú (120 fuentes)</text>
+<text x="1830" y="1015" class="footer-text" text-anchor="end">DATA INTELLIGENCE // REPORTE EJECUTIVO</text>
+</svg>
+  <div class="interactive-tooltip" id="tooltip"></div>
+</div>
+</body>
+</html>

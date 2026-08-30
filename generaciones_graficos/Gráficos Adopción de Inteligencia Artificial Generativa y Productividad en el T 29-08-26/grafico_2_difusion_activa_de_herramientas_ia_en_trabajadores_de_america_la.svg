@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap');
+
+:root {
+  --pz-canvas: #0A0F1D;
+  --pz-surface: #131827;
+  --pz-elevated: #202538;
+  --pz-border: #2E3856;
+  --pz-border-subtle: #23293F;
+  --pz-grid: #23293F;
+  --pz-text-primary: #FFFFFF;
+  --pz-text-secondary: #E2E8F0;
+  --pz-text-muted: #94A3B8;
+  --pz-text-dimmed: #64748B;
+  --pz-mint: #00F2FE;
+  --pz-blue: #4FACFE;
+  --pz-lilac: #10B981;
+  --pz-sol: #F43F5E;
+  --pz-orange: #FFBCF0;
+  --pz-coral: #D6C4FF;
+  --pz-cyan: #FFDA6D;
+}
+
+.canvas-bg { fill: #0A0F1D; }
+.card-surface { fill: #131827; stroke: #2E3856; stroke-width: 1px; rx: 16px; }
+.elevated-card { fill: #202538; stroke: #23293F; stroke-width: 1px; rx: 12px; }
+
+.badge-text {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  fill: #00F2FE;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chart-title {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.chart-subtitle {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  fill: #94A3B8;
+}
+
+.axis-label {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  fill: #E2E8F0;
+}
+
+.tick-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  fill: #94A3B8;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.data-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.grid-line {
+  stroke: #23293F;
+  stroke-width: 1px;
+  stroke-dasharray: 4 4;
+}
+
+.axis-line {
+  stroke: #2E3856;
+  stroke-width: 1.5px;
+}
+
+.legend-text {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  fill: #E2E8F0;
+}
+
+.footer-text {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  fill: #64748B;
+}
+
+.watermark {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  fill: #64748B;
+  letter-spacing: 0.05em;
+}
+]]></style>
+  <g id="background">
+    <rect width="1920" height="1080" class="canvas-bg"/>
+    <rect x="20" y="20" width="1880" height="1040" class="card-surface"/>
+  </g>
+  <g id="grid">
+    <line x1="90" y1="995.0" x2="1860" y2="995.0" class="grid-line"/>
+    <line x1="90" y1="849.2" x2="1860" y2="849.2" class="grid-line"/>
+    <line x1="90" y1="703.3" x2="1860" y2="703.3" class="grid-line"/>
+    <line x1="90" y1="557.5" x2="1860" y2="557.5" class="grid-line"/>
+    <line x1="90" y1="411.7" x2="1860" y2="411.7" class="grid-line"/>
+    <line x1="90" y1="265.8" x2="1860" y2="265.8" class="grid-line"/>
+    <line x1="90" y1="120.0" x2="1860" y2="120.0" class="grid-line"/>
+  </g>
+  <g id="axes">
+    <text x="78" y="999.0" class="tick-label" text-anchor="end">16</text>
+    <text x="78" y="853.2" class="tick-label" text-anchor="end">18</text>
+    <text x="78" y="707.3" class="tick-label" text-anchor="end">20</text>
+    <text x="78" y="561.5" class="tick-label" text-anchor="end">22</text>
+    <text x="78" y="415.7" class="tick-label" text-anchor="end">24</text>
+    <text x="78" y="269.8" class="tick-label" text-anchor="end">26</text>
+    <text x="78" y="124.0" class="tick-label" text-anchor="end">28</text>
+    <text x="200.6" y="1017.0" class="axis-label" text-anchor="middle">Costa Rica</text>
+    <text x="421.9" y="1017.0" class="axis-label" text-anchor="middle">Brasil</text>
+    <text x="643.1" y="1017.0" class="axis-label" text-anchor="middle">Colombia</text>
+    <text x="864.4" y="1017.0" class="axis-label" text-anchor="middle">Chile</text>
+    <text x="1085.6" y="1017.0" class="axis-label" text-anchor="middle">Perú</text>
+    <text x="1306.9" y="1017.0" class="axis-label" text-anchor="middle">Argentina</text>
+    <text x="1528.1" y="1017.0" class="axis-label" text-anchor="middle">México</text>
+    <text x="1749.4" y="1017.0" class="axis-label" text-anchor="middle">Prom. LatAm</text>
+    <line x1="90" y1="2161.7" x2="1860" y2="2161.7" class="axis-line"/>
+  </g>
+  <g id="series">
+    <rect x="176.6" y="229.4" width="42.2" height="1932.3" fill="#8E9BF7" rx="4"/>
+    <rect x="397.9" y="280.4" width="42.2" height="1881.2" fill="#3D51F2" rx="4"/>
+    <rect x="619.1" y="557.5" width="42.2" height="1604.2" fill="#FE7E57" rx="4"/>
+    <rect x="840.4" y="645.0" width="42.2" height="1516.7" fill="#F2D412" rx="4"/>
+    <rect x="1061.6" y="688.8" width="42.2" height="1472.9" fill="#0AE88A" rx="4"/>
+    <rect x="1282.9" y="732.5" width="42.2" height="1429.2" fill="#00F0FF" rx="4"/>
+    <rect x="1504.1" y="863.8" width="42.2" height="1297.9" fill="#F0524B" rx="4"/>
+    <rect x="1725.4" y="572.1" width="42.2" height="1589.6" fill="#FFFFFF" rx="4"/>
+  </g>
+  <g id="labels">
+  <g id="header">
+    <circle cx="50" cy="51" r="4" fill="#00F2FE"/>
+    <text x="62" y="55" class="badge-text">LATAM // DIFUSIÓN LABORAL</text>
+    <text x="50" y="85" class="chart-title">Difusión Activa de Herramientas IA en Trabajadores de América Latina</text>
+    <text x="50" y="108" class="chart-subtitle">Porcentaje de fuerza laboral activa formal que utiliza GenAI en sus flujos diarios (%)</text>
+  </g>
+  </g>
+  <g id="source">
+  <g id="footer">
+    <text x="50" y="1045" class="footer-text">Fuente: Microsoft AI Diffusion Tracker, BID / CENIA ILIA, OIT, CEPAL, INEI (120 fuentes)</text>
+  </g>
+  </g>
+</svg>

@@ -2001,6 +2001,22 @@ h1, h2, h3 {
   width: 100%;
 }
 
+/* Fila 1 (Impar): Texto a la izquierda, Video a la derecha */
+.video-row:nth-child(odd) .video-ref {
+  order: 1;
+}
+.video-row:nth-child(odd) .video-card {
+  order: 2;
+}
+
+/* Fila 2 (Par): Video a la izquierda, Texto a la derecha */
+.video-row:nth-child(even) .video-card {
+  order: 1;
+}
+.video-row:nth-child(even) .video-ref {
+  order: 2;
+}
+
 .video-card {
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.5);

@@ -411,12 +411,9 @@ import './style.css';
       };
 
       btnGoToExplanation.onclick = () => {
-          openModal('paper');
-          try {
-            window.open(window.location.origin + window.location.pathname + '?modal=paper', '_blank');
-          } catch(e) {
-            console.error(e);
-          }
+          const query = (memoOutputVal && memoOutputVal.value.trim()) ? memoOutputVal.value.trim() : '69 pose x';
+          const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+          window.open(searchUrl, '_blank');
       };
     }
 

@@ -411,7 +411,12 @@ import './style.css';
       };
 
       btnGoToExplanation.onclick = () => {
-          navigateToGameScreen(6);
+          openModal('paper');
+          try {
+            window.open(window.location.origin + window.location.pathname + '?modal=paper', '_blank');
+          } catch(e) {
+            console.error(e);
+          }
       };
     }
 
@@ -597,3 +602,18 @@ window.closeModal = closeModal;
 window.openModal = openModal;
 window.applyVideoClip = applyVideoClip;
 window.resetVideoClip = resetVideoClip;
+
+// Abrir modal automáticamente si viene en los parámetros de la URL (?modal=paper o #modal-paper)
+if (typeof window !== 'undefined') {
+  const checkUrlAndOpenModal = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('modal') === 'paper' || window.location.hash === '#modal-paper') {
+      openModal('paper');
+    }
+  };
+  if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', checkUrlAndOpenModal);
+  } else {
+    checkUrlAndOpenModal();
+  }
+}

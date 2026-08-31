@@ -1976,28 +1976,154 @@ h1, h2, h3 {
 }
 
 /* ==============================================================================
-   AJUSTES FINALES (2026-08-29): alternar video/texto, corregir zoom y gráficos completos
+   AJUSTES DE BLOQUES DE VIDEO Y REPRODUCTORES PROPORCIONALES (SLIDES 6 & 7)
    ============================================================================== */
-.video-row {
-  grid-template-columns: minmax(0, 34%) minmax(0, 1fr);
-  gap: 18px;
-  align-items: center;
+.video-slide-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.video-row:nth-child(even) .video-card {
-  order: 2;
-}
-.video-row:nth-child(even) .video-ref {
-  order: 1;
-}
-.video-ref-quote {
-  font-size: clamp(20px, 2.6vw, 34px);
-}
-.video-card {
-  gap: 8px;
-  padding: 10px;
-}
+
 .video-rows {
-  gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.video-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% / 50% proporcionalidad exacta */
+  gap: 20px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.video-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(74, 81, 96, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.video-card-head h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--purpura-zentry);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.video-card-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--purpura-zentry);
+  background: var(--lavanda-zentry);
+  padding: 2px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Ocultar información del canal en la miniatura del reproductor recortando proporcionalmente */
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.yt-embed {
+  position: absolute;
+  top: -11%;
+  left: 0;
+  width: 100%;
+  height: 122%;
+  border: 0;
+  border-radius: 12px;
+}
+
+.video-clip-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gris-neutro-oscuro);
+  flex-wrap: wrap;
+}
+
+.video-clip-controls label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.video-clip-controls input {
+  width: 54px;
+  padding: 3px 6px;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.btn-clip {
+  background: var(--purpura-zentry);
+  color: #FFFFFF;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-clip:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-clip.ghost {
+  background: #E2E8F0;
+  color: var(--gris-neutro-oscuro);
+}
+
+.video-ref {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(74, 81, 96, 0.04);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  height: 100%;
+}
+
+.video-ref-quote {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(18px, 1.8vw, 26px);
+  font-weight: 600;
+  color: var(--purpura-zentry);
+  line-height: 1.35;
+  text-align: center;
 }
 
 /* Gráficos: asegurar que el SVG se vea completo, sin cortes */
@@ -2017,6 +2143,10 @@ h1, h2, h3 {
 }
 
 @media (max-width: 900px) {
+  .video-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
   .video-row:nth-child(even) .video-card,
   .video-row:nth-child(even) .video-ref {
     order: 0;

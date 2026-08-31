@@ -2143,19 +2143,111 @@ h1, h2, h3 {
 }
 
 /* ========================================================
-   SLIDE 2: MISIÓN & PROPORCIONES DE PROBLEMÁTICA
+   ESTILOS DE MODAL EL LADO OSCURO (SLIDE 4 TARJETA 2)
    ======================================================== */
-#slide-1 .slide-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: center;
+.modal-content.modal-dark-content {
+  max-width: 780px;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 32px;
+  border-radius: 24px;
 }
 
-.mission-text-panel {
+.dark-badge-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--purpura-zentry);
+  background: var(--lavanda-zentry);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.dark-modal-subtitle {
+  font-size: 13px;
+  color: var(--gris-neutro-oscuro);
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.dark-gallery-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--purpura-zentry);
+  margin: 18px 0 12px 0;
+}
+
+.dark-visual-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.dark-visual-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s ease;
+}
+
+.dark-visual-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(83, 59, 135, 0.1);
+}
+
+.dark-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.dark-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dark-check-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #10B981;
+  color: #FFFFFF;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.dark-card-content {
+  padding: 12px;
+}
+
+.dark-card-content h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--purpura-zentry);
+  margin-bottom: 4px;
+}
+
+.dark-card-content p {
+  font-size: 11.5px;
+  color: var(--gris-neutro-oscuro);
+  line-height: 1.35;
 }
 
 .mission-statement {

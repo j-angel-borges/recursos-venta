@@ -68,44 +68,22 @@
             <div class="mission-statement">
               "ZentryOS nace de una premisa: Blindar la Salud mental de las nuevas generaciones con herramientas que eleven su potencial y los protejan de los algoritmos"
             </div>
-
-            <div class="mission-checks-grid">
-              <div class="check-item">
-                <span class="check-icon">✓</span>
-                <div class="check-text">
-                  <strong>Desarrollo Cognitivo Guiado:</strong>
-                  <span>Potenciación del pensamiento crítico y la lógica mediante herramientas educativas gamificadas.</span>
-                </div>
-              </div>
-              <div class="check-item">
-                <span class="check-icon">✓</span>
-                <div class="check-text">
-                  <strong>Protección Integral contra Algoritmos:</strong>
-                  <span>Filtro activo que bloquea patrones adictivos, scroll infinito y notificaciones manipuladoras.</span>
-                </div>
-              </div>
-              <div class="check-item">
-                <span class="check-icon">✓</span>
-                <div class="check-text">
-                  <strong>Soberanía Digital Familiar:</strong>
-                  <span>Transparencia y control ejecutivo absoluto para padres sin invadir la autonomía del menor.</span>
-                </div>
-              </div>
-            </div>
           </div>
-
-          <div class="mission-visual-gallery">
-            <div class="visual-card">
-              <img src="/problematica_dopamina.jpg" alt="Secuestro Algorítmico y Bucle de Dopamina" class="visual-img">
-              <div class="visual-caption">1. Secuestro Algorítmico</div>
+          <div class="mission-visual">
+            <div class="mission-image-card">
+              <picture>
+                <source srcset="/mision-familia.webp" type="image/webp">
+                <img src="/mision-familia.jpg" alt="ZentryOS - Desarrollo y Bienestar Familiar" class="mission-top-img">
+              </picture>
+              <div class="mission-image-fade-overlay"></div>
             </div>
-            <div class="visual-card">
-              <img src="/problematica_enfoque.jpg" alt="Fragmentación de la Atención y Deuda Cognitiva" class="visual-img">
-              <div class="visual-caption">2. Fragmentación del Enfoque</div>
-            </div>
-            <div class="visual-card">
-              <img src="/proteccion_familiar.jpg" alt="Soberanía Digital y Desarrollo Acompañado" class="visual-img">
-              <div class="visual-caption">3. Soberanía Familiar</div>
+            <div class="shield-illustration">
+              <div class="shield-bg-glow"></div>
+              <!-- Shield Icon -->
+              <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#533B87" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M12 8v8M9 11h6" stroke-width="1.5"/>
+              </svg>
             </div>
           </div>
         </div>
@@ -786,19 +764,59 @@
     }
   </script>
 
-  <!-- Modal 2: Video -->
+  <!-- Modal 2: El Lado Oscuro de la Pantalla -->
   <div class="modal-overlay" id="modal-video">
-    <div class="modal-content">
+    <div class="modal-content modal-dark-content">
       <button class="modal-close" onclick="closeModal('video')">✕</button>
-      <h2 class="modal-title" style="color: var(--purpura-zentry);">🎬 El Lado Oscuro de la Pantalla</h2>
-      <div class="modal-body">
+      
+      <div class="dark-modal-header">
+        <div class="dark-badge-tag">🎬 EVIDENCIA &amp; MANIPULACIÓN ALGORÍTMICA</div>
+        <h2 class="modal-title" style="color: var(--purpura-zentry); font-size: 26px;">El Lado Oscuro de la Pantalla</h2>
+        <p class="dark-modal-subtitle">Testimonios de ex-diseñadores de Silicon Valley y evidencia visual sobre la manipulación de la dopamina infantil</p>
+      </div>
+
+      <div class="modal-body dark-modal-body">
         <div class="video-mock">
           <button class="video-mock-btn-play">▶</button>
           <div class="video-overlay-text">Simulación: Ex-diseñadores de Silicon Valley explican cómo se manipula la dopamina infantil para maximizar el scroll.</div>
         </div>
-        <br>
-        <p><strong>Bucle de Dopamina Artificial:</strong><br>
-        Las notificaciones push, likes y feeds de reproducción automática disparan descargas continuas de dopamina de forma constante en el cerebro del niño. Esto reduce su tolerancia a la frustración y disminuye su capacidad de retención y atención profunda.</p>
+
+        <div class="dark-gallery-title">🧠 Dimensiones de la Problemática y Soberanía Familiar</div>
+
+        <div class="dark-visual-gallery">
+          <div class="dark-visual-card">
+            <div class="dark-card-image-wrap">
+              <img src="/problematica_dopamina.jpg" alt="Secuestro Algorítmico" class="dark-card-img">
+              <span class="dark-check-badge">✓</span>
+            </div>
+            <div class="dark-card-content">
+              <h4>1. Secuestro Algorítmico</h4>
+              <p>Feeds de reproducción automática y notificaciones push diseñados para generar hiperestímulos continuos de dopamina.</p>
+            </div>
+          </div>
+
+          <div class="dark-visual-card">
+            <div class="dark-card-image-wrap">
+              <img src="/problematica_enfoque.jpg" alt="Fragmentación del Enfoque" class="dark-card-img">
+              <span class="dark-check-badge">✓</span>
+            </div>
+            <div class="dark-card-content">
+              <h4>2. Fragmentación del Enfoque</h4>
+              <p>Reducción drástica del tiempo de atención sostenida y baja tolerancia a la frustración ante tareas de esfuerzo cognitivo.</p>
+            </div>
+          </div>
+
+          <div class="dark-visual-card">
+            <div class="dark-card-image-wrap">
+              <img src="/proteccion_familiar.jpg" alt="Soberanía y Protección Familiar" class="dark-card-img">
+              <span class="dark-check-badge">✓</span>
+            </div>
+            <div class="dark-card-content">
+              <h4>3. Soberanía Familiar</h4>
+              <p>Restablecimiento de la autoridad paterna y reorientación de la tecnología hacia la creatividad y el aprendizaje guiado.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

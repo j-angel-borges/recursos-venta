@@ -17,11 +17,11 @@
   <div class="presentation-container">
     <div class="slides-wrapper">
 
-      <!-- SLIDE 1: AUTORIDAD Y POSICIONAMIENTO -->
+      <!-- SLIDE 1: EMPRESA -->
       <div class="slide active" id="slide-0">
         <div class="slide-header">
-          <h2 class="slide-title">Autoridad y Posicionamiento</h2>
-          <p class="slide-subtitle">Respaldo tecnológico e infraestructura de nivel industrial</p>
+          <h2 class="slide-title">Empresa</h2>
+          <p class="slide-subtitle">Respaldo tecnológico e infraestructura a nivel industrial</p>
         </div>
         <div class="slide-content">
           <div class="map-container">
@@ -37,21 +37,21 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 Google Cloud Platform
               </h3>
-              <p>Procesamiento avanzado de telemetría y hosting bajo infraestructura de alta redundancia. Conectamos los reportes a través de Vertex AI de Google.</p>
+              <p>Partners de Google.</p>
             </div>
             <div class="info-card" id="card-meta" onclick="selectCard('meta')">
               <h3>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
                 Meta Developers
               </h3>
-              <p>Seguridad y arquitectura integrada para el bloqueo inteligente a nivel de API de aplicaciones sociales como Facebook, Instagram y WhatsApp.</p>
+              <p>Seguridad y arquitectura de aplicaciones sociales como Facebook, Instagram y WhatsApp.</p>
             </div>
             <div class="info-card" id="card-apple" onclick="selectCard('apple')">
               <h3>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                 Apple Enterprise
               </h3>
-              <p>Gestión avanzada de dispositivos móviles (MDM) de grado corporativo, impidiendo que el launcher de ZentryOS pueda ser desinstalado por el menor.</p>
+              <p>Gestión avanzada de dispositivos móviles (MDM) de grado corporativo.</p>
             </div>
           </div>
         </div>
@@ -70,10 +70,17 @@
             </div>
           </div>
           <div class="mission-visual">
+            <div class="mission-image-card">
+              <picture>
+                <source srcset="/mision-familia.webp" type="image/webp">
+                <img src="/mision-familia.jpg" alt="ZentryOS - Desarrollo y Bienestar Familiar" class="mission-top-img">
+              </picture>
+              <div class="mission-image-fade-overlay"></div>
+            </div>
             <div class="shield-illustration">
               <div class="shield-bg-glow"></div>
               <!-- Shield Icon -->
-              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#533B87" stroke-width="1.5">
+              <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#533B87" stroke-width="1.5">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 <path d="M12 8v8M9 11h6" stroke-width="1.5"/>
               </svg>
@@ -99,7 +106,7 @@
                 </label>
                 <div class="input-control">
                   <button class="calc-btn-adjust" onclick="adjustValue('equipos', -500)">-</button>
-                  <input type="number" id="equipos" value="4500" step="500">
+                  <input type="number" id="equipos" placeholder="0" value="" step="500" oninput="calculateCost()">
                   <button class="calc-btn-adjust" onclick="adjustValue('equipos', 500)">+</button>
                 </div>
               </div>
@@ -111,7 +118,7 @@
                 </label>
                 <div class="input-control">
                   <button class="calc-btn-adjust" onclick="adjustValue('servicios', -20)">-</button>
-                  <input type="number" id="servicios" value="150" step="10">
+                  <input type="number" id="servicios" placeholder="0" value="" step="10" oninput="calculateCost()">
                   <button class="calc-btn-adjust" onclick="adjustValue('servicios', 20)">+</button>
                 </div>
               </div>
@@ -123,7 +130,7 @@
                 </label>
                 <div class="input-control">
                   <button class="calc-btn-adjust" onclick="adjustValue('otros', -10)">-</button>
-                  <input type="number" id="otros" value="60" step="10">
+                  <input type="number" id="otros" placeholder="0" value="" step="10" oninput="calculateCost()">
                   <button class="calc-btn-adjust" onclick="adjustValue('otros', 10)">+</button>
                 </div>
               </div>
@@ -135,7 +142,7 @@
             <div class="calc-result-panel">
               <div class="calc-result-box">
                 <div class="calc-result-label">Gasto Histórico (5 años)</div>
-                <div class="calc-result-value" id="calc-total">S/. 17,100.00</div>
+                <div class="calc-result-value" id="calc-total">S/. 0.00</div>
               </div>
 
               <div class="rafaga-panel" id="rafaga-panel">

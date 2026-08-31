@@ -282,24 +282,76 @@
        SLIDE 2: MISIÓN Y PROBLEMÁTICA (Fugaz)
        ======================================================== */
     .mission-visual {
-      width: 45%;
+      width: 48%;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .mission-image-card {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      height: 200px;
+      border-radius: 20px 20px 0 0;
+      overflow: hidden;
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 1;
+    }
+
+    .mission-image-card picture {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .mission-top-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: 20px 20px 0 0;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%);
+      transition: transform 0.4s ease;
+    }
+
+    .mission-image-card:hover .mission-top-img {
+      transform: scale(1.02);
+    }
+
+    .mission-image-fade-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(to bottom, transparent 35%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0.95) 100%);
     }
 
     .shield-illustration {
       position: relative;
-      width: 260px;
-      height: 260px;
+      width: 180px;
+      height: 180px;
       background: white;
       border-radius: 50%;
-      box-shadow: 0 10px 40px rgba(83,59,135,0.08);
+      box-shadow: 0 10px 40px rgba(83, 59, 135, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
       border: 4px solid var(--lavanda-zentry);
+      margin-top: -30px;
+      z-index: 2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .shield-illustration:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 45px rgba(83, 59, 135, 0.18);
     }
 
     .shield-bg-glow {
@@ -390,6 +442,12 @@
       color: var(--purpura-zentry);
       outline: none;
       text-align: center;
+    }
+
+    .input-control input::placeholder {
+      color: #94A3B8;
+      font-weight: 500;
+      opacity: 0.8;
     }
 
     .calc-btn-adjust {

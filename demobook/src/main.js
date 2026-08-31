@@ -54,17 +54,22 @@ import './style.css';
     // Funciones de la calculadora de la slide 3
     function adjustValue(fieldId, delta) {
       const input = document.getElementById(fieldId);
-      let val = parseInt(input.value) || 0;
+      if (!input) return;
+      let val = parseInt(input.value, 10) || 0;
       val += delta;
       if (val < 0) val = 0;
-      input.value = val;
+      input.value = val > 0 ? val : '';
       calculateCost();
     }
 
     function calculateCost() {
-      const equipos = parseInt(document.getElementById('equipos').value) || 0;
-      const servicios = parseInt(document.getElementById('servicios').value) || 0;
-      const otros = parseInt(document.getElementById('otros').value) || 0;
+      const eqInput = document.getElementById('equipos');
+      const serInput = document.getElementById('servicios');
+      const otrInput = document.getElementById('otros');
+      
+      const equipos = parseInt(eqInput ? eqInput.value : 0, 10) || 0;
+      const servicios = parseInt(serInput ? serInput.value : 0, 10) || 0;
+      const otros = parseInt(otrInput ? otrInput.value : 0, 10) || 0;
 
       // Inversión acumulada en 5 años (60 meses)
       const total = equipos + (servicios * 12 * 5) + (otros * 12 * 5);
@@ -76,11 +81,16 @@ import './style.css';
         minimumFractionDigits: 2
       });
 
-      document.getElementById('calc-total').innerText = formatter.format(total).replace('PEN', 'S/.');
+      const totalEl = document.getElementById('calc-total');
+      if (totalEl) {
+        totalEl.innerText = formatter.format(total).replace('PEN', 'S/.');
+      }
       
-      // Mostrar ráfaga de preguntas
+      // Mostrar ráfaga de preguntas cuando hay cálculo activo
       const rafaga = document.getElementById('rafaga-panel');
-      rafaga.style.display = 'flex';
+      if (rafaga) {
+        rafaga.style.display = total > 0 ? 'flex' : 'none';
+      }
     }
 
     // Modales de la slide 4

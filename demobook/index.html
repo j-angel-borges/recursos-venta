@@ -185,13 +185,24 @@
                 <p>Testimonios de ex-ingenieros de Silicon Valley sobre el bucle de dopamina y la reducción de potencial.</p>
               </div>
 
-              <!-- Botón 3: Evidencia Científica -->
+              <!-- Botón 3: Resultado -->
               <div class="attention-card-btn" onclick="openModal('paper')">
                 <div class="attention-icon-wrapper">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5v-15A2.5 2.5 0 0 1 6.5 2M20 2v20"/></svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="2"/>
+                    <line x1="8" y1="6" x2="16" y2="6"/>
+                    <line x1="16" y1="14" x2="16" y2="18"/>
+                    <path d="M16 10h.01"/>
+                    <path d="M12 10h.01"/>
+                    <path d="M8 10h.01"/>
+                    <path d="M12 14h.01"/>
+                    <path d="M8 14h.01"/>
+                    <path d="M12 18h.01"/>
+                    <path d="M8 18h.01"/>
+                  </svg>
                 </div>
-                <h3>Evidencia Científica</h3>
-                <p>Estudios médicos que demuestran el colapso cognitivo del lóbulo frontal por la economía de la atención.</p>
+                <h3>Resultado</h3>
+                <p>¿Tiene sentido destinar semejante cantidad para que tengamos esto a cambio?</p>
               </div>
             </div>
           </div>
@@ -645,20 +656,74 @@
     </div>
   </div>
 
-  <!-- Modal 1: Paper -->
+  <!-- Modal 1: Resultado (Lienzo de Conversión y Totales) -->
   <div class="modal-overlay" id="modal-paper">
-    <div class="modal-content">
+    <div class="modal-content result-modal-content">
       <button class="modal-close" onclick="closeModal('paper')">✕</button>
-      <h2 class="modal-title" style="color: var(--purpura-zentry);">📚 Biblioteca de Validación Científica</h2>
-      <div class="modal-body">
-        <p><strong>Estudio Pediatrics Journal (AAP):</strong><br>
-        La investigación <em>"Association between Screen-Based Media Use and Brain White Matter Integrity in Preschool-aged Children"</em> demostró que los menores con alta exposición a pantallas sufren una menor integridad en la materia blanca cerebral en áreas encargadas del lenguaje, alfabetización y autorregulación (desarrollo de Mielina).</p>
-        <br>
-        <p><strong>Crecimiento Económico del Mercado:</strong><br>
-        La economía de la atención factura miles de millones de dólares al año. Ha evolucionado de la publicidad de TV (bloque estático) a los teléfonos móviles inteligentes mediante reforzamiento intermitente algorítmico, compitiendo directamente con la autoridad del padre.</p>
+
+      <div class="result-canvas-header">
+        <div class="result-badge">📊 LIENZO DE CONVERSIÓN</div>
+        <h2 class="result-title">Resultado</h2>
+        <p class="result-question">¿Tiene sentido destinar semejante cantidad para que tengamos esto a cambio?</p>
+      </div>
+
+      <div class="result-canvas-body">
+        <!-- Campo 1: Costo Tech -->
+        <div class="result-input-card">
+          <label for="costo-tech" class="result-label">
+            <span class="result-label-icon">💻</span>
+            Costo Tech
+          </label>
+          <div class="result-input-wrapper">
+            <span class="currency-prefix">S/.</span>
+            <input type="number" id="costo-tech" class="result-number-input" placeholder="0.00" min="0" step="100" oninput="updateTotalResultado()">
+          </div>
+          <span class="result-hint">Monto total extraído de la calculadora de inversión tecnológica</span>
+        </div>
+
+        <!-- Campo 2: Costo En Atención -->
+        <div class="result-input-card">
+          <label for="costo-atencion" class="result-label">
+            <span class="result-label-icon">⏳</span>
+            Costo En Atención
+          </label>
+          <div class="result-input-wrapper">
+            <span class="currency-prefix">S/.</span>
+            <input type="number" id="costo-atencion" class="result-number-input" placeholder="0.00" min="0" step="100" oninput="updateTotalResultado()">
+          </div>
+          <span class="result-hint">Monto total extraído de la tarjeta de Remate de Horas</span>
+        </div>
+
+        <!-- Campo 3: Suma de Totales -->
+        <div class="result-total-card">
+          <div class="result-total-label">SUMA TOTAL REGLAMENTARIA</div>
+          <div class="result-total-display" id="total-cost-display">S/. 0.00</div>
+          <div class="result-total-subtext">Conversión acumulada de Costo Tech + Costo En Atención</div>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function updateTotalResultado() {
+      const techInput = document.getElementById('costo-tech');
+      const atencionInput = document.getElementById('costo-atencion');
+      const totalDisplay = document.getElementById('total-cost-display');
+      if (!techInput || !atencionInput || !totalDisplay) return;
+
+      const tech = parseFloat(techInput.value) || 0;
+      const atencion = parseFloat(atencionInput.value) || 0;
+      const total = tech + atencion;
+
+      const formatter = new Intl.NumberFormat('es-PE', {
+        style: 'currency',
+        currency: 'PEN',
+        minimumFractionDigits: 2
+      });
+
+      totalDisplay.textContent = formatter.format(total).replace('PEN', 'S/.');
+    }
+  </script>
 
   <!-- Modal 2: Video -->
   <div class="modal-overlay" id="modal-video">

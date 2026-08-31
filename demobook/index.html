@@ -68,22 +68,44 @@
             <div class="mission-statement">
               "ZentryOS nace de una premisa: Blindar la Salud mental de las nuevas generaciones con herramientas que eleven su potencial y los protejan de los algoritmos"
             </div>
-          </div>
-          <div class="mission-visual">
-            <div class="mission-image-card">
-              <picture>
-                <source srcset="/mision-familia.webp" type="image/webp">
-                <img src="/mision-familia.jpg" alt="ZentryOS - Desarrollo y Bienestar Familiar" class="mission-top-img">
-              </picture>
-              <div class="mission-image-fade-overlay"></div>
+
+            <div class="mission-checks-grid">
+              <div class="check-item">
+                <span class="check-icon">✓</span>
+                <div class="check-text">
+                  <strong>Desarrollo Cognitivo Guiado:</strong>
+                  <span>Potenciación del pensamiento crítico y la lógica mediante herramientas educativas gamificadas.</span>
+                </div>
+              </div>
+              <div class="check-item">
+                <span class="check-icon">✓</span>
+                <div class="check-text">
+                  <strong>Protección Integral contra Algoritmos:</strong>
+                  <span>Filtro activo que bloquea patrones adictivos, scroll infinito y notificaciones manipuladoras.</span>
+                </div>
+              </div>
+              <div class="check-item">
+                <span class="check-icon">✓</span>
+                <div class="check-text">
+                  <strong>Soberanía Digital Familiar:</strong>
+                  <span>Transparencia y control ejecutivo absoluto para padres sin invadir la autonomía del menor.</span>
+                </div>
+              </div>
             </div>
-            <div class="shield-illustration">
-              <div class="shield-bg-glow"></div>
-              <!-- Shield Icon -->
-              <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#533B87" stroke-width="1.5">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="M12 8v8M9 11h6" stroke-width="1.5"/>
-              </svg>
+          </div>
+
+          <div class="mission-visual-gallery">
+            <div class="visual-card">
+              <img src="/problematica_dopamina.jpg" alt="Secuestro Algorítmico y Bucle de Dopamina" class="visual-img">
+              <div class="visual-caption">1. Secuestro Algorítmico</div>
+            </div>
+            <div class="visual-card">
+              <img src="/problematica_enfoque.jpg" alt="Fragmentación de la Atención y Deuda Cognitiva" class="visual-img">
+              <div class="visual-caption">2. Fragmentación del Enfoque</div>
+            </div>
+            <div class="visual-card">
+              <img src="/proteccion_familiar.jpg" alt="Soberanía Digital y Desarrollo Acompañado" class="visual-img">
+              <div class="visual-caption">3. Soberanía Familiar</div>
             </div>
           </div>
         </div>
@@ -575,7 +597,7 @@
       
       <div class="remate-modal-header">
         <div class="remate-badge-tag">🏷️ PRE-CIERRE DIALÉCTICO</div>
-        <h2 class="modal-title" style="color: var(--purpura-zentry); font-size: 26px;">El Remate de Horas</h2>
+        <h2 class="modal-title" style="color: var(--purpura-zentry); font-size: 28px;">El Remate de Horas</h2>
         <p class="remate-modal-subtitle">La paradoja del valor del tiempo frente al negocio multimillonario de las redes sociales</p>
       </div>
 
@@ -591,10 +613,22 @@
           <div class="remate-step-num">1</div>
           <div class="remate-step-text">
             <h4>¿Por qué las redes sociales son gratis?</h4>
-            <p>Es por los anuncios. META no te cobra con dinero, <strong>te cobra con la atención de tus hijos</strong>.</p>
+            <p>Es por los anuncios. Las plataformas no te cobran dinero, <strong>te cobran con la atención y el tiempo de tu hijo</strong>.</p>
             <div class="remate-quote-box">
               <em>"Si yo te pagara un millón de dólares con la única condición de que mañana morirás, ¿los aceptarías?"</em>
-              <div class="remate-quote-answer">➔ <strong>Respuesta: NO.</strong> Tus días y los de tu familia valen infinitamente más que un millón.</div>
+              <div class="remate-quote-answer">➔ <strong>Respuesta: NO.</strong> El tiempo de tu familia vale infinitamente más que un millón.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Calculator Slider -->
+        <div class="remate-calc-interactive-box">
+          <div class="remate-calc-title">⚡ Simulación Dialéctica de Horas en Pantalla</div>
+          <div class="remate-slider-group">
+            <label for="remate-hrs-slider">Horas diarias de consumo del menor:</label>
+            <div class="remate-slider-wrapper">
+              <input type="range" id="remate-hrs-slider" min="1" max="10" value="4" step="0.5" oninput="updateRemateCalc()">
+              <span class="remate-slider-badge" id="remate-hrs-val">4 hrs/día</span>
             </div>
           </div>
         </div>
@@ -613,13 +647,13 @@
           </div>
           <div class="remate-kpi-card highlight-danger">
             <span class="kpi-icon">⏱️</span>
-            <div class="kpi-val">1 Céntimo / Hora</div>
-            <div class="kpi-lbl">Lo que META gana de ti (apenas S/ 14.00 al año)</div>
+            <div class="kpi-val" id="remate-meta-profit">S/ 14.60</div>
+            <div class="kpi-lbl">Lo que META gana de ti al año (<span id="remate-total-hrs">1,460 hrs/año</span>)</div>
           </div>
           <div class="remate-kpi-card highlight-gold">
             <span class="kpi-icon">💎</span>
-            <div class="kpi-val">S/ 14,690 PEN</div>
-            <div class="kpi-lbl">Valor productivo real de las horas que les regalas</div>
+            <div class="kpi-val" id="remate-real-value">S/. 14,600.00</div>
+            <div class="kpi-lbl">Valor productivo y desarrollo futuro regalado</div>
           </div>
         </div>
 
@@ -631,13 +665,13 @@
           <div class="comparison-bar-wrap">
             <div class="comp-item left">
               <span class="comp-tag danger">Lo que META te da:</span>
-              <span class="comp-amount">S/ 14.00 / año</span>
+              <span class="comp-amount" id="comp-meta-text">S/ 14.60 / año</span>
               <span class="comp-sub">(Scroll infinito y dopamina barata)</span>
             </div>
             <div class="comp-divider">VS</div>
             <div class="comp-item right">
               <span class="comp-tag success">Lo que tú les entregas:</span>
-              <span class="comp-amount gold">S/ 14,690.00</span>
+              <span class="comp-amount gold" id="comp-user-text">S/ 14,600.00</span>
               <span class="comp-sub">(Valor productivo y futuro cognitivo del menor)</span>
             </div>
           </div>
@@ -655,6 +689,33 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function updateRemateCalc() {
+      const hrsInput = document.getElementById('remate-hrs-slider');
+      const hrsValEl = document.getElementById('remate-hrs-val');
+      const totalHrsEl = document.getElementById('remate-total-hrs');
+      const metaProfitEl = document.getElementById('remate-meta-profit');
+      const realValueEl = document.getElementById('remate-real-value');
+      const compMetaText = document.getElementById('comp-meta-text');
+      const compUserText = document.getElementById('comp-user-text');
+
+      if (!hrsInput || !hrsValEl) return;
+      const hrs = parseFloat(hrsInput.value) || 4;
+      hrsValEl.textContent = `${hrs} hr${hrs > 1 ? 's' : ''}/día`;
+
+      const annualHrs = Math.round(hrs * 365);
+      const metaProfit = (annualHrs * 0.01).toFixed(2);
+      const realValNum = annualHrs * 10;
+      const realValStr = realValNum.toLocaleString('es-PE', { style: 'currency', currency: 'PEN' });
+
+      if (totalHrsEl) totalHrsEl.textContent = `${annualHrs.toLocaleString('es-PE')} hrs/año`;
+      if (metaProfitEl) metaProfitEl.textContent = `S/ ${metaProfit}`;
+      if (realValueEl) realValueEl.textContent = realValStr.replace('PEN', 'S/.');
+      if (compMetaText) compMetaText.textContent = `S/ ${metaProfit} / año`;
+      if (compUserText) compUserText.textContent = realValStr.replace('PEN', 'S/.');
+    }
+  </script>
 
   <!-- Modal 1: Resultado (Lienzo de Conversión y Totales) -->
   <div class="modal-overlay" id="modal-paper">

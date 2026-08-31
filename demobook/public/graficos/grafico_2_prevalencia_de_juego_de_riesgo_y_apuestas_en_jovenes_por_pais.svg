@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap');
+
+:root {
+  --pz-canvas: #101219;
+  --pz-surface: #191B22;
+  --pz-elevated: #202538;
+  --pz-border: #2E3856;
+  --pz-border-subtle: #23293F;
+  --pz-grid: #23293F;
+  --pz-text-primary: #FFFFFF;
+  --pz-text-secondary: #E2E8F0;
+  --pz-text-muted: #94A3B8;
+  --pz-text-dimmed: #64748B;
+  --pz-mint: #6F58A7;
+  --pz-blue: #D6C8FA;
+  --pz-lilac: #C2F4E7;
+  --pz-sol: #5A6271;
+  --pz-orange: #00F2FE;
+  --pz-coral: #AF892C;
+  --pz-cyan: #A14A45;
+}
+
+.canvas-bg { fill: #101219; }
+.card-surface { fill: #191B22; stroke: #2E3856; stroke-width: 1.5px; rx: 18px; }
+.elevated-card { fill: #202538; stroke: #23293F; stroke-width: 1px; rx: 14px; }
+
+.badge-text {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  fill: #6F58A7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chart-title {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  letter-spacing: -0.015em;
+}
+
+.chart-subtitle {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  fill: #94A3B8;
+}
+
+.axis-label {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  fill: #E2E8F0;
+}
+
+.tick-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 14px;
+  font-weight: 500;
+  fill: #94A3B8;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.data-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 15px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.grid-line {
+  stroke: #23293F;
+  stroke-width: 1px;
+  stroke-dasharray: 4 4;
+}
+
+.axis-line {
+  stroke: #2E3856;
+  stroke-width: 1.5px;
+}
+
+.legend-text {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  fill: #E2E8F0;
+}
+
+.footer-text {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  fill: #64748B;
+}
+
+.watermark {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  fill: #64748B;
+  letter-spacing: 0.05em;
+}
+]]></style>
+  <g id="background">
+    <rect width="1920" height="1080" class="canvas-bg"/>
+    <rect x="20" y="20" width="1880" height="1040" class="card-surface"/>
+  </g>
+  <g id="grid">
+    <line x1="330.0" y1="170" x2="330.0" y2="1010" class="grid-line"/>
+    <text x="330.0" y="1030" class="tick-label" text-anchor="middle">0</text>
+    <line x1="1029.4" y1="170" x2="1029.4" y2="1010" class="grid-line"/>
+    <text x="1029.4" y="1030" class="tick-label" text-anchor="middle">20</text>
+    <line x1="1728.8" y1="170" x2="1728.8" y2="1010" class="grid-line"/>
+    <text x="1728.8" y="1030" class="tick-label" text-anchor="middle">40</text>
+  </g>
+  <g id="series">
+    <text x="312.0" y="211.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Brasil</text>
+    <rect x="330.0" y="186.6" width="1342.9" height="38.9" fill="#8E72D8" rx="5"/>
+    <text x="1686.9" y="211.0" class="data-label" font-size="15px" fill="#8E72D8">38%</text>
+    <text x="312.0" y="283.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Colombia</text>
+    <rect x="330.0" y="258.6" width="1157.5" height="38.9" fill="#8E72D8" rx="5"/>
+    <text x="1501.5" y="283.0" class="data-label" font-size="15px" fill="#8E72D8">33%</text>
+    <rect x="40.0" y="317.0" width="1840.0" height="66.0" rx="8" fill="rgba(242, 212, 18, 0.08)" stroke="#5A6271" stroke-width="1.2"/>
+    <text x="312.0" y="355.0" class="axis-label" font-size="15px" font-weight="700" fill="#5A6271" text-anchor="end">Perú</text>
+    <rect x="330.0" y="330.6" width="1108.6" height="38.9" fill="#5A6271" rx="5"/>
+    <text x="1452.6" y="355.0" class="data-label" font-size="15px" fill="#5A6271">32%</text>
+    <text x="312.0" y="427.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Argentina</text>
+    <rect x="330.0" y="402.6" width="1066.6" height="38.9" fill="#8E72D8" rx="5"/>
+    <text x="1410.6" y="427.0" class="data-label" font-size="15px" fill="#8E72D8">30%</text>
+    <text x="312.0" y="499.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">México</text>
+    <rect x="330.0" y="474.6" width="951.2" height="38.9" fill="#8E72D8" rx="5"/>
+    <text x="1295.2" y="499.0" class="data-label" font-size="15px" fill="#8E72D8">27%</text>
+    <text x="312.0" y="571.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Chile</text>
+    <rect x="330.0" y="546.6" width="867.3" height="38.9" fill="#8E72D8" rx="5"/>
+    <text x="1211.3" y="571.0" class="data-label" font-size="15px" fill="#8E72D8">25%</text>
+    <text x="312.0" y="643.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">España</text>
+    <rect x="330.0" y="618.6" width="790.3" height="38.9" fill="#8E72D8" rx="5"/>
+    <text x="1134.3" y="643.0" class="data-label" font-size="15px" fill="#8E72D8">23%</text>
+    <text x="312.0" y="715.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">EE.UU.</text>
+    <rect x="330.0" y="690.6" width="748.4" height="38.9" fill="#8E72D8" rx="5"/>
+    <text x="1092.4" y="715.0" class="data-label" font-size="15px" fill="#8E72D8">21%</text>
+  </g>
+  <g id="labels">
+  <g id="header">
+    <circle cx="50" cy="60" r="4.5" fill="#6F58A7"/>
+    <text x="64" y="65" class="badge-text">LATAM &amp; GLOBAL // PREVALENCIA CLÍNICA</text>
+    <text x="50" y="103" class="chart-title">Prevalencia de Juego de Riesgo y Apuestas en Jóvenes por País</text>
+    <text x="50" y="133" class="chart-subtitle">Tasa de participación activa y riesgo de ludopatía en población de 15 a 35 años (%)</text>
+  </g>
+  </g>
+  <g id="source">
+  <g id="footer">
+    <text x="50" y="1045" class="footer-text">Fuente: MINSA / MINCETUR Perú, OPS/OMS, Fiocruz Brasil, Coljuegos, DGOJ España, SAMHSA EE.UU. (145 fuentes)</text>
+  </g>
+  </g>
+</svg>

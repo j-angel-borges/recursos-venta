@@ -2746,23 +2746,30 @@ h1, h2, h3 {
 }
 
 .yt-shorts-sound-btn {
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 25;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #FFFFFF;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
-  transition: all 0.2s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .yt-shorts-sound-btn:hover {
   background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.08);
 }
 
 /* Reel Container */

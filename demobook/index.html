@@ -760,24 +760,15 @@
       <!-- Contenedor Principal del Dispositivo Shorts (9:16) -->
       <div class="yt-shorts-device" id="ytShortsDevice">
         
-        <!-- Header Superior del Short -->
-        <div class="yt-shorts-top-bar">
-          <div class="yt-shorts-badge">
-            <svg class="yt-shorts-icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="#FF0000">
-              <path d="M17.77 10.32l-1.2-.5a3.9 3.9 0 0 0-5.18-1.78l-.34.17-.4-.2A3.88 3.88 0 0 0 5.48 9.8c-.8 1.45-.6 3.25.5 4.51l1.2.51a3.9 3.9 0 0 0 5.18 1.77l.34-.16.4.19c1.6.76 3.5.14 4.35-1.4.8-1.46.6-3.26-.5-4.52l-.18-.38zm-7.77 4.18V9.5l4.5 2.5-4.5 2.5z"/>
-            </svg>
-            <span>Shorts</span>
-          </div>
-          <div class="yt-shorts-counter" id="ytShortsCounter">1 / 4</div>
-          <button class="yt-shorts-sound-btn" id="ytShortsMuteBtn" onclick="toggleShortsMute()" title="Silenciar / Activar sonido">
-            <svg id="ytSoundIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-            </svg>
-          </button>
-        </div>
+        <!-- Botón Flotante de Volumen / Sonido -->
+        <button class="yt-shorts-sound-btn" id="ytShortsMuteBtn" onclick="toggleShortsMute()" title="Silenciar / Activar sonido">
+          <svg id="ytSoundIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
 
-        <!-- Reel Vertical (Carrusel de Shorts) -->
+        <!-- Reel Vertical (Carrusel de Shorts Limpio) -->
         <div class="yt-shorts-reel" id="ytShortsReel">
           
           <!-- SHORT 1 -->
@@ -791,20 +782,6 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen></iframe>
             </div>
-            <div class="yt-short-bottom-info">
-              <div class="yt-short-channel-row">
-                <div class="yt-short-avatar">QZ</div>
-                <div class="yt-short-channel-meta">
-                  <span class="yt-short-channel-name">@angelborges4170</span>
-                  <svg class="yt-short-verified" viewBox="0 0 24 24" width="14" height="14" fill="#aaa">
-                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.5 14.5L6 12l1.4-1.4 3.1 3.1 7.1-7.1L19 8l-8.5 8.5z"/>
-                  </svg>
-                </div>
-                <button class="yt-short-sub-btn" onclick="toggleSubscribe(this)">Suscribirse</button>
-              </div>
-              <h3 class="yt-short-title">Por qué renuncié a Google | Testimonio Ético <span class="yt-short-hashtag">#Shorts</span></h3>
-            </div>
-            <div class="yt-short-progress"><div class="yt-short-progress-bar"></div></div>
           </div>
 
           <!-- SHORT 2 -->
@@ -818,20 +795,6 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen></iframe>
             </div>
-            <div class="yt-short-bottom-info">
-              <div class="yt-short-channel-row">
-                <div class="yt-short-avatar">QZ</div>
-                <div class="yt-short-channel-meta">
-                  <span class="yt-short-channel-name">@angelborges4170</span>
-                  <svg class="yt-short-verified" viewBox="0 0 24 24" width="14" height="14" fill="#aaa">
-                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.5 14.5L6 12l1.4-1.4 3.1 3.1 7.1-7.1L19 8l-8.5 8.5z"/>
-                  </svg>
-                </div>
-                <button class="yt-short-sub-btn" onclick="toggleSubscribe(this)">Suscribirse</button>
-              </div>
-              <h3 class="yt-short-title">Suicidios adolescentes +70% | The Social Dilemma <span class="yt-short-hashtag">#Shorts</span></h3>
-            </div>
-            <div class="yt-short-progress"><div class="yt-short-progress-bar"></div></div>
           </div>
 
           <!-- SHORT 3 -->
@@ -845,20 +808,6 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen></iframe>
             </div>
-            <div class="yt-short-bottom-info">
-              <div class="yt-short-channel-row">
-                <div class="yt-short-avatar">QZ</div>
-                <div class="yt-short-channel-meta">
-                  <span class="yt-short-channel-name">@angelborges4170</span>
-                  <svg class="yt-short-verified" viewBox="0 0 24 24" width="14" height="14" fill="#aaa">
-                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.5 14.5L6 12l1.4-1.4 3.1 3.1 7.1-7.1L19 8l-8.5 8.5z"/>
-                  </svg>
-                </div>
-                <button class="yt-short-sub-btn" onclick="toggleSubscribe(this)">Suscribirse</button>
-              </div>
-              <h3 class="yt-short-title">Somos ratas de laboratorio para las Big Tech <span class="yt-short-hashtag">#Shorts</span></h3>
-            </div>
-            <div class="yt-short-progress"><div class="yt-short-progress-bar"></div></div>
           </div>
 
           <!-- SHORT 4 -->
@@ -872,20 +821,6 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen></iframe>
             </div>
-            <div class="yt-short-bottom-info">
-              <div class="yt-short-channel-row">
-                <div class="yt-short-avatar">QZ</div>
-                <div class="yt-short-channel-meta">
-                  <span class="yt-short-channel-name">@angelborges4170</span>
-                  <svg class="yt-short-verified" viewBox="0 0 24 24" width="14" height="14" fill="#aaa">
-                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.5 14.5L6 12l1.4-1.4 3.1 3.1 7.1-7.1L19 8l-8.5 8.5z"/>
-                  </svg>
-                </div>
-                <button class="yt-short-sub-btn" onclick="toggleSubscribe(this)">Suscribirse</button>
-              </div>
-              <h3 class="yt-short-title">El secreto de Stanford para volverte adicto <span class="yt-short-hashtag">#Shorts</span></h3>
-            </div>
-            <div class="yt-short-progress"><div class="yt-short-progress-bar"></div></div>
           </div>
 
         </div>

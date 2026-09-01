@@ -155,34 +155,58 @@ import './style.css';
       });
     }
 
-    function playActiveShort() {
+    function sendYTIframeCommand(iframe, func, args = []) {
+      if (!iframe || !iframe.contentWindow) return;
+      try {
+        iframe.contentWindow.postMessage(JSON.stringify({
+          event: 'command',
+          func: func,
+          args: args
+        }), '*');
+      } catch (e) {}
+    }
+
+    function buildShortEmbedUrl(videoId, autoplay = 0, mute = 0) {
+      return `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=${autoplay}&mute=${mute}&controls=1&rel=0&modestbranding=1&playsinline=1&loop=1&playlist=${videoId}`;
+    }
+
+    function updateVideoPlayback() {
       const items = document.querySelectorAll('.yt-short-item');
+      const muteParam = isShortsMuted ? 1 : 0;
+
       items.forEach((item, idx) => {
         const iframe = item.querySelector('.yt-short-iframe');
-        if (!iframe) return;
+        const videoId = item.getAttribute('data-video-id');
+        const poster = item.querySelector('.yt-short-poster');
+        if (!iframe || !videoId) return;
 
         if (idx === currentShortIndex) {
-          const dataSrc = iframe.getAttribute('data-src');
-          let targetSrc = dataSrc;
-          if (isShortsMuted) {
-            targetSrc = targetSrc.replace('mute=0', 'mute=1');
-          } else {
-            targetSrc = targetSrc.replace('mute=1', 'mute=0');
-          }
-          if (iframe.src !== targetSrc) {
+          // ACTIVE SHORT: Play immediately!
+          const targetSrc = buildShortEmbedUrl(videoId, 1, muteParam);
+          if (iframe.src === 'about:blank' || !iframe.src) {
             iframe.src = targetSrc;
+            iframe.onload = () => {
+              if (poster) poster.classList.add('hidden');
+            };
           } else {
-            try {
-              iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-            } catch (e) {}
+            sendYTIframeCommand(iframe, 'playVideo');
+            if (isShortsMuted) {
+              sendYTIframeCommand(iframe, 'mute');
+            } else {
+              sendYTIframeCommand(iframe, 'unMute');
+            }
+            if (poster) poster.classList.add('hidden');
+          }
+        } else if (Math.abs(idx - currentShortIndex) <= 1) {
+          // ADJACENT SHORT (PRE-BUFFER): Preload in background for instant readiness!
+          if (iframe.src === 'about:blank' || !iframe.src) {
+            iframe.src = buildShortEmbedUrl(videoId, 0, 1);
+          } else {
+            sendYTIframeCommand(iframe, 'pauseVideo');
           }
         } else {
-          try {
-            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-          } catch (e) {}
-          if (Math.abs(idx - currentShortIndex) > 1) {
-            iframe.src = 'about:blank';
-          }
+          // NON-ADJACENT: Pause
+          sendYTIframeCommand(iframe, 'pauseVideo');
         }
       });
     }
@@ -191,18 +215,23 @@ import './style.css';
       currentShortIndex = 0;
       isShortsNavigating = false;
       updateShortsUI();
-      playActiveShort();
+      updateVideoPlayback();
       attachShortsListeners();
     }
 
     function stopAllShorts() {
       detachShortsListeners();
-      const iframes = document.querySelectorAll('.yt-short-iframe');
-      iframes.forEach(iframe => {
-        try {
-          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        } catch (e) {}
-        iframe.src = 'about:blank';
+      const items = document.querySelectorAll('.yt-short-item');
+      items.forEach(item => {
+        const iframe = item.querySelector('.yt-short-iframe');
+        const poster = item.querySelector('.yt-short-poster');
+        if (iframe) {
+          sendYTIframeCommand(iframe, 'pauseVideo');
+          iframe.src = 'about:blank';
+        }
+        if (poster) {
+          poster.classList.remove('hidden');
+        }
       });
     }
 
@@ -212,29 +241,26 @@ import './style.css';
       if (newIndex < 0 || newIndex >= totalShorts) return;
 
       isShortsNavigating = true;
+
+      // Pause current active video before transitioning
+      const currentItem = document.querySelector(`.yt-short-item[data-index="${currentShortIndex}"]`);
+      if (currentItem) {
+        const currentIframe = currentItem.querySelector('.yt-short-iframe');
+        sendYTIframeCommand(currentIframe, 'pauseVideo');
+      }
+
       currentShortIndex = newIndex;
       updateShortsUI();
-      playActiveShort();
+      updateVideoPlayback();
 
       setTimeout(() => {
         isShortsNavigating = false;
-      }, 450);
+      }, 400);
     }
 
     function toggleShortsLike(btn) {
       shortsLikedState[currentShortIndex] = !shortsLikedState[currentShortIndex];
       updateShortsUI();
-    }
-
-    function toggleSubscribe(btn) {
-      if (!btn) return;
-      if (btn.classList.contains('subscribed')) {
-        btn.classList.remove('subscribed');
-        btn.textContent = 'Suscribirse';
-      } else {
-        btn.classList.add('subscribed');
-        btn.textContent = 'Suscrito ✓';
-      }
     }
 
     function toggleShortsMute() {
@@ -254,7 +280,7 @@ import './style.css';
           `;
         }
       }
-      playActiveShort();
+      updateVideoPlayback();
     }
 
     function onShortsWheel(e) {
@@ -851,7 +877,6 @@ window.applyVideoClip = applyVideoClip;
 window.resetVideoClip = resetVideoClip;
 window.navigateShorts = navigateShorts;
 window.toggleShortsLike = toggleShortsLike;
-window.toggleSubscribe = toggleSubscribe;
 window.toggleShortsMute = toggleShortsMute;
 
 // Abrir modal automáticamente si viene en los parámetros de la URL (?modal=video, ?modal=paper, etc.)

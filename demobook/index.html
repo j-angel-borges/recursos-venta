@@ -414,14 +414,15 @@
               <h2 class="slide-title">Evidencia en Video</h2>
               <p class="slide-subtitle">Impacto de la IA y la tecnología algorítmica en el desarrollo familiar y cognitivo</p>
             </div>
-            <!-- Acceso rápido a los 5 videos -->
+            <!-- Acceso rápido a los 6 videos -->
             <div class="video-slide-quicknav" id="videoQuickNav">
               <button type="button" class="video-quicknav-btn active" onclick="scrollToVideo(0)" title="Open AI bajo Demandas ?">1</button>
               <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(1)" title="Por qué es peligroso contarle tus problemas a ChatGPT">2</button>
-              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(2)" title="La IA preocupa a sus propios creadores">3</button>
-              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(3)" title="La IA nos hace mas tontos?">4</button>
-              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(4)" title="El Analfabetismo que NADIE Vio Venir">5</button>
-              <span class="video-quicknav-counter" id="videoQuickCounter">1 / 5</span>
+              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(2)" title="El Oscuro y Violento Mundo de la IA para NIÑOS">3</button>
+              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(3)" title="La IA preocupa a sus propios creadores">4</button>
+              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(4)" title="La IA nos hace mas tontos?">5</button>
+              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(5)" title="El Analfabetismo que NADIE Vio Venir">6</button>
+              <span class="video-quicknav-counter" id="videoQuickCounter">1 / 6</span>
             </div>
           </div>
         </div>
@@ -464,11 +465,11 @@
                   <div class="video-segment-buttons">
                     <button type="button" class="btn-segment active" onclick="switchVideoSegment('yt-2', '4Ax6hGhRvnI', 171, 196, this)">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                      Corte 1 · 02:51 - 03:16
+                      Parte 1
                     </button>
                     <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-2', '4Ax6hGhRvnI', 1185, 1214, this)">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                      Corte 2 · 19:45 - 20:14
+                      Parte 2
                     </button>
                   </div>
                 </div>
@@ -481,21 +482,27 @@
             <!-- BLOQUE 3: Texto izquierda, Video derecha -->
             <div class="video-row" id="video-block-2">
               <div class="video-ref">
-                <p class="video-ref-quote">“Los propios creadores de la IA ya advierten que su tecnología puede descontrolarse.”</p>
+                <p class="video-ref-quote">“Los algoritmos no discriminan: la IA expone a los niños a dinámicas que ningún padre autorizaría.”</p>
               </div>
               <div class="video-card" id="video-card-3">
                 <div class="video-card-head">
-                  <span class="video-card-badge">DW Español</span>
-                  <h3>La IA preocupa a sus propios creadores</h3>
+                  <span class="video-card-badge">La gata de Schrödinger</span>
+                  <h3>El Oscuro y Violento Mundo de la IA para NIÑOS</h3>
                 </div>
                 <div class="video-frame">
-                  <iframe id="yt-3" class="yt-embed" src="https://www.youtube.com/embed/0VzVoaUY79k?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=654&amp;end=676" title="La IA preocupa a sus propios creadores" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe id="yt-3" class="yt-embed" src="https://www.youtube.com/embed/RWGr8LwG3TY?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=229&amp;end=256" title="El Oscuro y Violento Mundo de la IA para NIÑOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="video-segment-bar">
-                  <span class="video-segment-badge">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    Recorte: 10:54 - 11:16
-                  </span>
+                <div class="video-segments-nav">
+                  <div class="video-segment-buttons">
+                    <button type="button" class="btn-segment active" onclick="switchVideoSegment('yt-3', 'RWGr8LwG3TY', 229, 256, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Parte 1
+                    </button>
+                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-3', 'RWGr8LwG3TY', 648, 664, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Parte 2
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -504,50 +511,69 @@
             <div class="video-row" id="video-block-3">
               <div class="video-card" id="video-card-4">
                 <div class="video-card-head">
-                  <span class="video-card-badge">El Robot de Platón</span>
-                  <h3>La IA nos hace mas tontos?</h3>
+                  <span class="video-card-badge">DW Español</span>
+                  <h3>La IA preocupa a sus propios creadores</h3>
                 </div>
                 <div class="video-frame">
-                  <iframe id="yt-4" class="yt-embed" src="https://www.youtube.com/embed/P_gwEo9qz3w?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=342&amp;end=368" title="La IA nos hace mas tontos?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe id="yt-4" class="yt-embed" src="https://www.youtube.com/embed/0VzVoaUY79k?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=654&amp;end=676" title="La IA preocupa a sus propios creadores" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="video-segments-nav">
-                  <div class="video-segment-buttons">
-                    <button type="button" class="btn-segment active" onclick="switchVideoSegment('yt-4', 'P_gwEo9qz3w', 342, 368, this)">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                      Corte 1 · 05:42 - 06:08
-                    </button>
-                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-4', 'P_gwEo9qz3w', 598, 645, this)">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                      Corte 2 · 09:58 - 10:45
-                    </button>
-                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-4', 'P_gwEo9qz3w', 868, 898, this)">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                      Corte 3 · 14:28 - 14:58
-                    </button>
-                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-4', 'P_gwEo9qz3w', 1248, 1264, this)">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                      Corte 4 · 20:48 - 21:04
-                    </button>
-                  </div>
+                <div class="video-segment-bar">
+                  <span class="video-segment-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Recorte: 10:54 - 11:16
+                  </span>
                 </div>
               </div>
               <div class="video-ref">
-                <p class="video-ref-quote">“Los que escriben ya no se esfuerzan”</p>
+                <p class="video-ref-quote">“Los propios creadores de la IA ya advierten que su tecnología puede descontrolarse.”</p>
               </div>
             </div>
 
             <!-- BLOQUE 5: Texto izquierda, Video derecha -->
             <div class="video-row" id="video-block-4">
               <div class="video-ref">
-                <p class="video-ref-quote">“Un titulo universitario no garantiza tu futuro, El nuevo metodo de alfabetizacion si”</p>
+                <p class="video-ref-quote">“Los que escriben ya no se esfuerzan”</p>
               </div>
               <div class="video-card" id="video-card-5">
+                <div class="video-card-head">
+                  <span class="video-card-badge">El Robot de Platón</span>
+                  <h3>La IA nos hace mas tontos?</h3>
+                </div>
+                <div class="video-frame">
+                  <iframe id="yt-5" class="yt-embed" src="https://www.youtube.com/embed/P_gwEo9qz3w?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=342&amp;end=368" title="La IA nos hace mas tontos?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-segments-nav">
+                  <div class="video-segment-buttons">
+                    <button type="button" class="btn-segment active" onclick="switchVideoSegment('yt-5', 'P_gwEo9qz3w', 342, 368, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Parte 1
+                    </button>
+                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-5', 'P_gwEo9qz3w', 598, 645, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Parte 2
+                    </button>
+                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-5', 'P_gwEo9qz3w', 868, 898, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Parte 3
+                    </button>
+                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-5', 'P_gwEo9qz3w', 1248, 1264, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Parte 4
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BLOQUE 6: Video izquierda, Texto derecha -->
+            <div class="video-row" id="video-block-5">
+              <div class="video-card" id="video-card-6">
                 <div class="video-card-head">
                   <span class="video-card-badge">El Robot de Platón</span>
                   <h3>El Analfabetismo que NADIE Vio Venir</h3>
                 </div>
                 <div class="video-frame">
-                  <iframe id="yt-5" class="yt-embed" src="https://www.youtube.com/embed/CqotNt4ij2A?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=1092&amp;end=1123" title="El Analfabetismo que NADIE Vio Venir" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe id="yt-6" class="yt-embed" src="https://www.youtube.com/embed/CqotNt4ij2A?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=1092&amp;end=1123" title="El Analfabetismo que NADIE Vio Venir" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="video-segment-bar">
                   <span class="video-segment-badge">
@@ -555,6 +581,9 @@
                     Recorte: 18:12 - 18:43
                   </span>
                 </div>
+              </div>
+              <div class="video-ref">
+                <p class="video-ref-quote">“Un titulo universitario no garantiza tu futuro, El nuevo metodo de alfabetizacion si”</p>
               </div>
             </div>
 

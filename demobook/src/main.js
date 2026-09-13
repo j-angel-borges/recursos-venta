@@ -775,6 +775,14 @@ import './style.css';
           initGameControls();
         }
         resetGameUI();
+      } else if (slideIndex === 5) {
+        // Slide de videos (unificada): actualizar estado si es primera vez o scroll en 0
+        const container = document.getElementById('videoSlideScrollContainer');
+        if (container && container.scrollTop === 0) {
+          if (typeof updateVideoQuickNav === 'function') {
+            updateVideoQuickNav(0);
+          }
+        }
       } else {
         // Detener timers activos si salimos de la slide del juego
         whackActive = false;
@@ -799,7 +807,112 @@ import './style.css';
 
   // ==================== NUEVAS FUNCIONES (2026-08-28) ====================
 
-  // --- Slide 6: clips de YouTube con recorte start/end ---
+  // --- Slide 6: Evidencia en Video (5 videos, carrusel vertical y cortes interactivos) ---
+  function switchVideoSegment(iframeId, videoId, start, end, btnElement) {
+    const iframe = document.getElementById(iframeId);
+    if (!iframe) return;
+
+    const params = new URLSearchParams();
+    params.set('rel', '0');
+    params.set('modestbranding', '1');
+    params.set('showinfo', '0');
+    params.set('iv_load_policy', '3');
+    params.set('controls', '1');
+    params.set('autoplay', '1');
+    if (start && start > 0) params.set('start', String(start));
+    if (end && end > 0) params.set('end', String(end));
+
+    iframe.src = `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+
+    if (btnElement && btnElement.parentElement) {
+      const siblingButtons = btnElement.parentElement.querySelectorAll('.btn-segment');
+      siblingButtons.forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+    }
+  }
+
+  function scrollToVideo(index) {
+    const container = document.getElementById('videoSlideScrollContainer');
+    if (!container) return;
+    const rows = container.querySelectorAll('.video-row');
+    if (rows[index]) {
+      rows[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      updateVideoQuickNav(index);
+    }
+  }
+
+  function updateVideoQuickNav(index) {
+    const buttons = document.querySelectorAll('.video-quicknav-btn');
+    buttons.forEach((btn, idx) => {
+      if (idx === index) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    const counter = document.getElementById('videoQuickCounter');
+    if (counter) {
+      counter.textContent = `${index + 1} / ${buttons.length}`;
+    }
+    const hint = document.getElementById('videoScrollHint');
+    if (hint) {
+      if (index >= buttons.length - 1) {
+        hint.innerHTML = `<span>Volver al inicio</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>`;
+      } else {
+        hint.innerHTML = `<span>Siguiente video</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>`;
+      }
+    }
+  }
+
+  function scrollToNextVideo() {
+    const container = document.getElementById('videoSlideScrollContainer');
+    if (!container) return;
+    const rows = container.querySelectorAll('.video-row');
+    let currentIdx = 0;
+    let minDiff = Infinity;
+    const containerTop = container.getBoundingClientRect().top;
+
+    rows.forEach((row, idx) => {
+      const diff = Math.abs(row.getBoundingClientRect().top - containerTop);
+      if (diff < minDiff) {
+        minDiff = diff;
+        currentIdx = idx;
+      }
+    });
+
+    const nextIdx = (currentIdx + 1) % rows.length;
+    scrollToVideo(nextIdx);
+  }
+
+  function initVideoSlideObserver() {
+    const container = document.getElementById('videoSlideScrollContainer');
+    if (!container) return;
+    const rows = container.querySelectorAll('.video-row');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          const index = Array.from(rows).indexOf(entry.target);
+          if (index !== -1) {
+            updateVideoQuickNav(index);
+          }
+        }
+      });
+    }, {
+      root: container,
+      threshold: 0.5
+    });
+
+    rows.forEach(r => observer.observe(r));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVideoSlideObserver);
+  } else {
+    initVideoSlideObserver();
+  }
+
+
   function buildYouTubeEmbedSrc(videoId, start, end) {
     const params = new URLSearchParams();
     params.set('rel', '0');
@@ -842,7 +955,8 @@ import './style.css';
       }));
     },
     mount(slotId, payload = {}) {
-      const slot = document.querySelector(`[data-stat-slot="${slotId}"]`);
+      const slot = document.querySelector(`[data-stat-slot="${slotId}"]`) ||
+                   document.getElementById(`stat-slot-${slotId.replace('slide-', '')}`);
       if (!slot) {
         console.warn(`ZentryStats: slot ${slotId} no encontrado`);
         return false;
@@ -860,7 +974,8 @@ import './style.css';
       return true;
     },
     clear(slotId) {
-      const slot = document.querySelector(`[data-stat-slot="${slotId}"]`);
+      const slot = document.querySelector(`[data-stat-slot="${slotId}"]`) ||
+                   document.getElementById(`stat-slot-${slotId.replace('slide-', '')}`);
       if (!slot) return false;
       slot.innerHTML = '';
       return true;
@@ -873,6 +988,9 @@ window.adjustValue = adjustValue;
 window.calculateCost = calculateCost;
 window.closeModal = closeModal;
 window.openModal = openModal;
+window.switchVideoSegment = switchVideoSegment;
+window.scrollToVideo = scrollToVideo;
+window.scrollToNextVideo = scrollToNextVideo;
 window.applyVideoClip = applyVideoClip;
 window.resetVideoClip = resetVideoClip;
 window.navigateShorts = navigateShorts;

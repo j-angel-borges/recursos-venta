@@ -406,85 +406,71 @@
         </div>
       </div>
 
-      <!-- SLIDE 6: EVIDENCIA EN VIDEO 1/2 -->
+      <!-- SLIDE 6: EVIDENCIA EN VIDEO (UNIFICADA - 5 VIDEOS) -->
       <div class="slide" id="slide-5">
         <div class="slide-header">
-          <h2 class="slide-title">Evidencia en Video</h2>
-        </div>
-        <div class="slide-content video-slide-content">
-          <div class="video-rows">
-
-            <!-- FILA VIDEO 1 -->
-            <div class="video-row">
-              <div class="video-card" id="video-card-1">
-                <div class="video-card-head">
-                  <span class="video-card-badge">DW Español</span>
-                  <h3>La IA preocupa a sus propios creadores</h3>
-                </div>
-                <div class="video-frame">
-                  <iframe id="yt-1" class="yt-embed" src="https://www.youtube.com/embed/0VzVoaUY79k?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&controls=1" title="La IA preocupa a sus propios creadores" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-clip-controls">
-                  <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
-                  <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
-                  <button type="button" class="btn-clip" onclick="applyVideoClip('1','0VzVoaUY79k')">Aplicar recorte</button>
-                  <button type="button" class="btn-clip ghost" onclick="resetVideoClip('1','0VzVoaUY79k')">Ver completo</button>
-                </div>
-              </div>
-              <div class="video-ref">
-                <p class="video-ref-quote">“Los propios creadores de la IA ya advierten que su tecnología puede descontrolarse.”</p>
-              </div>
+          <div class="video-slide-header-flex">
+            <div>
+              <h2 class="slide-title">Evidencia en Video</h2>
+              <p class="slide-subtitle">Impacto de la IA y la tecnología algorítmica en el desarrollo familiar y cognitivo</p>
             </div>
-
-            <!-- FILA VIDEO 2 -->
-            <div class="video-row">
-              <div class="video-card" id="video-card-2">
-                <div class="video-card-head">
-                  <span class="video-card-badge">El Robot de Platón</span>
-                  <h3>El MIT Muestra el Peligro del ChatGPT</h3>
-                </div>
-                <div class="video-frame">
-                  <iframe id="yt-2" class="yt-embed" src="https://www.youtube.com/embed/P_gwEo9qz3w?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&controls=1" title="El MIT Muestra el Peligro del ChatGPT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-clip-controls">
-                  <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
-                  <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
-                  <button type="button" class="btn-clip" onclick="applyVideoClip('2','P_gwEo9qz3w')">Aplicar recorte</button>
-                  <button type="button" class="btn-clip ghost" onclick="resetVideoClip('2','P_gwEo9qz3w')">Ver completo</button>
-                </div>
-              </div>
-              <div class="video-ref">
-                <p class="video-ref-quote">“El MIT demuestra cómo un modelo de lenguaje puede manipular tus decisiones.”</p>
-              </div>
+            <!-- Acceso rápido a los 5 videos -->
+            <div class="video-slide-quicknav" id="videoQuickNav">
+              <button type="button" class="video-quicknav-btn active" onclick="scrollToVideo(0)" title="Open AI bajo Demandas ?">1</button>
+              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(1)" title="Por qué es peligroso contarle tus problemas a ChatGPT">2</button>
+              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(2)" title="La IA preocupa a sus propios creadores">3</button>
+              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(3)" title="La IA nos hace mas tontos?">4</button>
+              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(4)" title="El Analfabetismo que NADIE Vio Venir">5</button>
+              <span class="video-quicknav-counter" id="videoQuickCounter">1 / 5</span>
             </div>
-
           </div>
         </div>
-      </div>
-
-      <!-- SLIDE 7: EVIDENCIA EN VIDEO 2/2 -->
-      <div class="slide" id="slide-6">
-        <div class="slide-header">
-          <h2 class="slide-title">Evidencia en Video</h2>
-        </div>
-        <div class="slide-content video-slide-content">
+        <div class="slide-content video-slide-content" id="videoSlideScrollContainer">
           <div class="video-rows">
 
-            <!-- FILA VIDEO 3 -->
-            <div class="video-row">
-              <div class="video-card" id="video-card-3">
+            <!-- BLOQUE 1: Texto izquierda, Video derecha -->
+            <div class="video-row" id="video-block-0">
+              <div class="video-ref">
+                <p class="video-ref-quote">“La IA está reconfigurando el poder en el ecosistema tecnológico global.”</p>
+              </div>
+              <div class="video-card" id="video-card-1">
+                <div class="video-card-head">
+                  <span class="video-card-badge">EDteam</span>
+                  <h3>Open AI bajo Demandas ?</h3>
+                </div>
+                <div class="video-frame">
+                  <iframe id="yt-1" class="yt-embed" src="https://www.youtube.com/embed/a-xYN6kfK-Q?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=103&amp;end=136" title="Open AI bajo Demandas ?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-segment-bar">
+                  <span class="video-segment-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Recorte: 01:43 - 02:16
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- BLOQUE 2: Video izquierda, Texto derecha -->
+            <div class="video-row" id="video-block-1">
+              <div class="video-card" id="video-card-2">
                 <div class="video-card-head">
                   <span class="video-card-badge">DW Cómo te afecta</span>
                   <h3>Por qué es peligroso contarle tus problemas a ChatGPT</h3>
                 </div>
                 <div class="video-frame">
-                  <iframe id="yt-3" class="yt-embed" src="https://www.youtube.com/embed/4Ax6hGhRvnI?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&controls=1" title="Por qué es peligroso contarle tus problemas a ChatGPT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe id="yt-2" class="yt-embed" src="https://www.youtube.com/embed/4Ax6hGhRvnI?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=171&amp;end=196" title="Por qué es peligroso contarle tus problemas a ChatGPT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="video-clip-controls">
-                  <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
-                  <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
-                  <button type="button" class="btn-clip" onclick="applyVideoClip('3','4Ax6hGhRvnI')">Aplicar recorte</button>
-                  <button type="button" class="btn-clip ghost" onclick="resetVideoClip('3','4Ax6hGhRvnI')">Ver completo</button>
+                <div class="video-segments-nav">
+                  <div class="video-segment-buttons">
+                    <button type="button" class="btn-segment active" onclick="switchVideoSegment('yt-2', '4Ax6hGhRvnI', 171, 196, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Corte 1 · 02:51 - 03:16
+                    </button>
+                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-2', '4Ax6hGhRvnI', 1185, 1214, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Corte 2 · 19:45 - 20:14
+                    </button>
+                  </div>
                 </div>
               </div>
               <div class="video-ref">
@@ -492,66 +478,130 @@
               </div>
             </div>
 
-            <!-- FILA VIDEO 4 -->
-            <div class="video-row">
-              <div class="video-card" id="video-card-4">
+            <!-- BLOQUE 3: Texto izquierda, Video derecha -->
+            <div class="video-row" id="video-block-2">
+              <div class="video-ref">
+                <p class="video-ref-quote">“Los propios creadores de la IA ya advierten que su tecnología puede descontrolarse.”</p>
+              </div>
+              <div class="video-card" id="video-card-3">
                 <div class="video-card-head">
-                  <span class="video-card-badge">EDteam</span>
-                  <h3>¿Se acerca el dominio de Linux gracias a la IA?</h3>
+                  <span class="video-card-badge">DW Español</span>
+                  <h3>La IA preocupa a sus propios creadores</h3>
                 </div>
                 <div class="video-frame">
-                  <iframe id="yt-4" class="yt-embed" src="https://www.youtube.com/embed/a-xYN6kfK-Q?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&controls=1" title="¿Se acerca el dominio de Linux gracias a la IA?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe id="yt-3" class="yt-embed" src="https://www.youtube.com/embed/0VzVoaUY79k?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=654&amp;end=676" title="La IA preocupa a sus propios creadores" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="video-clip-controls">
-                  <label>Inicio (s) <input type="number" min="0" value="0" data-clip="start"></label>
-                  <label>Fin (s) <input type="number" min="0" value="0" data-clip="end" placeholder="0 = final"></label>
-                  <button type="button" class="btn-clip" onclick="applyVideoClip('4','a-xYN6kfK-Q')">Aplicar recorte</button>
-                  <button type="button" class="btn-clip ghost" onclick="resetVideoClip('4','a-xYN6kfK-Q')">Ver completo</button>
+                <div class="video-segment-bar">
+                  <span class="video-segment-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Recorte: 10:54 - 11:16
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- BLOQUE 4: Video izquierda, Texto derecha -->
+            <div class="video-row" id="video-block-3">
+              <div class="video-card" id="video-card-4">
+                <div class="video-card-head">
+                  <span class="video-card-badge">El Robot de Platón</span>
+                  <h3>La IA nos hace mas tontos?</h3>
+                </div>
+                <div class="video-frame">
+                  <iframe id="yt-4" class="yt-embed" src="https://www.youtube.com/embed/P_gwEo9qz3w?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=342&amp;end=368" title="La IA nos hace mas tontos?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-segments-nav">
+                  <div class="video-segment-buttons">
+                    <button type="button" class="btn-segment active" onclick="switchVideoSegment('yt-4', 'P_gwEo9qz3w', 342, 368, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Corte 1 · 05:42 - 06:08
+                    </button>
+                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-4', 'P_gwEo9qz3w', 598, 645, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Corte 2 · 09:58 - 10:45
+                    </button>
+                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-4', 'P_gwEo9qz3w', 868, 898, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Corte 3 · 14:28 - 14:58
+                    </button>
+                    <button type="button" class="btn-segment" onclick="switchVideoSegment('yt-4', 'P_gwEo9qz3w', 1248, 1264, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Corte 4 · 20:48 - 21:04
+                    </button>
+                  </div>
                 </div>
               </div>
               <div class="video-ref">
-                <p class="video-ref-quote">“La IA está reconfigurando el poder en el ecosistema tecnológico global.”</p>
+                <p class="video-ref-quote">“Los que escriben ya no se esfuerzan”</p>
+              </div>
+            </div>
+
+            <!-- BLOQUE 5: Texto izquierda, Video derecha -->
+            <div class="video-row" id="video-block-4">
+              <div class="video-ref">
+                <p class="video-ref-quote">“Un titulo universitario no garantiza tu futuro, El nuevo metodo de alfabetizacion si”</p>
+              </div>
+              <div class="video-card" id="video-card-5">
+                <div class="video-card-head">
+                  <span class="video-card-badge">El Robot de Platón</span>
+                  <h3>El Analfabetismo que NADIE Vio Venir</h3>
+                </div>
+                <div class="video-frame">
+                  <iframe id="yt-5" class="yt-embed" src="https://www.youtube.com/embed/CqotNt4ij2A?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=1092&amp;end=1123" title="El Analfabetismo que NADIE Vio Venir" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-segment-bar">
+                  <span class="video-segment-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Recorte: 18:12 - 18:43
+                  </span>
+                </div>
               </div>
             </div>
 
           </div>
+
+          <!-- Indicador flotante para avanzar al siguiente video -->
+          <div class="video-scroll-hint" id="videoScrollHint" onclick="scrollToNextVideo()">
+            <span>Siguiente video</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
         </div>
       </div>
 
-      <!-- SLIDE 8: NEUROPATOLOGÍAS DIGITALES -->
-      <div class="slide" id="slide-7">
+      <!-- SLIDE 7: NEUROPATOLOGÍAS DIGITALES -->
+      <div class="slide" id="slide-6">
         <div class="slide-header">
           <h2 class="slide-title">Neuropatologías Digitales</h2>
           <p class="slide-subtitle">Distribución Clínica de Nuevas Neuropatologías Digitales · CIE-11 / DSM-5</p>
         </div>
         <div class="slide-content stats-slide-content">
-          <div class="stat-slot" id="stat-slot-7" data-stat-slot="slide-8" data-chart-type="reference_bars" data-aspect="4:3">
+          <div class="stat-slot" id="stat-slot-6" data-stat-slot="slide-7" data-chart-type="reference_bars" data-aspect="4:3">
             <img class="stat-chart-img" src="/graficos/grafico_4_distribucion_clinica_de_nuevas_neuropatologias_digitales.svg" alt="Distribución Clínica de Nuevas Neuropatologías Digitales">
           </div>
         </div>
       </div>
 
-      <!-- SLIDE 9: ALGORITMOS VS CONVERSIÓN -->
-      <div class="slide" id="slide-8">
+      <!-- SLIDE 8: ALGORITMOS VS CONVERSIÓN -->
+      <div class="slide" id="slide-7">
         <div class="slide-header">
           <h2 class="slide-title">Algoritmos vs. Conversión</h2>
           <p class="slide-subtitle">Exposición a Algoritmos de Redes vs. Conversión a Apuestas · Stanford / Oxford</p>
         </div>
         <div class="slide-content stats-slide-content">
-          <div class="stat-slot" id="stat-slot-8" data-stat-slot="slide-9" data-chart-type="line" data-aspect="4:3">
+          <div class="stat-slot" id="stat-slot-7" data-stat-slot="slide-8" data-chart-type="line" data-aspect="4:3">
             <img class="stat-chart-img" src="/graficos/grafico_3_exposicion_a_algoritmos_de_redes_vs_conversion_a_apuestas.svg" alt="Exposición a Algoritmos de Redes vs. Conversión a Apuestas">
           </div>
         </div>
       </div>
 
-      <!-- SLIDE 10: PREVALENCIA DE JUEGO DE RIESGO -->
-      <div class="slide" id="slide-9">
+      <!-- SLIDE 9: PREVALENCIA DE JUEGO DE RIESGO -->
+      <div class="slide" id="slide-8">
         <div class="slide-header">
           <h2 class="slide-title">Prevalencia de Juego de Riesgo</h2>
           <p class="slide-subtitle">Prevalencia de Juego de Riesgo y Apuestas en Jóvenes por País (15 a 35 años)</p>
         </div>
         <div class="slide-content stats-slide-content">
-          <div class="stat-slot" id="stat-slot-9" data-stat-slot="slide-10" data-chart-type="big_numbers" data-aspect="4:3">
+          <div class="stat-slot" id="stat-slot-8" data-stat-slot="slide-9" data-chart-type="big_numbers" data-aspect="4:3">
             <img class="stat-chart-img" src="/graficos/grafico_2_prevalencia_de_juego_de_riesgo_y_apuestas_en_jovenes_por_pais.svg" alt="Prevalencia de Juego de Riesgo y Apuestas en Jóvenes por País">
           </div>
         </div>
@@ -565,7 +615,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
         Atrás
       </button>
-      <div class="slide-indicator" id="slide-ind">1 / 10</div>
+      <div class="slide-indicator" id="slide-ind">1 / 9</div>
       <button class="nav-btn" id="next-btn" onclick="changeSlide(1)">
         Siguiente
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>

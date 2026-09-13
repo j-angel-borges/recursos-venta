@@ -406,25 +406,11 @@
         </div>
       </div>
 
-      <!-- SLIDE 6: EVIDENCIA EN VIDEO (UNIFICADA - 5 VIDEOS) -->
+      <!-- SLIDE 6: EVIDENCIA EN VIDEO (UNIFICADA - 6 VIDEOS) -->
       <div class="slide" id="slide-5">
         <div class="slide-header">
-          <div class="video-slide-header-flex">
-            <div>
-              <h2 class="slide-title">Evidencia en Video</h2>
-              <p class="slide-subtitle">Impacto de la IA y la tecnología algorítmica en el desarrollo familiar y cognitivo</p>
-            </div>
-            <!-- Acceso rápido a los 6 videos -->
-            <div class="video-slide-quicknav" id="videoQuickNav">
-              <button type="button" class="video-quicknav-btn active" onclick="scrollToVideo(0)" title="Open AI bajo Demandas ?">1</button>
-              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(1)" title="Por qué es peligroso contarle tus problemas a ChatGPT">2</button>
-              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(2)" title="El Oscuro y Violento Mundo de la IA para NIÑOS">3</button>
-              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(3)" title="La IA preocupa a sus propios creadores">4</button>
-              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(4)" title="La IA nos hace mas tontos?">5</button>
-              <button type="button" class="video-quicknav-btn" onclick="scrollToVideo(5)" title="El Analfabetismo que NADIE Vio Venir">6</button>
-              <span class="video-quicknav-counter" id="videoQuickCounter">1 / 6</span>
-            </div>
-          </div>
+          <h2 class="slide-title">Evidencia en Video</h2>
+          <p class="slide-subtitle">Impacto de la IA y la tecnología algorítmica en el desarrollo familiar y cognitivo</p>
         </div>
         <div class="slide-content video-slide-content" id="videoSlideScrollContainer">
           <div class="video-rows">
@@ -442,11 +428,13 @@
                 <div class="video-frame">
                   <iframe id="yt-1" class="yt-embed" src="https://www.youtube.com/embed/a-xYN6kfK-Q?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=103&amp;end=136" title="Open AI bajo Demandas ?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="video-segment-bar">
-                  <span class="video-segment-badge">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    Recorte: 01:43 - 02:16
-                  </span>
+                <div class="video-segments-nav">
+                  <div class="video-segment-buttons">
+                    <button type="button" class="btn-segment active" onclick="switchVideoSegment('yt-1', 'a-xYN6kfK-Q', 103, 136, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Parte 1
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -517,11 +505,13 @@
                 <div class="video-frame">
                   <iframe id="yt-4" class="yt-embed" src="https://www.youtube.com/embed/0VzVoaUY79k?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=654&amp;end=676" title="La IA preocupa a sus propios creadores" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="video-segment-bar">
-                  <span class="video-segment-badge">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    Recorte: 10:54 - 11:16
-                  </span>
+                <div class="video-segments-nav">
+                  <div class="video-segment-buttons">
+                    <button type="button" class="btn-segment active" onclick="switchVideoSegment('yt-4', '0VzVoaUY79k', 654, 676, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Parte 1
+                    </button>
+                  </div>
                 </div>
               </div>
               <div class="video-ref">
@@ -575,11 +565,13 @@
                 <div class="video-frame">
                   <iframe id="yt-6" class="yt-embed" src="https://www.youtube.com/embed/CqotNt4ij2A?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=1&amp;start=1092&amp;end=1123" title="El Analfabetismo que NADIE Vio Venir" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="video-segment-bar">
-                  <span class="video-segment-badge">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    Recorte: 18:12 - 18:43
-                  </span>
+                <div class="video-segments-nav">
+                  <div class="video-segment-buttons">
+                    <button type="button" class="btn-segment active" onclick="switchVideoSegment('yt-6', 'CqotNt4ij2A', 1092, 1123, this)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      Parte 1
+                    </button>
+                  </div>
                 </div>
               </div>
               <div class="video-ref">
@@ -587,12 +579,6 @@
               </div>
             </div>
 
-          </div>
-
-          <!-- Indicador flotante para avanzar al siguiente video -->
-          <div class="video-scroll-hint" id="videoScrollHint" onclick="scrollToNextVideo()">
-            <span>Siguiente video</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
         </div>
       </div>

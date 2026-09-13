@@ -1,0 +1,390 @@
+{
+  "timestamp": "2026-09-13T01:38:36.072827+00:00",
+  "target": "D:\\1_jose_angel\\1_GitHub\\Zentry\\recursos-venta\\generaciones_graficos\\Gráficos Comprensión Lectora, Dispositivos e Inmediatez Digital 12-09-26",
+  "verdict": "PASS",
+  "total_checks": 54,
+  "passed_checks": 54,
+  "failed_checks": 0,
+  "healed_actions_count": 0,
+  "healed_actions": [],
+  "details": [
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File charts_audit_report.json (12.0 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in charts_audit_report.json",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File charts_manifest.json (3.7 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in charts_manifest.json",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File deep_research_chart.json (40.3 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in deep_research_chart.json",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File deep_research_report.md (14.6 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in deep_research_report.md",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_1_brecha_de_comprension_y_retencion_lectora_impreso_vs_pantalla_di.html (12.8 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_1_brecha_de_comprension_y_retencion_lectora_impreso_vs_pantalla_di.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_1_brecha_de_comprension_y_retencion_lectora_impreso_vs_pantalla_di.svg (11.5 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_1_brecha_de_comprension_y_retencion_lectora_impreso_vs_pantalla_di.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Layout clearance and anti-collision geometry verified",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_2_curva_dosis_respuesta_horas_de_pantalla_e_inmediatez_vs_retencio.html (10.7 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_2_curva_dosis_respuesta_horas_de_pantalla_e_inmediatez_vs_retencio.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_2_curva_dosis_respuesta_horas_de_pantalla_e_inmediatez_vs_retencio.svg (9.4 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_2_curva_dosis_respuesta_horas_de_pantalla_e_inmediatez_vs_retencio.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Layout clearance and anti-collision geometry verified",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_3_prevalencia_de_rezago_critico_en_comprension_lectora_nivel_2_pis.html (9.0 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_3_prevalencia_de_rezago_critico_en_comprension_lectora_nivel_2_pis.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_3_prevalencia_de_rezago_critico_en_comprension_lectora_nivel_2_pis.svg (7.8 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_3_prevalencia_de_rezago_critico_en_comprension_lectora_nivel_2_pis.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Layout clearance and anti-collision geometry verified",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_4_efecto_shallowing_modos_de_procesamiento_cognitivo_en_lectura_di.html (7.5 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_4_efecto_shallowing_modos_de_procesamiento_cognitivo_en_lectura_di.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_4_efecto_shallowing_modos_de_procesamiento_cognitivo_en_lectura_di.svg (6.2 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_4_efecto_shallowing_modos_de_procesamiento_cognitivo_en_lectura_di.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Layout clearance and anti-collision geometry verified",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_5_sintesis_ejecutiva_impacto_de_la_inmediatez_digital_en_el_circui.html (7.6 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_5_sintesis_ejecutiva_impacto_de_la_inmediatez_digital_en_el_circui.html",
+      "data": {}
+    },
+    {
+      "name": "Zero-Branding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "No forbidden branding strings found",
+      "data": {}
+    },
+    {
+      "name": "File Integrity Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "File grafico_5_sintesis_ejecutiva_impacto_de_la_inmediatez_digital_en_el_circui.svg (6.3 KB) is structurally valid",
+      "data": {}
+    },
+    {
+      "name": "Mojibake & UTF-8 Encoding Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Clean UTF-8 encoding verified in grafico_5_sintesis_ejecutiva_impacto_de_la_inmediatez_digital_en_el_circui.svg",
+      "data": {}
+    },
+    {
+      "name": "Contrast Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All text tokens meet WCAG contrast requirements",
+      "data": {}
+    },
+    {
+      "name": "Anti-Collision Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Layout clearance and anti-collision geometry verified",
+      "data": {}
+    },
+    {
+      "name": "Geographic Benchmark Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "Perú benchmark successfully included in LATAM visual series",
+      "data": {}
+    },
+    {
+      "name": "Suite Multi-Format Completeness Audit",
+      "passed": true,
+      "severity": "INFO",
+      "details": "All charts possess verified 2/2 format deliverables (SVG, HTML)",
+      "data": {}
+    }
+  ]
+}

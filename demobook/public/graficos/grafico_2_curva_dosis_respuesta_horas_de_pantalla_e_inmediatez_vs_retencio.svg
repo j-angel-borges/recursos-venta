@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap');
+
+:root {
+  --pz-canvas: #0A0813;
+  --pz-surface: #16112B;
+  --pz-elevated: #20183E;
+  --pz-border: #3B2A68;
+  --pz-border-subtle: #241B44;
+  --pz-grid: #23293F;
+  --pz-text-primary: #FFFFFF;
+  --pz-text-secondary: #D6C8FA;
+  --pz-text-muted: #A1A7B8;
+  --pz-text-dimmed: #707688;
+  --pz-mint: #C2F4E7;
+  --pz-blue: #C2F4E7;
+  --pz-lilac: #7A59BF;
+  --pz-sol: #D6C8FA;
+  --pz-orange: #F2D412;
+  --pz-coral: #FE7E57;
+  --pz-cyan: #F0524B;
+}
+
+.canvas-bg { fill: #0A0813; }
+.card-surface { fill: #16112B; stroke: #3B2A68; stroke-width: 1.5px; rx: 18px; }
+.elevated-card { fill: #20183E; stroke: #241B44; stroke-width: 1px; rx: 14px; }
+
+.badge-text {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  fill: #C2F4E7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chart-title {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  letter-spacing: -0.015em;
+}
+
+.chart-subtitle {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  fill: #A1A7B8;
+}
+
+.axis-label {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  fill: #D6C8FA;
+}
+
+.tick-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 14px;
+  font-weight: 500;
+  fill: #A1A7B8;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.data-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 15px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.grid-line {
+  stroke: #23293F;
+  stroke-width: 1px;
+  stroke-dasharray: 4 4;
+}
+
+.axis-line {
+  stroke: #3B2A68;
+  stroke-width: 1.5px;
+}
+
+.legend-text {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  fill: #D6C8FA;
+}
+
+.footer-text {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  fill: #707688;
+}
+
+.watermark {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  fill: #707688;
+  letter-spacing: 0.05em;
+}
+]]></style>
+  <g id="background">
+    <rect width="1920" height="1080" class="canvas-bg"/>
+    <rect x="20" y="20" width="1880" height="1040" class="card-surface"/>
+  </g>
+  <g id="grid">
+    <line x1="95" y1="985.0" x2="1845" y2="985.0" class="grid-line"/>
+    <line x1="95" y1="823.0" x2="1845" y2="823.0" class="grid-line"/>
+    <line x1="95" y1="661.0" x2="1845" y2="661.0" class="grid-line"/>
+    <line x1="95" y1="499.0" x2="1845" y2="499.0" class="grid-line"/>
+    <line x1="95" y1="337.0" x2="1845" y2="337.0" class="grid-line"/>
+    <line x1="95" y1="175.0" x2="1845" y2="175.0" class="grid-line"/>
+  </g>
+  <g id="axes">
+    <text x="81" y="990.0" class="tick-label" text-anchor="end">0</text>
+    <text x="81" y="828.0" class="tick-label" text-anchor="end">20</text>
+    <text x="81" y="666.0" class="tick-label" text-anchor="end">40</text>
+    <text x="81" y="504.0" class="tick-label" text-anchor="end">60</text>
+    <text x="81" y="342.0" class="tick-label" text-anchor="end">80</text>
+    <text x="81" y="180.0" class="tick-label" text-anchor="end">100</text>
+    <text x="95.0" y="1007.0" class="axis-label" text-anchor="middle">&lt; 1 h/día</text>
+    <text x="678.3" y="1007.0" class="axis-label" text-anchor="middle">2 - 4 hrs</text>
+    <text x="1261.7" y="1007.0" class="axis-label" text-anchor="middle">5 - 7 hrs</text>
+    <text x="1845.0" y="1007.0" class="axis-label" text-anchor="middle">&gt; 8 hrs/día</text>
+    <line x1="95" y1="985.0" x2="1845" y2="985.0" class="axis-line"/>
+  </g>
+  <g id="series">
+    <defs>
+      <linearGradient id="area-grad-0" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.32"/>
+        <stop offset="100%" stop-color="#00F2FE" stop-opacity="0.0"/>
+      </linearGradient>
+      <linearGradient id="area-grad-1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#C2F4E7" stop-opacity="0.32"/>
+        <stop offset="100%" stop-color="#C2F4E7" stop-opacity="0.0"/>
+      </linearGradient>
+    </defs>
+    <path d="M 95.0 721.8 C 192.2 746.5, 483.9 833.9, 678.3 870.0 C 872.8 906.0, 1067.2 922.6, 1261.7 938.0 C 1456.1 953.4, 1747.8 958.3, 1845.0 962.3 L 1845.0 985.0 L 95.0 985.0 Z" fill="url(#area-grad-0)"/>
+    <path d="M 95.0 721.8 C 192.2 746.5, 483.9 833.9, 678.3 870.0 C 872.8 906.0, 1067.2 922.6, 1261.7 938.0 C 1456.1 953.4, 1747.8 958.3, 1845.0 962.3" fill="none" stroke="#00F2FE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="95.0" cy="721.8" r="8" fill="#16112B" stroke="#00F2FE" stroke-width="2.5"/>
+    <circle cx="95.0" cy="721.8" r="4" fill="#00F2FE"/>
+    <text x="95.0" y="708.8" class="data-label" font-size="13px" text-anchor="middle">&lt; 1 h/día</text>
+    <circle cx="678.3" cy="870.0" r="8" fill="#16112B" stroke="#00F2FE" stroke-width="2.5"/>
+    <circle cx="678.3" cy="870.0" r="4" fill="#00F2FE"/>
+    <text x="678.3" y="857.0" class="data-label" font-size="13px" text-anchor="middle">2 - 4 hrs</text>
+    <circle cx="1261.7" cy="938.0" r="8" fill="#16112B" stroke="#00F2FE" stroke-width="2.5"/>
+    <circle cx="1261.7" cy="938.0" r="4" fill="#00F2FE"/>
+    <text x="1261.7" y="925.0" class="data-label" font-size="13px" text-anchor="middle">5 - 7 hrs</text>
+    <circle cx="1845.0" cy="962.3" r="8" fill="#16112B" stroke="#00F2FE" stroke-width="2.5"/>
+    <circle cx="1845.0" cy="962.3" r="4" fill="#00F2FE"/>
+    <text x="1845.0" y="949.3" class="data-label" font-size="13px" text-anchor="middle">&gt; 8 hrs/día</text>
+    <path d="M 95.0 272.2 C 192.2 308.4, 483.9 416.4, 678.3 489.3 C 872.8 562.2, 1067.2 652.9, 1261.7 709.6 C 1456.1 766.3, 1747.8 809.5, 1845.0 829.5 L 1845.0 985.0 L 95.0 985.0 Z" fill="url(#area-grad-1)"/>
+    <path d="M 95.0 272.2 C 192.2 308.4, 483.9 416.4, 678.3 489.3 C 872.8 562.2, 1067.2 652.9, 1261.7 709.6 C 1456.1 766.3, 1747.8 809.5, 1845.0 829.5" fill="none" stroke="#C2F4E7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="95.0" cy="272.2" r="8" fill="#16112B" stroke="#C2F4E7" stroke-width="2.5"/>
+    <circle cx="95.0" cy="272.2" r="4" fill="#C2F4E7"/>
+    <text x="95.0" y="259.2" class="data-label" font-size="13px" text-anchor="middle">&lt; 1 h/día</text>
+    <circle cx="678.3" cy="489.3" r="8" fill="#16112B" stroke="#C2F4E7" stroke-width="2.5"/>
+    <circle cx="678.3" cy="489.3" r="4" fill="#C2F4E7"/>
+    <text x="678.3" y="476.3" class="data-label" font-size="13px" text-anchor="middle">2 - 4 hrs</text>
+    <circle cx="1261.7" cy="709.6" r="8" fill="#16112B" stroke="#C2F4E7" stroke-width="2.5"/>
+    <circle cx="1261.7" cy="709.6" r="4" fill="#C2F4E7"/>
+    <text x="1261.7" y="696.6" class="data-label" font-size="13px" text-anchor="middle">5 - 7 hrs</text>
+    <circle cx="1845.0" cy="829.5" r="8" fill="#16112B" stroke="#C2F4E7" stroke-width="2.5"/>
+    <circle cx="1845.0" cy="829.5" r="4" fill="#C2F4E7"/>
+    <text x="1845.0" y="816.5" class="data-label" font-size="13px" text-anchor="middle">&gt; 8 hrs/día</text>
+    <rect x="1605" y="190" width="230" height="86" rx="12" class="hero-card" fill="#20183E" stroke="#3B2A68" stroke-width="1.2"/>
+    <text x="1623" y="216" class="axis-label" font-size="13px" font-weight="600">Span Lector con &gt;8h Pantalla</text>
+    <text x="1623" y="250" class="data-label" font-size="28px">2.8 min</text>
+    <text x="1817" y="250" class="tick-label" font-size="13px" font-weight="700" fill="#FE7E57" text-anchor="end">-91.4% vs Base (&lt;1h)</text>
+  </g>
+  <g id="labels">
+  <g id="header">
+    <circle cx="50" cy="60" r="4.5" fill="#C2F4E7"/>
+    <text x="64" y="65" class="badge-text">SOBRECARGA COGNITIVA // ATENCIÓN</text>
+    <text x="50" y="103" class="chart-title">Curva Dosis-Respuesta: Horas de Pantalla e Inmediatez vs. Retención</text>
+    <text x="50" y="133" class="chart-subtitle">Correlación entre exposición diaria a microestímulos digitales y capacidad de concentración continua</text>
+  </g>
+    <rect x="1239.0" y="65" width="14" height="14" rx="3.5" fill="#00F2FE"/>
+    <text x="1259.0" y="76" class="legend-text">Concentración Continua (min)</text>
+    <rect x="1533.0" y="65" width="14" height="14" rx="3.5" fill="#C2F4E7"/>
+    <text x="1553.0" y="76" class="legend-text">Retención Textos Complejos (%)</text>
+  </g>
+  <g id="source">
+  <g id="footer">
+    <text x="50" y="1045" class="footer-text">Fuente: OECD PISA Digital Well-being Study, UNESCO GEM Report, Minedu UMC Perú (140 fuentes)</text>
+  </g>
+  </g>
+</svg>

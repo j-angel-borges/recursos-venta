@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Efecto Shallowing: Modos de Procesamiento Cognitivo en Lectura Digital</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: #0A0813;
+    font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  .chart-container {
+    width: 1920px;
+    height: 1080px;
+    display: block;
+    position: relative;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+  }
+  .chart-container svg {
+    display: block;
+    width: 1920px;
+    height: 1080px;
+  }
+  .interactive-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: #20183E;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid #3B2A68;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    opacity: 0;
+    transition: opacity 150ms ease;
+  }
+</style>
+</head>
+<body>
+<div class="chart-container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap');
+
+:root {
+  --pz-canvas: #0A0813;
+  --pz-surface: #16112B;
+  --pz-elevated: #20183E;
+  --pz-border: #3B2A68;
+  --pz-border-subtle: #241B44;
+  --pz-grid: #23293F;
+  --pz-text-primary: #FFFFFF;
+  --pz-text-secondary: #D6C8FA;
+  --pz-text-muted: #A1A7B8;
+  --pz-text-dimmed: #707688;
+  --pz-mint: #C2F4E7;
+  --pz-blue: #C2F4E7;
+  --pz-lilac: #7A59BF;
+  --pz-sol: #D6C8FA;
+  --pz-orange: #F2D412;
+  --pz-coral: #FE7E57;
+  --pz-cyan: #F0524B;
+}
+
+.canvas-bg { fill: #0A0813; }
+.card-surface { fill: #16112B; stroke: #3B2A68; stroke-width: 1.5px; rx: 18px; }
+.elevated-card { fill: #20183E; stroke: #241B44; stroke-width: 1px; rx: 14px; }
+
+.badge-text {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  fill: #C2F4E7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chart-title {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  letter-spacing: -0.015em;
+}
+
+.chart-subtitle {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  fill: #A1A7B8;
+}
+
+.axis-label {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  fill: #D6C8FA;
+}
+
+.tick-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 14px;
+  font-weight: 500;
+  fill: #A1A7B8;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.data-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 15px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.grid-line {
+  stroke: #23293F;
+  stroke-width: 1px;
+  stroke-dasharray: 4 4;
+}
+
+.axis-line {
+  stroke: #3B2A68;
+  stroke-width: 1.5px;
+}
+
+.legend-text {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  fill: #D6C8FA;
+}
+
+.footer-text {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  fill: #707688;
+}
+
+.watermark {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  fill: #707688;
+  letter-spacing: 0.05em;
+}
+]]></style>
+  <g id="background">
+    <rect width="1920" height="1080" class="canvas-bg"/>
+    <rect x="20" y="20" width="1880" height="1040" class="card-surface"/>
+  </g>
+  <g id="grid">
+    <circle cx="672.0" cy="595.0" r="379.6" fill="none" stroke="#23293F" stroke-width="1.2" stroke-dasharray="4 4"/>
+  </g>
+  <g id="axes"></g>
+  <g id="series">
+    <path d="M 675.7 225.4 A 369.6 369.6 0 0 1 811.5 937.3 L 755.7 800.4 A 221.8 221.8 0 0 0 674.2 373.3 Z" fill="#00F2FE" stroke="#16112B" stroke-width="2.5"/>
+    <path d="M 804.6 940.0 A 369.6 369.6 0 0 1 321.6 712.7 L 461.8 665.6 A 221.8 221.8 0 0 0 751.6 802.0 Z" fill="#C2F4E7" stroke="#16112B" stroke-width="2.5"/>
+    <path d="M 319.4 705.7 A 369.6 369.6 0 0 1 433.6 312.6 L 528.9 425.6 A 221.8 221.8 0 0 0 460.4 661.4 Z" fill="#7A59BF" stroke="#16112B" stroke-width="2.5"/>
+    <path d="M 439.3 307.9 A 369.6 369.6 0 0 1 668.3 225.4 L 669.8 373.3 A 221.8 221.8 0 0 0 532.4 422.7 Z" fill="#D6C8FA" stroke="#16112B" stroke-width="2.5"/>
+    <circle cx="672.0" cy="595.0" r="218.8" fill="#20183E"/>
+    <text x="672.0" y="601.0" class="data-label" font-size="44px" text-anchor="middle">11.0%</text>
+    <text x="672.0" y="627.0" class="axis-label" font-size="15px" text-anchor="middle">Tiempo en Lectura Profunda</text>
+  </g>
+  <g id="labels">
+    <rect x="1113.6" y="480.3" width="14" height="14" rx="3.5" fill="#00F2FE"/>
+    <text x="1137.6" y="482.3" class="legend-text"><tspan x="1137.6" dy="0">Escaneo Superficial</tspan><tspan x="1137.6" dy="16">(F-Pattern)</tspan></text>
+    <text x="1855.0" y="493.3" class="tick-label" font-weight="700" fill="#FFFFFF" text-anchor="end">44 (44.0%)</text>
+    <rect x="1113.6" y="542.3" width="14" height="14" rx="3.5" fill="#C2F4E7"/>
+    <text x="1137.6" y="555.3" class="legend-text">Multitasking Hipertextual</text>
+    <text x="1855.0" y="555.3" class="tick-label" font-weight="700" fill="#FFFFFF" text-anchor="end">26 (26.0%)</text>
+    <rect x="1113.6" y="604.3" width="14" height="14" rx="3.5" fill="#7A59BF"/>
+    <text x="1137.6" y="606.3" class="legend-text"><tspan x="1137.6" dy="0">Fragmentación por</tspan><tspan x="1137.6" dy="16">Microinterrupción</tspan></text>
+    <text x="1855.0" y="617.3" class="tick-label" font-weight="700" fill="#FFFFFF" text-anchor="end">19 (19.0%)</text>
+    <rect x="1113.6" y="666.3" width="14" height="14" rx="3.5" fill="#D6C8FA"/>
+    <text x="1137.6" y="679.3" class="legend-text">Lectura Analítica Profunda</text>
+    <text x="1855.0" y="679.3" class="tick-label" font-weight="700" fill="#FFFFFF" text-anchor="end">11 (11.0%)</text>
+  <g id="header">
+    <circle cx="50" cy="60" r="4.5" fill="#C2F4E7"/>
+    <text x="64" y="65" class="badge-text">NEUROCIENCIA // CIRCUITO LECTOR</text>
+    <text x="50" y="103" class="chart-title">Efecto Shallowing: Modos de Procesamiento Cognitivo en Lectura Digital</text>
+    <text x="50" y="133" class="chart-subtitle">Desglose del tiempo de procesamiento cognitivo en pantallas e interfaces táctiles (%)</text>
+  </g>
+  </g>
+  <g id="source">
+  <g id="footer">
+    <text x="50" y="1045" class="footer-text">Fuente: Maryanne Wolf (Reader, Come Home), Nielsen Norman Group, Dehaene (140 fuentes)</text>
+  </g>
+  </g>
+</svg>
+  <div class="interactive-tooltip" id="tooltip"></div>
+</div>
+</body>
+</html>

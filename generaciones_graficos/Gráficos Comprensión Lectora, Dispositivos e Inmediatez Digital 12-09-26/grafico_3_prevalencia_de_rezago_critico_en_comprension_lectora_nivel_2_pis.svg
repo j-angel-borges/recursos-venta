@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+<style><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap');
+
+:root {
+  --pz-canvas: #0A0813;
+  --pz-surface: #16112B;
+  --pz-elevated: #20183E;
+  --pz-border: #3B2A68;
+  --pz-border-subtle: #241B44;
+  --pz-grid: #23293F;
+  --pz-text-primary: #FFFFFF;
+  --pz-text-secondary: #D6C8FA;
+  --pz-text-muted: #A1A7B8;
+  --pz-text-dimmed: #707688;
+  --pz-mint: #C2F4E7;
+  --pz-blue: #C2F4E7;
+  --pz-lilac: #7A59BF;
+  --pz-sol: #D6C8FA;
+  --pz-orange: #F2D412;
+  --pz-coral: #FE7E57;
+  --pz-cyan: #F0524B;
+}
+
+.canvas-bg { fill: #0A0813; }
+.card-surface { fill: #16112B; stroke: #3B2A68; stroke-width: 1.5px; rx: 18px; }
+.elevated-card { fill: #20183E; stroke: #241B44; stroke-width: 1px; rx: 14px; }
+
+.badge-text {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  fill: #C2F4E7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chart-title {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  letter-spacing: -0.015em;
+}
+
+.chart-subtitle {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  fill: #A1A7B8;
+}
+
+.axis-label {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  fill: #D6C8FA;
+}
+
+.tick-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 14px;
+  font-weight: 500;
+  fill: #A1A7B8;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.data-label {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 15px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+.grid-line {
+  stroke: #23293F;
+  stroke-width: 1px;
+  stroke-dasharray: 4 4;
+}
+
+.axis-line {
+  stroke: #3B2A68;
+  stroke-width: 1.5px;
+}
+
+.legend-text {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  fill: #D6C8FA;
+}
+
+.footer-text {
+  font-family: 'Outfit', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  fill: #707688;
+}
+
+.watermark {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  fill: #707688;
+  letter-spacing: 0.05em;
+}
+]]></style>
+  <g id="background">
+    <rect width="1920" height="1080" class="canvas-bg"/>
+    <rect x="20" y="20" width="1880" height="1040" class="card-surface"/>
+  </g>
+  <g id="grid">
+    <line x1="330.0" y1="170" x2="330.0" y2="1010" class="grid-line"/>
+    <text x="330.0" y="1030" class="tick-label" text-anchor="middle">0</text>
+    <line x1="800.0" y1="170" x2="800.0" y2="1010" class="grid-line"/>
+    <text x="800.0" y="1030" class="tick-label" text-anchor="middle">20</text>
+    <line x1="1270.0" y1="170" x2="1270.0" y2="1010" class="grid-line"/>
+    <text x="1270.0" y="1030" class="tick-label" text-anchor="middle">40</text>
+    <line x1="1740.0" y1="170" x2="1740.0" y2="1010" class="grid-line"/>
+    <text x="1740.0" y="1030" class="tick-label" text-anchor="middle">60</text>
+  </g>
+  <g id="series">
+    <text x="312.0" y="211.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Singapur</text>
+    <rect x="330.0" y="186.6" width="258.5" height="38.9" fill="#7A59BF" rx="5"/>
+    <text x="602.5" y="211.0" class="data-label" font-size="15px" fill="#7A59BF">11%</text>
+    <text x="312.0" y="283.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Finlandia</text>
+    <rect x="330.0" y="258.6" width="502.9" height="38.9" fill="#7A59BF" rx="5"/>
+    <text x="846.9" y="283.0" class="data-label" font-size="15px" fill="#7A59BF">21%</text>
+    <text x="312.0" y="346.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end"><tspan x="312.0" dy="0">Promedio OCDE</tspan><tspan x="312.0" dy="16">(Referencia Global)</tspan></text>
+    <rect x="330.0" y="330.6" width="618.1" height="38.9" fill="#7A59BF" rx="5"/>
+    <text x="962.1" y="355.0" class="data-label" font-size="15px" fill="#7A59BF">26%</text>
+    <text x="312.0" y="427.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Chile</text>
+    <rect x="330.0" y="402.6" width="827.2" height="38.9" fill="#7A59BF" rx="5"/>
+    <text x="1171.2" y="427.0" class="data-label" font-size="15px" fill="#7A59BF">35%</text>
+    <text x="312.0" y="499.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Uruguay</text>
+    <rect x="330.0" y="474.6" width="975.2" height="38.9" fill="#7A59BF" rx="5"/>
+    <text x="1319.2" y="499.0" class="data-label" font-size="15px" fill="#7A59BF">42%</text>
+    <text x="312.0" y="571.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">México</text>
+    <rect x="330.0" y="546.6" width="1109.2" height="38.9" fill="#7A59BF" rx="5"/>
+    <text x="1453.2" y="571.0" class="data-label" font-size="15px" fill="#7A59BF">47%</text>
+    <text x="312.0" y="643.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Brasil</text>
+    <rect x="330.0" y="618.6" width="1177.4" height="38.9" fill="#7A59BF" rx="5"/>
+    <text x="1521.4" y="643.0" class="data-label" font-size="15px" fill="#7A59BF">50%</text>
+    <rect x="40.0" y="677.0" width="1840.0" height="66.0" rx="8" fill="rgba(242, 212, 18, 0.08)" stroke="#D6C8FA" stroke-width="1.2"/>
+    <text x="312.0" y="715.0" class="axis-label" font-size="15px" font-weight="700" fill="#D6C8FA" text-anchor="end">Perú</text>
+    <rect x="330.0" y="690.6" width="1184.4" height="38.9" fill="#D6C8FA" rx="5"/>
+    <text x="1528.4" y="715.0" class="data-label" font-size="15px" fill="#D6C8FA">50%</text>
+    <text x="312.0" y="787.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Colombia</text>
+    <rect x="330.0" y="762.6" width="1198.5" height="38.9" fill="#7A59BF" rx="5"/>
+    <text x="1542.5" y="787.0" class="data-label" font-size="15px" fill="#7A59BF">51%</text>
+    <text x="312.0" y="859.0" class="axis-label" font-size="15px" font-weight="500" fill="#FFFFFF" text-anchor="end">Argentina</text>
+    <rect x="330.0" y="834.6" width="1278.4" height="38.9" fill="#7A59BF" rx="5"/>
+    <text x="1622.4" y="859.0" class="data-label" font-size="15px" fill="#7A59BF">54%</text>
+  </g>
+  <g id="labels">
+  <g id="header">
+    <circle cx="50" cy="60" r="4.5" fill="#C2F4E7"/>
+    <text x="64" y="65" class="badge-text">LATAM &amp; GLOBAL // EVALUACIÓN PISA</text>
+    <text x="50" y="103" class="chart-title">Prevalencia de Rezago Crítico en Comprensión Lectora (&lt; Nivel 2 PISA)</text>
+    <text x="50" y="133" class="chart-subtitle">Estudiantes de 15 años que no alcanzan el umbral mínimo de lectura expuestos a distracción digital (%)</text>
+  </g>
+  </g>
+  <g id="source">
+  <g id="footer">
+    <text x="50" y="1045" class="footer-text">Fuente: OECD PISA, UNESCO LLECE, INEI ENAHO Perú, Minedu UMC (140 fuentes)</text>
+  </g>
+  </g>
+</svg>

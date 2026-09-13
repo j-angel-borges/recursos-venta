@@ -1,0 +1,72 @@
+{
+  "suite_topic": "Comprensión Lectora, Dispositivos e Inmediatez Digital",
+  "timestamp": "2026-09-13T01:38:35.869468+00:00",
+  "theme": "zentryos-aurora",
+  "theme_mode": "dark",
+  "workspace_root": "D:\\1_jose_angel\\1_GitHub\\Zentry\\recursos-venta",
+  "output_directory": "D:\\1_jose_angel\\1_GitHub\\Zentry\\recursos-venta\\generaciones_graficos\\Gráficos Comprensión Lectora, Dispositivos e Inmediatez Digital 12-09-26",
+  "total_charts": 5,
+  "total_files": 10,
+  "charts": [
+    {
+      "id": "grafico_1",
+      "title": "Brecha de Comprensión y Retención Lectora: Impreso vs. Pantalla Digital",
+      "subtitle": "Retención factual, inferencial y mnemónica según soporte cognitivo (%)",
+      "type": "dumbbell",
+      "badge": "NEUROCOGNICIÓN // SCREEN INFERIORITY",
+      "source": "Meta-análisis Delgado et al. (Univ. Valencia), Baron (American Univ.), CERLALC (140 fuentes)",
+      "files": {
+        "svg": "grafico_1_brecha_de_comprension_y_retencion_lectora_impreso_vs_pantalla_di.svg",
+        "html": "grafico_1_brecha_de_comprension_y_retencion_lectora_impreso_vs_pantalla_di.html"
+      }
+    },
+    {
+      "id": "grafico_2",
+      "title": "Curva Dosis-Respuesta: Horas de Pantalla e Inmediatez vs. Retención",
+      "subtitle": "Correlación entre exposición diaria a microestímulos digitales y capacidad de concentración continua",
+      "type": "line",
+      "badge": "SOBRECARGA COGNITIVA // ATENCIÓN",
+      "source": "OECD PISA Digital Well-being Study, UNESCO GEM Report, Minedu UMC Perú (140 fuentes)",
+      "files": {
+        "svg": "grafico_2_curva_dosis_respuesta_horas_de_pantalla_e_inmediatez_vs_retencio.svg",
+        "html": "grafico_2_curva_dosis_respuesta_horas_de_pantalla_e_inmediatez_vs_retencio.html"
+      }
+    },
+    {
+      "id": "grafico_3",
+      "title": "Prevalencia de Rezago Crítico en Comprensión Lectora (< Nivel 2 PISA)",
+      "subtitle": "Estudiantes de 15 años que no alcanzan el umbral mínimo de lectura expuestos a distracción digital (%)",
+      "type": "bar_horizontal",
+      "badge": "LATAM & GLOBAL // EVALUACIÓN PISA",
+      "source": "OECD PISA, UNESCO LLECE, INEI ENAHO Perú, Minedu UMC (140 fuentes)",
+      "files": {
+        "svg": "grafico_3_prevalencia_de_rezago_critico_en_comprension_lectora_nivel_2_pis.svg",
+        "html": "grafico_3_prevalencia_de_rezago_critico_en_comprension_lectora_nivel_2_pis.html"
+      }
+    },
+    {
+      "id": "grafico_4",
+      "title": "Efecto Shallowing: Modos de Procesamiento Cognitivo en Lectura Digital",
+      "subtitle": "Desglose del tiempo de procesamiento cognitivo en pantallas e interfaces táctiles (%)",
+      "type": "donut",
+      "badge": "NEUROCIENCIA // CIRCUITO LECTOR",
+      "source": "Maryanne Wolf (Reader, Come Home), Nielsen Norman Group, Dehaene (140 fuentes)",
+      "files": {
+        "svg": "grafico_4_efecto_shallowing_modos_de_procesamiento_cognitivo_en_lectura_di.svg",
+        "html": "grafico_4_efecto_shallowing_modos_de_procesamiento_cognitivo_en_lectura_di.html"
+      }
+    },
+    {
+      "id": "grafico_5",
+      "title": "Síntesis Ejecutiva: Impacto de la Inmediatez Digital en el Circuito Lector",
+      "subtitle": "Diagnóstico transversal de la erosión lectora por pantallas y sobrecarga atencional (2018 - 2026)",
+      "type": "slide_deck",
+      "badge": "DECK EJECUTIVO // DEUDA COGNITIVA",
+      "source": "Delgado et al., OECD PISA, UNESCO, INEI Perú, Maryanne Wolf (140 fuentes)",
+      "files": {
+        "svg": "grafico_5_sintesis_ejecutiva_impacto_de_la_inmediatez_digital_en_el_circui.svg",
+        "html": "grafico_5_sintesis_ejecutiva_impacto_de_la_inmediatez_digital_en_el_circui.html"
+      }
+    }
+  ]
+}

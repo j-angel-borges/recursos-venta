@@ -764,7 +764,11 @@ import './style.css';
 
     // Sincronización con el cambio de diapositiva
     function onSlideChange(slideIndex) {
-      if (slideIndex === 4) {
+      const activeSlideEl = slides[slideIndex];
+      const isGameSlide = activeSlideEl && activeSlideEl.id === 'slide-4';
+      const isVideoSlide = activeSlideEl && activeSlideEl.id === 'slide-5';
+
+      if (isGameSlide) {
         // Inicializar DOM del juego y cargarlo
         if (!gameScreens) {
           initGameDOM();
@@ -775,7 +779,7 @@ import './style.css';
           initGameControls();
         }
         resetGameUI();
-      } else if (slideIndex === 5) {
+      } else if (isVideoSlide) {
         // Slide de videos (unificada): actualizar estado si es primera vez o scroll en 0
         const container = document.getElementById('videoSlideScrollContainer');
         if (container && container.scrollTop === 0) {

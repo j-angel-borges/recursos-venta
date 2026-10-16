@@ -3243,4 +3243,136 @@ h1, h2, h3 {
   }
 }
 
+/* ========================================================= */
+/* SLIDE 0: CÓMO LLEGUÉ ACÁ? - EFECTO CIRCULAR ZENTRY (FONDO BLANCO) */
+/* ========================================================= */
+.slide-intro-how-content {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.intro-portal-stage {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  max-width: 85vw;
+  max-height: 52vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ondas pulsantes de fondo - Tema Blanco con morado Zentry (#533B87), lavanda (#D6C8FA) y menta (#C2F4E7) */
+.intro-ripple {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.intro-ripple-1 {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(214, 200, 250, 0.45) 0%, rgba(194, 244, 231, 0.3) 50%, rgba(255, 255, 255, 0) 70%);
+  animation: zentryPulseGlow 4s ease-in-out infinite alternate;
+}
+
+.intro-ripple-2 {
+  width: 86%;
+  height: 86%;
+  border: 2px dashed rgba(83, 59, 135, 0.28);
+  animation: zentryRotateRing 24s linear infinite;
+}
+
+.intro-ripple-3 {
+  width: 74%;
+  height: 74%;
+  border: 1.5px solid rgba(83, 59, 135, 0.35);
+  box-shadow: 0 0 35px rgba(83, 59, 135, 0.15), inset 0 0 25px rgba(214, 200, 250, 0.3);
+  animation: zentryPulseRing 3s ease-in-out infinite;
+}
+
+/* Borde exterior animado con degradado Zentry cónico */
+.intro-portal-ring {
+  position: absolute;
+  width: 274px;
+  height: 274px;
+  border-radius: 50%;
+  padding: 6px;
+  background: conic-gradient(from 0deg, #533B87, #D6C8FA, #C2F4E7, #8B66D6, #533B87);
+  box-shadow: 0 10px 40px rgba(83, 59, 135, 0.28), 0 0 20px rgba(214, 200, 250, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: zentryConicSpin 6s linear infinite;
+}
+
+/* Halo resplandeciente blanco intermedio */
+.intro-portal-ring::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(83, 59, 135, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: -1;
+  filter: blur(8px);
+}
+
+/* Contenedor circular con fondo blanco para la imagen */
+.intro-avatar-circle {
+  position: relative;
+  width: 254px;
+  height: 254px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 4px solid #533B87;
+  overflow: hidden;
+  box-shadow: inset 0 0 16px rgba(83, 59, 135, 0.18), 0 12px 30px rgba(74, 81, 96, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.intro-avatar-circle:hover {
+  transform: scale(1.04);
+  box-shadow: 0 18px 45px rgba(83, 59, 135, 0.35);
+}
+
+.intro-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+/* Keyframes de animación fluida y ultraligera (Zero-Lag) */
+@keyframes zentryPulseGlow {
+  0% { transform: scale(0.92); opacity: 0.6; }
+  100% { transform: scale(1.1); opacity: 0.95; }
+}
+
+@keyframes zentryRotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes zentryPulseRing {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+  100% { transform: scale(0.95); opacity: 0.5; }
+}
+
+@keyframes zentryConicSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
 
